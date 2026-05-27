@@ -34,6 +34,12 @@ Sanity Studio:
 npm run studio:dev
 ```
 
+Hosted Sanity Studio:
+
+```txt
+https://chayka-live.sanity.studio/
+```
+
 Sanity needs real values in `.env` before it can connect to a project.
 Use `.env.example` as the starting point.
 
