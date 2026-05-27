@@ -1,0 +1,104 @@
+---
+import PortableText from '../../components/content/PortableText.astro';
+import GlobalCTA from '../../components/cta/GlobalCTA.astro';
+import Layout from '../../components/layout/Layout.astro';
+import Breadcrumbs from '../../components/seo/Breadcrumbs.astro';
+import JsonLd from '../../components/seo/JsonLd.astro';
+import { getConcerns, getContactSettings, getDefaultCTA, getServices } from '../../lib/data';
+import {
+  buildBreadcrumbJsonLd,
+  buildFaqJsonLd,
+  buildProfessionalServiceJsonLd,
+} from '../../lib/seo/jsonLd';
+
+export async function getStaticPaths() {
+  const services = await getServices();
+
+  return services.map((service) => ({
+    params: { slug: service.slug },
+    props: { service },
+  }));
+}
+
+const { service } = Astro.props;
+const [allConcerns, contactSettings, defaultCTA] = await Promise.all([
+  getConcerns(),
+  getContactSettings(),
+  getDefaultCTA(),
+]);
+const relatedConcerns = service.relatedConcerns?.length ? service.relatedConcerns : allConcerns;
+const faq = service.faq || [];
+const hasBody = Array.isArray(service.body) && service.body.length > 0;
+const seoTitle = service.seo?.title || service.title;
+const seoDescription = service.seo?.description || service.description;
+const servicePath = `/poslugy/${service.slug}`;
+const canonicalPath = service.seo?.canonicalOverride || servicePath;
+---
+
+<Layout
+  title={seoTitle}
+  description={seoDescription}
+  canonicalPath={canonicalPath}
+  noindex={service.seo?.noindex}
+>
+  <JsonLd data={buildBreadcrumbJsonLd([{ label: 'Послуги', path: '/poslugy' }, { label: service.title, path: servicePath }])} />
+  <JsonLd data={buildProfessionalServiceJsonLd(contactSettings)} />
+  <JsonLd data={buildFaqJsonLd(faq)} />
+  <Breadcrumbs items={[{ label: 'Послуги', href: '/poslugy' }, { label: service.title }]} />
+  <section class="section">
+    <div class="container grid gap-10 md:grid-cols-[1fr_360px]">
+      <article>
+        <p class="eyebrow">Послуга</p>
+        <h1 class="mt-4 text-4xl font-semibold leading-tight md:text-5xl">{service.title}</h1>
+        <p class="mt-6 max-w-2xl text-lg leading-8 text-[var(--color-muted)]">{service.description}</p>
+
+        <div class="mt-10">
+          {hasBody ? (
+            <PortableText value={service.body} />
+          ) : (
+            <div class="portable-text">
+              <h2>Кому це може бути корисно</h2>
+              <p>
+                Тут буде основний текст із Sanity CMS: для кого ця послуга, з якими ситуаціями можна звернутися і як виглядає формат роботи.
+              </p>
+              <h2>З чим можна працювати на сесіях</h2>
+              <p>
+                Додайте контент у поле Body цього документа в Sanity, і він автоматично з'явиться на цій сторінці.
+              </p>
+            </div>
+          )}
+        </div>
+
+        {faq.length > 0 && (
+          <section class="mt-12">
+            <h2 class="text-2xl font-semibold">Питання про цю послугу</h2>
+            <div class="mt-5 grid gap-4">
+              {faq.map((item) => (
+                <article class="rounded-lg border border-[var(--color-line)] bg-[var(--color-surface)] p-5">
+                  <h3 class="font-semibold">{item.question}</h3>
+                  <p class="mt-3 text-sm leading-6 text-[var(--color-muted)]">{item.answer}</p>
+                </article>
+              ))}
+            </div>
+          </section>
+        )}
+      </article>
+
+      <aside class="rounded-lg border border-[var(--color-line)] bg-[var(--color-surface)] p-5">
+        <h2 class="font-semibold">Пов'язані запити</h2>
+        <div class="mt-4 grid gap-3">
+          {relatedConcerns.map((concern) => (
+            <a class="text-sm leading-6 text-[var(--color-muted)] hover:text-[var(--color-ink)]" href={`/zapyt/${concern.slug}`}>{concern.title}</a>
+          ))}
+        </div>
+      </aside>
+    </div>
+  </section>
+  <GlobalCTA
+    placement="service_final"
+    pageType="service"
+    contentId={service.slug}
+    contactSettings={contactSettings}
+    cta={service.cta || defaultCTA}
+  />
+</Layout>

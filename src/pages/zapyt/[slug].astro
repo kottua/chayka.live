@@ -1,0 +1,104 @@
+---
+import PortableText from '../../components/content/PortableText.astro';
+import GlobalCTA from '../../components/cta/GlobalCTA.astro';
+import Layout from '../../components/layout/Layout.astro';
+import Breadcrumbs from '../../components/seo/Breadcrumbs.astro';
+import JsonLd from '../../components/seo/JsonLd.astro';
+import { getConcerns, getContactSettings, getDefaultCTA, getServices } from '../../lib/data';
+import {
+  buildBreadcrumbJsonLd,
+  buildFaqJsonLd,
+  buildProfessionalServiceJsonLd,
+} from '../../lib/seo/jsonLd';
+
+export async function getStaticPaths() {
+  const concerns = await getConcerns();
+
+  return concerns.map((concern) => ({
+    params: { slug: concern.slug },
+    props: { concern },
+  }));
+}
+
+const { concern } = Astro.props;
+const [contactSettings, defaultCTA, allServices] = await Promise.all([
+  getContactSettings(),
+  getDefaultCTA(),
+  getServices(),
+]);
+const relatedServices = concern.relatedServices?.length ? concern.relatedServices : allServices;
+const faq = concern.faq || [];
+const hasBody = Array.isArray(concern.body) && concern.body.length > 0;
+const seoTitle = concern.seo?.title || concern.title;
+const seoDescription = concern.seo?.description || concern.description;
+const concernPath = `/zapyt/${concern.slug}`;
+const canonicalPath = concern.seo?.canonicalOverride || concernPath;
+---
+
+<Layout
+  title={seoTitle}
+  description={seoDescription}
+  canonicalPath={canonicalPath}
+  noindex={concern.seo?.noindex}
+>
+  <JsonLd data={buildBreadcrumbJsonLd([{ label: 'Запити', path: '/zapyt' }, { label: concern.title, path: concernPath }])} />
+  <JsonLd data={buildProfessionalServiceJsonLd(contactSettings)} />
+  <JsonLd data={buildFaqJsonLd(faq)} />
+  <Breadcrumbs items={[{ label: 'Запити', href: '/zapyt' }, { label: concern.title }]} />
+  <section class="section">
+    <div class="container grid gap-10 md:grid-cols-[1fr_360px]">
+      <article>
+        <p class="eyebrow">Запит</p>
+        <h1 class="mt-4 text-4xl font-semibold leading-tight md:text-5xl">{concern.title}</h1>
+        <p class="mt-6 max-w-2xl text-lg leading-8 text-[var(--color-muted)]">{concern.description}</p>
+
+        <div class="mt-10">
+          {hasBody ? (
+            <PortableText value={concern.body} />
+          ) : (
+            <div class="portable-text">
+              <h2>Як це може проявлятися</h2>
+              <p>
+                Тут буде сторінковий контент із Sanity під конкретний пошуковий намір: ситуації, симптоми, приклади і мова, близька людині.
+              </p>
+              <h2>Як психотерапія може допомогти</h2>
+              <p>
+                Додайте контент у поле Body цього документа в Sanity, і він автоматично з'явиться на цій сторінці.
+              </p>
+            </div>
+          )}
+        </div>
+
+        {faq.length > 0 && (
+          <section class="mt-12">
+            <h2 class="text-2xl font-semibold">Питання на цю тему</h2>
+            <div class="mt-5 grid gap-4">
+              {faq.map((item) => (
+                <article class="rounded-lg border border-[var(--color-line)] bg-[var(--color-surface)] p-5">
+                  <h3 class="font-semibold">{item.question}</h3>
+                  <p class="mt-3 text-sm leading-6 text-[var(--color-muted)]">{item.answer}</p>
+                </article>
+              ))}
+            </div>
+          </section>
+        )}
+      </article>
+
+      <aside class="rounded-lg border border-[var(--color-line)] bg-[var(--color-surface)] p-5">
+        <h2 class="font-semibold">Релевантні послуги</h2>
+        <div class="mt-4 grid gap-3">
+          {relatedServices.map((service) => (
+            <a class="text-sm leading-6 text-[var(--color-muted)] hover:text-[var(--color-ink)]" href={`/poslugy/${service.slug}`}>{service.title}</a>
+          ))}
+        </div>
+      </aside>
+    </div>
+  </section>
+  <GlobalCTA
+    placement="concern_final"
+    pageType="concern"
+    contentId={concern.slug}
+    contactSettings={contactSettings}
+    cta={concern.cta || defaultCTA}
+  />
+</Layout>

@@ -1,0 +1,39 @@
+---
+import Layout from '../components/layout/Layout.astro';
+import ContactActions from '../components/cta/ContactActions.astro';
+import Breadcrumbs from '../components/seo/Breadcrumbs.astro';
+import { site } from '../lib/site';
+import { getContactSettings } from '../lib/data';
+
+const contactSettings = await getContactSettings();
+---
+
+<Layout title="Звернутися на консультацію" description="Оберіть зручний месенджер або відкрийте номер телефону, щоб поставити уточнююче питання." canonicalPath="/zapys-na-konsultatsiiu">
+  <Breadcrumbs items={[{ label: 'Звернутися' }]} />
+  <section class="section">
+    <div class="container grid gap-10 md:grid-cols-[1fr_420px] md:items-start">
+      <div>
+        <p class="eyebrow">Перший контакт</p>
+        <h1 class="mt-4 text-4xl font-semibold leading-tight md:text-5xl">Можна почати з короткого повідомлення</h1>
+        <p class="mt-6 max-w-2xl text-lg leading-8 text-[var(--color-muted)]">
+          Не потрібно одразу точно формулювати запит. Достатньо написати, що зараз турбує, який формат зручний і які питання хочеться уточнити перед консультацією.
+        </p>
+        <div class="mt-8 rounded-lg border border-[var(--color-line)] bg-[var(--color-surface)] p-5 text-sm leading-6 text-[var(--color-muted)]">
+          {contactSettings.confidentialityNote}
+        </div>
+      </div>
+      <aside class="rounded-lg border border-[var(--color-line)] bg-[var(--color-surface)] p-6">
+        <h2 class="text-xl font-semibold">Оберіть зручний спосіб зв'язку</h2>
+        <p class="mt-2 text-sm leading-6 text-[var(--color-muted)]">{contactSettings.responseHours}</p>
+        <div class="mt-6">
+          <ContactActions
+            placement="action_page"
+            pageType="action"
+            contentId={site.name}
+            contactSettings={contactSettings}
+          />
+        </div>
+      </aside>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,112 @@
+---
+import { contactSettings as defaultContactSettings } from '../../lib/site';
+import type { ContactSettings } from '../../lib/data';
+
+interface Props {
+  placement: string;
+  pageType: string;
+  contentId?: string;
+  contactSettings?: ContactSettings;
+  enabledChannels?: string[];
+  ctaId?: string;
+  trackingContext?: string;
+}
+
+const {
+  placement,
+  pageType,
+  contentId = '',
+  contactSettings = defaultContactSettings,
+  enabledChannels,
+  ctaId = '',
+  trackingContext = '',
+} = Astro.props;
+
+const allowedChannels = enabledChannels?.length
+  ? enabledChannels
+  : ['telegram', 'viber', 'whatsapp', 'phone'];
+const messengerChannels = contactSettings.channels.filter((channel) =>
+  allowedChannels.includes(channel.id),
+);
+const showPhone = allowedChannels.includes('phone');
+---
+
+<div class="grid gap-3 sm:grid-cols-3" data-contact-actions>
+  {
+    messengerChannels.map((channel) => (
+      <a
+        class="focus-ring inline-flex min-h-12 items-center justify-center rounded-md border border-[var(--color-line)] bg-white px-4 text-sm font-semibold hover:border-[var(--color-accent)]"
+        href={channel.href}
+        data-event="cta_messenger_click"
+        data-channel={channel.id}
+        data-placement={placement}
+        data-page-type={pageType}
+        data-content-id={contentId}
+        data-cta-id={ctaId}
+        data-tracking-context={trackingContext}
+      >
+        {channel.label}
+      </a>
+    ))
+  }
+  {
+    showPhone && (
+      <button
+        class="focus-ring inline-flex min-h-12 items-center justify-center rounded-md border border-[var(--color-line)] bg-white px-4 text-sm font-semibold hover:border-[var(--color-accent)] sm:col-span-3"
+        type="button"
+        data-phone-reveal
+        data-phone={contactSettings.phone}
+        data-phone-display={contactSettings.phoneDisplay}
+        data-event="cta_phone_reveal"
+        data-placement={placement}
+        data-page-type={pageType}
+        data-content-id={contentId}
+        data-cta-id={ctaId}
+        data-tracking-context={trackingContext}
+      >
+        Показати номер телефону
+      </button>
+    )
+  }
+</div>
+
+<script>
+  const pushEvent = (eventName, payload = {}) => {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ event: eventName, ...payload });
+  };
+
+  document.querySelectorAll('[data-event]').forEach((element) => {
+    element.addEventListener('click', () => {
+      const target = element;
+      pushEvent(target.dataset.event || 'cta_click', {
+        channel: target.dataset.channel,
+        placement: target.dataset.placement,
+        page_type: target.dataset.pageType,
+        content_id: target.dataset.contentId,
+        cta_id: target.dataset.ctaId,
+        tracking_context: target.dataset.trackingContext,
+      });
+    });
+  });
+
+  document.querySelectorAll('[data-phone-reveal]').forEach((button) => {
+    button.addEventListener('click', async () => {
+      const phone = button.dataset.phone || '';
+      const display = button.dataset.phoneDisplay || phone;
+      button.textContent = display;
+      button.setAttribute('aria-label', `Телефон: ${display}`);
+
+      if (navigator.clipboard && phone) {
+        await navigator.clipboard.writeText(phone);
+        pushEvent('cta_phone_copy', {
+          placement: button.dataset.placement,
+          page_type: button.dataset.pageType,
+          content_id: button.dataset.contentId,
+          cta_id: button.dataset.ctaId,
+          tracking_context: button.dataset.trackingContext,
+        });
+      }
+    });
+  });
+</script>

@@ -1,0 +1,104 @@
+---
+import PortableText from '../../components/content/PortableText.astro';
+import GlobalCTA from '../../components/cta/GlobalCTA.astro';
+import Layout from '../../components/layout/Layout.astro';
+import Breadcrumbs from '../../components/seo/Breadcrumbs.astro';
+import JsonLd from '../../components/seo/JsonLd.astro';
+import {
+  getArticles,
+  getConcerns,
+  getContactSettings,
+  getDefaultCTA,
+  getServices,
+} from '../../lib/data';
+import { buildArticleJsonLd, buildBreadcrumbJsonLd } from '../../lib/seo/jsonLd';
+
+export async function getStaticPaths() {
+  const articles = await getArticles();
+
+  return articles.map((article) => ({
+    params: { slug: article.slug },
+    props: { article },
+  }));
+}
+
+const { article } = Astro.props;
+const [allConcerns, contactSettings, defaultCTA, allServices] = await Promise.all([
+  getConcerns(),
+  getContactSettings(),
+  getDefaultCTA(),
+  getServices(),
+]);
+const relatedServices = article.relatedServices?.length ? article.relatedServices : allServices;
+const relatedConcerns = article.relatedConcerns?.length ? article.relatedConcerns : allConcerns;
+const hasBody = Array.isArray(article.body) && article.body.length > 0;
+const seoTitle = article.seo?.title || article.title;
+const seoDescription = article.seo?.description || article.excerpt || article.description;
+const articlePath = `/statti/${article.slug}`;
+const canonicalPath = article.seo?.canonicalOverride || articlePath;
+---
+
+<Layout
+  title={seoTitle}
+  description={seoDescription}
+  canonicalPath={canonicalPath}
+  noindex={article.seo?.noindex}
+>
+  <JsonLd data={buildBreadcrumbJsonLd([{ label: 'Статті', path: '/statti' }, { label: article.title, path: articlePath }])} />
+  <JsonLd
+    data={buildArticleJsonLd({
+      title: article.title,
+      description: seoDescription,
+      path: articlePath,
+      publishedAt: article.publishedAt,
+    })}
+  />
+  <Breadcrumbs items={[{ label: 'Статті', href: '/statti' }, { label: article.title }]} />
+  <section class="section">
+    <div class="container grid gap-10 md:grid-cols-[1fr_360px]">
+      <article>
+        <p class="eyebrow">Стаття</p>
+        <h1 class="mt-4 text-4xl font-semibold leading-tight md:text-5xl">{article.title}</h1>
+        <p class="mt-6 max-w-2xl text-lg leading-8 text-[var(--color-muted)]">{article.excerpt}</p>
+
+        <div class="mt-10">
+          {hasBody ? (
+            <PortableText value={article.body} />
+          ) : (
+            <div class="portable-text">
+              <p>
+                Це місце для повного тексту статті з Sanity. Додайте контент у поле Body цього документа, і він автоматично з'явиться на сторінці.
+              </p>
+            </div>
+          )}
+        </div>
+      </article>
+
+      <aside class="grid gap-6">
+        <div class="rounded-lg border border-[var(--color-line)] bg-[var(--color-surface)] p-5">
+          <h2 class="font-semibold">Пов'язані послуги</h2>
+          <div class="mt-4 grid gap-3">
+            {relatedServices.map((service) => (
+              <a class="text-sm leading-6 text-[var(--color-muted)] hover:text-[var(--color-ink)]" href={`/poslugy/${service.slug}`}>{service.title}</a>
+            ))}
+          </div>
+        </div>
+        <div class="rounded-lg border border-[var(--color-line)] bg-[var(--color-surface)] p-5">
+          <h2 class="font-semibold">Пов'язані запити</h2>
+          <div class="mt-4 grid gap-3">
+            {relatedConcerns.map((concern) => (
+              <a class="text-sm leading-6 text-[var(--color-muted)] hover:text-[var(--color-ink)]" href={`/zapyt/${concern.slug}`}>{concern.title}</a>
+            ))}
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+  <GlobalCTA
+    placement="article_final"
+    pageType="article"
+    contentId={article.slug}
+    contactSettings={contactSettings}
+    cta={article.cta || defaultCTA}
+  />
+</Layout>

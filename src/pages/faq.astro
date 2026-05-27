@@ -1,0 +1,39 @@
+---
+import Layout from '../components/layout/Layout.astro';
+import GlobalCTA from '../components/cta/GlobalCTA.astro';
+import Breadcrumbs from '../components/seo/Breadcrumbs.astro';
+import JsonLd from '../components/seo/JsonLd.astro';
+import { getContactSettings, getDefaultCTA, getFaqItems } from '../lib/data';
+import { buildBreadcrumbJsonLd, buildFaqJsonLd } from '../lib/seo/jsonLd';
+
+const [contactSettings, defaultCTA, faqItems] = await Promise.all([
+  getContactSettings(),
+  getDefaultCTA(),
+  getFaqItems(),
+]);
+---
+
+<Layout
+  title="FAQ"
+  description="Відповіді на базові питання перед першим зверненням до психотерапевта."
+  canonicalPath="/faq"
+>
+  <JsonLd data={buildBreadcrumbJsonLd([{ label: 'FAQ', path: '/faq' }])} />
+  <JsonLd data={buildFaqJsonLd(faqItems)} />
+  <Breadcrumbs items={[{ label: 'FAQ' }]} />
+  <section class="section">
+    <div class="container max-w-3xl">
+      <p class="eyebrow">FAQ</p>
+      <h1 class="mt-4 text-4xl font-semibold leading-tight md:text-5xl">Питання перед першим контактом</h1>
+      <div class="mt-10 grid gap-4">
+        {faqItems.map((item) => (
+          <article class="rounded-lg border border-[var(--color-line)] bg-[var(--color-surface)] p-5">
+            <h2 class="text-lg font-semibold">{item.question}</h2>
+            <p class="mt-3 leading-7 text-[var(--color-muted)]">{item.answer}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+  <GlobalCTA placement="faq_final" pageType="faq" contactSettings={contactSettings} cta={defaultCTA} />
+</Layout>

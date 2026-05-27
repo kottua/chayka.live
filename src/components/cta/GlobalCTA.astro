@@ -1,0 +1,50 @@
+---
+import type { ContactSettings, CtaContent } from '../../lib/data';
+import ContactActions from './ContactActions.astro';
+
+interface Props {
+  title?: string;
+  text?: string;
+  placement: string;
+  pageType: string;
+  contentId?: string;
+  contactSettings?: ContactSettings;
+  cta?: CtaContent | null;
+}
+
+const {
+  title,
+  text,
+  placement,
+  pageType,
+  contentId,
+  contactSettings,
+  cta,
+} = Astro.props;
+
+const ctaTitle = title || cta?.headline || 'Можна почати з короткого повідомлення';
+const ctaText =
+  text ||
+  cta?.text ||
+  'Оберіть зручний канал і напишіть кілька слів про те, що зараз турбує. Не потрібно одразу формулювати ідеальний запит.';
+const trackingContext = cta?.trackingContext || cta?.placementType || '';
+---
+
+<section class="section bg-[var(--color-surface)]">
+  <div class="container grid gap-8 md:grid-cols-[1fr_420px] md:items-center">
+    <div>
+      <p class="eyebrow">Перший контакт</p>
+      <h2 class="mt-3 text-3xl font-semibold leading-tight md:text-4xl">{ctaTitle}</h2>
+      <p class="mt-4 max-w-2xl text-base leading-7 text-[var(--color-muted)]">{ctaText}</p>
+    </div>
+    <ContactActions
+      placement={placement}
+      pageType={pageType}
+      contentId={contentId}
+      contactSettings={contactSettings}
+      enabledChannels={cta?.enabledChannels}
+      ctaId={cta?.id}
+      trackingContext={trackingContext}
+    />
+  </div>
+</section>

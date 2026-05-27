@@ -1,0 +1,25 @@
+---
+import Layout from '../components/layout/Layout.astro';
+import GlobalCTA from '../components/cta/GlobalCTA.astro';
+import Breadcrumbs from '../components/seo/Breadcrumbs.astro';
+import { getContactSettings, getDefaultCTA } from '../lib/data';
+
+const [contactSettings, defaultCTA] = await Promise.all([getContactSettings(), getDefaultCTA()]);
+---
+
+<Layout title="Про психотерапевта" description="Сторінка довіри: підхід, освіта, принципи роботи і формат консультацій." canonicalPath="/pro-mene">
+  <Breadcrumbs items={[{ label: 'Про мене' }]} />
+  <section class="section">
+    <div class="container grid gap-10 md:grid-cols-[0.9fr_1.1fr]">
+      <div>
+        <p class="eyebrow">Про спеціаліста</p>
+        <h1 class="mt-4 text-4xl font-semibold leading-tight md:text-5xl">Тут буде сторінка довіри, не сухе резюме</h1>
+      </div>
+      <div class="grid gap-6 text-base leading-8 text-[var(--color-muted)]">
+        <p>Ця сторінка має пояснити підхід, освіту, етичні межі, формат роботи і те, як людині зрозуміти, чи їй підходить саме цей спеціаліст.</p>
+        <p>Пізніше ці блоки будуть керуватись через Sanity CMS, але маршрут і структура вже закладені.</p>
+      </div>
+    </div>
+  </section>
+  <GlobalCTA placement="about_final" pageType="about" contactSettings={contactSettings} cta={defaultCTA} />
+</Layout>

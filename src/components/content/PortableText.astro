@@ -1,0 +1,31 @@
+---
+import { toHTML } from '@portabletext/to-html';
+
+interface Props {
+  value?: unknown[];
+}
+
+const { value = [] } = Astro.props;
+
+const html = toHTML(value, {
+  components: {
+    block: {
+      h2: ({ children }) => `<h2>${children}</h2>`,
+      h3: ({ children }) => `<h3>${children}</h3>`,
+      normal: ({ children }) => `<p>${children}</p>`,
+      blockquote: ({ children }) => `<blockquote>${children}</blockquote>`,
+    },
+    marks: {
+      link: ({ children, value }) => {
+        const href = value?.href || '#';
+        const isExternal = /^https?:\/\//.test(href);
+        const rel = isExternal ? ' rel="noreferrer noopener"' : '';
+        const target = isExternal ? ' target="_blank"' : '';
+        return `<a href="${href}"${target}${rel}>${children}</a>`;
+      },
+    },
+  },
+});
+---
+
+<div class="portable-text" set:html={html} />
