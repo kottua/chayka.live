@@ -1,3 +1,5 @@
+import type { ContactSettings } from './data';
+
 export const site = {
   name: 'chayka.live',
   url: import.meta.env.PUBLIC_SITE_URL || 'https://chayka.live',
@@ -7,7 +9,7 @@ export const site = {
   language: 'uk',
 };
 
-export const contactSettings = {
+export const contactSettings: ContactSettings = {
   phone: '+380000000000',
   phoneDisplay: '+38 000 000 00 00',
   responseHours: 'Відповідь у месенджерах у робочий час',
@@ -17,16 +19,22 @@ export const contactSettings = {
       id: 'telegram',
       label: 'Telegram',
       href: 'https://t.me/',
+      icon: 'telegram',
+      role: 'contact',
     },
     {
       id: 'viber',
       label: 'Viber',
       href: 'viber://chat?number=%2B380000000000',
+      icon: 'viber',
+      role: 'contact',
     },
     {
       id: 'whatsapp',
       label: 'WhatsApp',
       href: 'https://wa.me/380000000000',
+      icon: 'whatsapp',
+      role: 'contact',
     },
   ],
 };

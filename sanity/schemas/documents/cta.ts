@@ -30,7 +30,7 @@ export const cta = defineType({
       title: 'Enabled channels',
       type: 'array',
       of: [{ type: 'string' }],
-      options: { list: ['telegram', 'viber', 'whatsapp', 'phone'] },
+      options: { list: ['telegram', 'viber', 'whatsapp', 'messenger', 'instagram', 'tiktok', 'phone'] },
       validation: (Rule) => Rule.required().min(1),
     }),
     defineField({ name: 'trackingContext', title: 'Tracking context', type: 'string', validation: (Rule) => Rule.required() }),

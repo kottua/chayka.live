@@ -2,14 +2,44 @@
 
 :root {
   color-scheme: light;
-  --color-ink: #1d2722;
-  --color-muted: #58655e;
-  --color-line: #d8e0db;
-  --color-bg: #f7f4ef;
-  --color-surface: #fffdf8;
-  --color-accent: #2f6f64;
-  --color-accent-strong: #194e46;
-  --color-warm: #d87b4a;
+
+  --color-brand-primary: #265c50;
+  --color-brand-primary-hover: #1e4a41;
+  --color-brand-soft: #c3dbd6;
+
+  --color-text-primary: #2c302f;
+  --color-text-secondary: #5c5a59;
+
+  --color-background: #f7f8f6;
+  --color-surface: #ffffff;
+  --color-surface-muted: #eef3f1;
+
+  --color-border: #d9dedc;
+  --color-border-strong: #bfcbc6;
+
+  --color-warm-accent: #d96f3d;
+  --color-warm-accent-soft: #f6d8c8;
+  --color-critical: #cc2d00;
+
+  --radius-small: 4px;
+  --radius-base: 6px;
+  --radius-large: 8px;
+  --radius-pill: 999px;
+
+  --size-touch-target: 44px;
+  --size-icon-button: 44px;
+  --size-contact-icon: 22px;
+
+  --line-height-body: 1.75;
+  --line-height-heading: 1.18;
+
+  --color-ink: var(--color-text-primary);
+  --color-muted: var(--color-text-secondary);
+  --color-line: var(--color-border);
+  --color-bg: var(--color-background);
+  --color-accent: var(--color-brand-primary);
+  --color-accent-strong: var(--color-brand-primary-hover);
+  --color-warm: var(--color-warm-accent);
 }
 
 html {
@@ -23,6 +53,7 @@ html {
 body {
   margin: 0;
   min-width: 320px;
+  line-height: var(--line-height-body);
 }
 
 a {
@@ -43,6 +74,50 @@ select {
 
 .section {
   padding-block: clamp(56px, 8vw, 96px);
+}
+
+.section-generous {
+  padding-block: clamp(72px, 10vw, 120px);
+}
+
+.button-primary {
+  min-height: var(--size-touch-target);
+  border-radius: var(--radius-base);
+  background: var(--color-brand-primary);
+  color: #ffffff;
+  font-weight: 600;
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease,
+    color 160ms ease;
+}
+
+.button-primary:hover {
+  background: var(--color-brand-primary-hover);
+}
+
+.icon-button {
+  inline-size: var(--size-icon-button);
+  block-size: var(--size-icon-button);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-base);
+  background: var(--color-surface);
+  color: var(--color-text-secondary);
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease,
+    color 160ms ease;
+}
+
+.icon-button:hover {
+  border-color: var(--color-brand-soft);
+  background: var(--color-surface-muted);
+  color: var(--color-brand-primary);
+}
+
+.phone-reveal-button[data-revealed="true"] {
+  inline-size: auto;
+  padding-inline: 1rem;
 }
 
 .eyebrow {
@@ -74,7 +149,7 @@ select {
 .portable-text h3 {
   color: var(--color-ink);
   font-weight: 650;
-  line-height: 1.25;
+  line-height: 1.22;
 }
 
 .portable-text h2 {

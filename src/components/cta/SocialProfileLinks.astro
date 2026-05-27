@@ -1,0 +1,39 @@
+---
+import type { ContactSettings } from '../../lib/data';
+import IconifyBrandIcon from '../icons/IconifyBrandIcon.astro';
+
+interface Props {
+  contactSettings: ContactSettings;
+  placement?: string;
+}
+
+const { contactSettings, placement = 'footer' } = Astro.props;
+const profileChannels = contactSettings.channels.filter(
+  (channel) => channel.role === 'trust' || channel.role === 'both',
+);
+---
+
+{
+  profileChannels.length > 0 && (
+    <div>
+      <p class="text-xs font-semibold uppercase tracking-[0.08em] text-[var(--color-muted)]">
+        Більше контексту - у профілях
+      </p>
+      <div class="mt-3 flex flex-wrap gap-3">
+        {profileChannels.map((channel) => (
+          <a
+            class="icon-button focus-ring inline-flex items-center justify-center"
+            href={channel.href}
+            aria-label={`Відкрити ${channel.label}`}
+            title={channel.label}
+            data-event="social_profile_click"
+            data-channel={channel.id}
+            data-placement={placement}
+          >
+            <IconifyBrandIcon name={channel.icon} />
+          </a>
+        ))}
+      </div>
+    </div>
+  )
+}

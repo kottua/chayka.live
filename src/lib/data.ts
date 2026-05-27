@@ -66,7 +66,11 @@ export type ContactChannel = {
   id: string;
   label: string;
   href: string;
+  icon: string;
+  role: ContactChannelRole;
 };
+
+export type ContactChannelRole = 'contact' | 'trust' | 'both';
 
 export type ContactSettings = {
   phone: string;
@@ -75,6 +79,42 @@ export type ContactSettings = {
   confidentialityNote: string;
   channels: ContactChannel[];
 };
+
+type ChannelRoleSetting = {
+  channel?: string;
+  role?: ContactChannelRole;
+};
+
+const channelDefaults: Record<string, { label: string; icon: string; role: ContactChannelRole }> = {
+  telegram: { label: 'Telegram', icon: 'telegram', role: 'contact' },
+  viber: { label: 'Viber', icon: 'viber', role: 'contact' },
+  whatsapp: { label: 'WhatsApp', icon: 'whatsapp', role: 'contact' },
+  messenger: { label: 'Messenger', icon: 'messenger', role: 'both' },
+  instagram: { label: 'Instagram', icon: 'instagram', role: 'both' },
+  tiktok: { label: 'TikTok', icon: 'tiktok', role: 'trust' },
+};
+
+function getChannelRole(id: string, roleSettings: ChannelRoleSetting[] | null = []) {
+  const settings = roleSettings || [];
+  const configured = settings.find((item) => item.channel === id)?.role;
+  return configured || channelDefaults[id]?.role || 'contact';
+}
+
+function buildChannel(
+  id: keyof typeof channelDefaults,
+  href: string | undefined,
+  roleSettings: ChannelRoleSetting[] | null = [],
+) {
+  if (!href) return null;
+
+  return {
+    id,
+    label: channelDefaults[id].label,
+    href,
+    icon: channelDefaults[id].icon,
+    role: getChannelRole(id, roleSettings),
+  };
+}
 
 async function fetchFromSanity<T>(query: string, fallback: T): Promise<T> {
   if (!hasSanityConfig) return fallback;
@@ -207,13 +247,28 @@ export async function getFaqItems() {
 }
 
 export async function getContactSettings() {
-  const settings = await fetchFromSanity<Partial<ContactSettings> | null>(
+  const settings = await fetchFromSanity<
+    | (Partial<ContactSettings> & {
+        telegramUrl?: string;
+        viberUrl?: string;
+        whatsAppUrl?: string;
+        messengerUrl?: string;
+        instagramUrl?: string;
+        tiktokUrl?: string;
+        channelRoles?: ChannelRoleSetting[];
+      })
+    | null
+  >(
     `*[_type == "contactSettings"][0] {
       phone,
       phoneDisplay,
       telegramUrl,
       viberUrl,
       whatsAppUrl,
+      messengerUrl,
+      instagramUrl,
+      tiktokUrl,
+      channelRoles,
       responseHours,
       confidentialityNote
     }`,
@@ -223,9 +278,12 @@ export async function getContactSettings() {
   if (!settings) return fallbackContactSettings;
 
   const channels = [
-    settings.telegramUrl && { id: 'telegram', label: 'Telegram', href: settings.telegramUrl },
-    settings.viberUrl && { id: 'viber', label: 'Viber', href: settings.viberUrl },
-    settings.whatsAppUrl && { id: 'whatsapp', label: 'WhatsApp', href: settings.whatsAppUrl },
+    buildChannel('telegram', settings.telegramUrl, settings.channelRoles),
+    buildChannel('viber', settings.viberUrl, settings.channelRoles),
+    buildChannel('whatsapp', settings.whatsAppUrl, settings.channelRoles),
+    buildChannel('messenger', settings.messengerUrl, settings.channelRoles),
+    buildChannel('instagram', settings.instagramUrl, settings.channelRoles),
+    buildChannel('tiktok', settings.tiktokUrl, settings.channelRoles),
   ].filter(Boolean) as ContactChannel[];
 
   return {
@@ -254,7 +312,7 @@ export async function getDefaultCTA() {
       headline: 'Можна почати з короткого повідомлення',
       text: 'Оберіть зручний канал і напишіть кілька слів про те, що зараз турбує. Не потрібно одразу формулювати ідеальний запит.',
       placementType: 'global',
-      enabledChannels: ['telegram', 'viber', 'whatsapp', 'phone'],
+      enabledChannels: ['telegram', 'viber', 'whatsapp', 'messenger', 'instagram', 'phone'],
       trackingContext: 'global_contact',
     },
   );

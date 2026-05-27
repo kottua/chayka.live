@@ -1,15 +1,22 @@
 ---
+import SocialProfileLinks from '../cta/SocialProfileLinks.astro';
+import { getContactSettings } from '../../lib/data';
+
 const year = new Date().getFullYear();
+const contactSettings = await getContactSettings();
 ---
 
-<footer class="border-t border-[var(--color-line)] bg-[var(--color-surface)]">
-  <div class="container grid gap-6 py-10 md:grid-cols-[1fr_auto] md:items-end">
+<footer class="border-t border-[var(--color-border)] bg-[var(--color-surface)]">
+  <div class="container grid gap-8 py-10 md:grid-cols-[1fr_auto] md:items-end">
     <div>
       <p class="text-lg font-semibold">chayka.live</p>
       <p class="mt-2 max-w-xl text-sm leading-6 text-[var(--color-muted)]">
         SEO-first сайт психотерапевта з керованим контентом, делікатними CTA і готовністю до майбутнього запису.
       </p>
     </div>
-    <p class="text-sm text-[var(--color-muted)]">© {year}</p>
+    <div class="grid gap-5 md:justify-items-end">
+      <SocialProfileLinks contactSettings={contactSettings} placement="footer" />
+      <p class="text-sm text-[var(--color-muted)]">© {year}</p>
+    </div>
   </div>
 </footer>

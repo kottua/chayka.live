@@ -47,5 +47,22 @@ const gtmId = import.meta.env.PUBLIC_GTM_ID;
       <slot />
     </main>
     <Footer />
+    <script>
+      document.addEventListener('click', (event) => {
+        const target = event.target instanceof Element ? event.target.closest('[data-event]') : null;
+        if (!(target instanceof HTMLElement)) return;
+
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          event: target.dataset.event || 'site_click',
+          channel: target.dataset.channel,
+          placement: target.dataset.placement,
+          page_type: target.dataset.pageType,
+          content_id: target.dataset.contentId,
+          cta_id: target.dataset.ctaId,
+          tracking_context: target.dataset.trackingContext,
+        });
+      });
+    </script>
   </body>
 </html>

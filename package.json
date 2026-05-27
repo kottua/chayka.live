@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.3",
+    "@iconify-json/simple-icons": "^1.2.84",
     "@lucide/astro": "^1.16.0",
     "@portabletext/to-html": "^5.0.2",
     "@sanity/client": "^7.22.0",

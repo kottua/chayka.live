@@ -1,6 +1,8 @@
 ---
+import { Phone } from '@lucide/astro';
 import { contactSettings as defaultContactSettings } from '../../lib/site';
 import type { ContactSettings } from '../../lib/data';
+import IconifyBrandIcon from '../icons/IconifyBrandIcon.astro';
 
 interface Props {
   placement: string;
@@ -22,22 +24,26 @@ const {
   trackingContext = '',
 } = Astro.props;
 
-const allowedChannels = enabledChannels?.length
-  ? enabledChannels
-  : ['telegram', 'viber', 'whatsapp', 'phone'];
-const messengerChannels = contactSettings.channels.filter((channel) =>
-  allowedChannels.includes(channel.id),
+const contactChannelIds = contactSettings.channels
+  .filter((channel) => channel.role === 'contact' || channel.role === 'both')
+  .map((channel) => channel.id);
+const allowedChannels = enabledChannels?.length ? enabledChannels : [...contactChannelIds, 'phone'];
+const actionChannels = contactSettings.channels.filter(
+  (channel) =>
+    allowedChannels.includes(channel.id) && (channel.role === 'contact' || channel.role === 'both'),
 );
 const showPhone = allowedChannels.includes('phone');
 ---
 
-<div class="grid gap-3 sm:grid-cols-3" data-contact-actions>
+<div class="flex flex-wrap gap-3" data-contact-actions>
   {
-    messengerChannels.map((channel) => (
+    actionChannels.map((channel) => (
       <a
-        class="focus-ring inline-flex min-h-12 items-center justify-center rounded-md border border-[var(--color-line)] bg-white px-4 text-sm font-semibold hover:border-[var(--color-accent)]"
+        class="icon-button focus-ring inline-flex items-center justify-center"
         href={channel.href}
-        data-event="cta_messenger_click"
+        aria-label={`Написати у ${channel.label}`}
+        title={channel.label}
+        data-event="cta_contact_click"
         data-channel={channel.id}
         data-placement={placement}
         data-page-type={pageType}
@@ -45,26 +51,29 @@ const showPhone = allowedChannels.includes('phone');
         data-cta-id={ctaId}
         data-tracking-context={trackingContext}
       >
-        {channel.label}
+        <IconifyBrandIcon name={channel.icon} />
       </a>
     ))
   }
   {
     showPhone && (
       <button
-        class="focus-ring inline-flex min-h-12 items-center justify-center rounded-md border border-[var(--color-line)] bg-white px-4 text-sm font-semibold hover:border-[var(--color-accent)] sm:col-span-3"
+        class="phone-reveal-button icon-button focus-ring inline-flex items-center justify-center text-sm font-semibold"
         type="button"
+        aria-label="Показати номер телефону"
+        title="Показати номер телефону"
         data-phone-reveal
         data-phone={contactSettings.phone}
         data-phone-display={contactSettings.phoneDisplay}
-        data-event="cta_phone_reveal"
+        data-event="phone_reveal"
+        data-channel="phone"
         data-placement={placement}
         data-page-type={pageType}
         data-content-id={contentId}
         data-cta-id={ctaId}
         data-tracking-context={trackingContext}
       >
-        Показати номер телефону
+        <Phone size={22} stroke-width={1.8} aria-hidden="true" />
       </button>
     )
   }
@@ -76,30 +85,24 @@ const showPhone = allowedChannels.includes('phone');
     window.dataLayer.push({ event: eventName, ...payload });
   };
 
-  document.querySelectorAll('[data-event]').forEach((element) => {
-    element.addEventListener('click', () => {
-      const target = element;
-      pushEvent(target.dataset.event || 'cta_click', {
-        channel: target.dataset.channel,
-        placement: target.dataset.placement,
-        page_type: target.dataset.pageType,
-        content_id: target.dataset.contentId,
-        cta_id: target.dataset.ctaId,
-        tracking_context: target.dataset.trackingContext,
-      });
-    });
-  });
-
   document.querySelectorAll('[data-phone-reveal]').forEach((button) => {
     button.addEventListener('click', async () => {
       const phone = button.dataset.phone || '';
       const display = button.dataset.phoneDisplay || phone;
+
+      if (button.dataset.revealed === 'true' && phone) {
+        window.location.href = `tel:${phone}`;
+        return;
+      }
+
       button.textContent = display;
+      button.dataset.revealed = 'true';
       button.setAttribute('aria-label', `Телефон: ${display}`);
+      button.setAttribute('title', display);
 
       if (navigator.clipboard && phone) {
         await navigator.clipboard.writeText(phone);
-        pushEvent('cta_phone_copy', {
+        pushEvent('phone_copy', {
           placement: button.dataset.placement,
           page_type: button.dataset.pageType,
           content_id: button.dataset.contentId,

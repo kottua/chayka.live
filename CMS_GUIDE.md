@@ -50,11 +50,35 @@ https://chayka-live.sanity.studio/
 - `Telegram URL`
 - `Viber URL`
 - `WhatsApp URL`
+- `Messenger URL`
+- `Instagram URL`
+- `TikTok URL`
 - `Response hours`: коли орієнтовно відповідають
 - `Confidentiality note`: коротка фраза, яка знижує тривогу перед першим повідомленням
 - `Enabled channels`: активні канали зв'язку
+- `Channel roles`: роль кожного каналу
 
 Не вмикати канал, якщо він не готовий приймати звернення.
+
+Ролі каналів:
+
+- `contact`: канал для прямого звернення;
+- `trust`: канал для знайомства, відгуків, рілзів, додаткового контексту;
+- `both`: канал працює і як контакт, і як мікроконверсія довіри.
+
+Приклад:
+
+```txt
+Phone:     contact
+Telegram:  contact
+Viber:     contact
+WhatsApp:  contact
+Messenger: both
+Instagram: both або trust
+TikTok:    trust
+```
+
+CTA-блоки показують `contact` і `both`. Футер показує `trust` і `both`.
 
 ### Tracking settings
 
@@ -84,6 +108,8 @@ CTA відповідає за перехід людини до першого к
 - `Placement type`: де використовується CTA
 - `Enabled channels`: які канали показувати
 - `Tracking context`: стабільний ключ для аналітики, наприклад `global_contact`
+
+Якщо в CTA обрати канал із роллю `trust`, він не стане контактною дією автоматично. Для прямого звернення канал має мати роль `contact` або `both` у `Contact settings`.
 
 Хороший CTA не тисне. Він має звучати як дозвіл зробити маленький наступний крок.
 
