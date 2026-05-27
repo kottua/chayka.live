@@ -15,7 +15,8 @@
     "studio:preview": "sanity preview studio-dist",
     "sanity:login": "sanity login",
     "sanity:debug": "sanity debug",
-    "sanity:import": "sanity dataset import sanity/seed/production.ndjson --dataset production --replace"
+    "sanity:import": "sanity dataset import sanity/seed/production.ndjson --dataset production --replace",
+    "deploy:cf": "npm run build && npx wrangler deploy"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.3",
