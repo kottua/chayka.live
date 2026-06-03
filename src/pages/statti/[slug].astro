@@ -12,6 +12,7 @@ import {
   getServices,
 } from '../../lib/data';
 import { buildArticleJsonLd, buildBreadcrumbJsonLd } from '../../lib/seo/jsonLd';
+import { sanityImageUrl } from '../../lib/sanity/image';
 
 export async function getStaticPaths() {
   const articles = await getArticles();
@@ -36,6 +37,10 @@ const seoTitle = article.seo?.title || article.title;
 const seoDescription = article.seo?.description || article.excerpt || article.description;
 const articlePath = `/statti/${article.slug}`;
 const canonicalPath = article.seo?.canonicalOverride || articlePath;
+const shareImage = article.seo?.ogImage || article.heroImage;
+const heroImageUrl = article.heroImage
+  ? sanityImageUrl(article.heroImage)?.width(1120).height(630).fit('crop').auto('format').url()
+  : null;
 ---
 
 <Layout
@@ -43,6 +48,7 @@ const canonicalPath = article.seo?.canonicalOverride || articlePath;
   description={seoDescription}
   canonicalPath={canonicalPath}
   noindex={article.seo?.noindex}
+  image={shareImage}
 >
   <JsonLd data={buildBreadcrumbJsonLd([{ label: 'Статті', path: '/statti' }, { label: article.title, path: articlePath }])} />
   <JsonLd
@@ -60,6 +66,19 @@ const canonicalPath = article.seo?.canonicalOverride || articlePath;
         <p class="eyebrow">Стаття</p>
         <h1 class="mt-4 text-4xl font-semibold leading-tight md:text-5xl">{article.title}</h1>
         <p class="mt-6 max-w-2xl text-lg leading-8 text-[var(--color-muted)]">{article.excerpt}</p>
+        {
+          heroImageUrl && (
+            <figure class="mt-8 overflow-hidden rounded-[var(--radius-large)] border border-[var(--color-border)] bg-[var(--color-surface)]">
+              <img
+                class="aspect-[16/9] h-full w-full object-cover"
+                src={heroImageUrl}
+                alt={article.title}
+                width="1120"
+                height="630"
+              />
+            </figure>
+          )
+        }
 
         <div class="mt-10">
           {hasBody ? (
@@ -67,7 +86,7 @@ const canonicalPath = article.seo?.canonicalOverride || articlePath;
           ) : (
             <div class="portable-text">
               <p>
-                Це місце для повного тексту статті з Sanity. Додайте контент у поле Body цього документа, і він автоматично з'явиться на сторінці.
+                Повний текст статті буде доповнювати цю тему поступово: з поясненнями, прикладами і відповідями на практичні питання.
               </p>
             </div>
           )}

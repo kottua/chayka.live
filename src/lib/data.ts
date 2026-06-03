@@ -4,7 +4,7 @@ import {
   faqItems as fallbackFaqItems,
   services as fallbackServices,
 } from './content';
-import { contactSettings as fallbackContactSettings } from './site';
+import { contactSettings as fallbackContactSettings, site } from './site';
 import { hasSanityConfig, sanityClient } from './sanity/client';
 
 const fallbackArticleDocuments: CmsDocumentContent[] = fallbackArticles.map((article) => ({
@@ -39,8 +39,22 @@ export type NavItem = {
 export type SeoFields = {
   title?: string;
   description?: string;
+  ogImage?: unknown;
   canonicalOverride?: string;
   noindex?: boolean;
+};
+
+export type SiteSettingsContent = {
+  siteName: string;
+  baseUrl: string;
+  defaultLanguage: string;
+  footerText: string;
+  professionalName?: string;
+  professionalRole?: string;
+  profilePhoto?: unknown;
+  defaultOgImage?: unknown;
+  favicon?: unknown;
+  defaultSeo?: SeoFields;
 };
 
 export type CmsDocumentContent = {
@@ -49,6 +63,13 @@ export type CmsDocumentContent = {
   description: string;
   excerpt?: string;
   publishedAt?: string;
+  heroImage?: unknown;
+  author?: {
+    name?: string;
+    role?: string;
+    photo?: unknown;
+    shortBio?: string;
+  };
   body?: unknown[];
   seo?: SeoFields;
   relatedServices?: CardContent[];
@@ -98,6 +119,16 @@ type CmsPageNavFields = {
   showInHeader?: boolean;
   showInFooter?: boolean;
   navOrder?: number;
+};
+
+const fallbackSiteSettings: SiteSettingsContent = {
+  siteName: 'Чайка Валентина',
+  baseUrl: site.url,
+  defaultLanguage: site.language,
+  footerText:
+    'Психотерапевтична підтримка онлайн: уважний перший контакт, конфіденційність і робота в темпі, який можна витримати.',
+  professionalName: 'Чайка Валентина',
+  professionalRole: 'Психотерапевт',
 };
 
 const channelDefaults: Record<string, { label: string; icon: string; role: ContactChannelRole }> = {
@@ -161,6 +192,39 @@ async function fetchFromSanity<T>(query: string, fallback: T): Promise<T> {
     console.warn('Sanity fetch failed, using fallback content.', error);
     return fallback;
   }
+}
+
+export async function getSiteSettings() {
+  const settings = await fetchFromSanity<Partial<SiteSettingsContent> | null>(
+    `*[_type == "siteSettings"][0] {
+      siteName,
+      baseUrl,
+      defaultLanguage,
+      footerText,
+      professionalName,
+      professionalRole,
+      profilePhoto,
+      defaultOgImage,
+      favicon,
+      defaultSeo
+    }`,
+    null,
+  );
+
+  if (!settings) return fallbackSiteSettings;
+
+  return {
+    siteName: settings.siteName || fallbackSiteSettings.siteName,
+    baseUrl: settings.baseUrl || fallbackSiteSettings.baseUrl,
+    defaultLanguage: settings.defaultLanguage || fallbackSiteSettings.defaultLanguage,
+    footerText: settings.footerText || fallbackSiteSettings.footerText,
+    professionalName: settings.professionalName || fallbackSiteSettings.professionalName,
+    professionalRole: settings.professionalRole || fallbackSiteSettings.professionalRole,
+    profilePhoto: settings.profilePhoto,
+    defaultOgImage: settings.defaultOgImage || settings.defaultSeo?.ogImage,
+    favicon: settings.favicon,
+    defaultSeo: settings.defaultSeo,
+  } satisfies SiteSettingsContent;
 }
 
 export async function getServices() {
@@ -245,6 +309,13 @@ export async function getArticles() {
       excerpt,
       "description": coalesce(excerpt, seo.description, ""),
       "publishedAt": coalesce(publishedAt, _createdAt),
+      heroImage,
+      "author": author->{
+        name,
+        role,
+        photo,
+        shortBio
+      },
       body,
       seo,
       "relatedServices": relatedServices[]->{

@@ -1,7 +1,12 @@
 ---
 import SocialProfileLinks from '../cta/SocialProfileLinks.astro';
-import { getContactSettings, getFooterNavItems } from '../../lib/data';
+import { getContactSettings, getFooterNavItems, type SiteSettingsContent } from '../../lib/data';
 
+interface Props {
+  siteSettings: SiteSettingsContent;
+}
+
+const { siteSettings } = Astro.props;
 const year = new Date().getFullYear();
 const [contactSettings, footerNavItems] = await Promise.all([getContactSettings(), getFooterNavItems()]);
 ---
@@ -9,9 +14,9 @@ const [contactSettings, footerNavItems] = await Promise.all([getContactSettings(
 <footer class="border-t border-[var(--color-border)] bg-[var(--color-surface)]">
   <div class="container grid gap-8 py-10 md:grid-cols-[1fr_auto] md:items-end">
     <div>
-      <p class="text-lg font-semibold">chayka.live</p>
+      <p class="text-lg font-semibold">{siteSettings.siteName}</p>
       <p class="mt-2 max-w-xl text-sm leading-6 text-[var(--color-muted)]">
-        SEO-first сайт психотерапевта з керованим контентом, делікатними CTA і готовністю до майбутнього запису.
+        {siteSettings.footerText}
       </p>
     </div>
     <div class="grid gap-5 md:justify-items-end">

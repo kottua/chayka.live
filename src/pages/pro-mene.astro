@@ -2,22 +2,58 @@
 import Layout from '../components/layout/Layout.astro';
 import GlobalCTA from '../components/cta/GlobalCTA.astro';
 import Breadcrumbs from '../components/seo/Breadcrumbs.astro';
-import { getContactSettings, getDefaultCTA } from '../lib/data';
+import { getContactSettings, getDefaultCTA, getSiteSettings } from '../lib/data';
+import { sanityImageUrl } from '../lib/sanity/image';
 
-const [contactSettings, defaultCTA] = await Promise.all([getContactSettings(), getDefaultCTA()]);
+const [contactSettings, defaultCTA, siteSettings] = await Promise.all([
+  getContactSettings(),
+  getDefaultCTA(),
+  getSiteSettings(),
+]);
+const profilePhotoUrl = siteSettings.profilePhoto
+  ? sanityImageUrl(siteSettings.profilePhoto)?.width(720).height(900).fit('crop').auto('format').url()
+  : null;
 ---
 
-<Layout title="Про психотерапевта" description="Сторінка довіри: підхід, освіта, принципи роботи і формат консультацій." canonicalPath="/pro-mene">
+<Layout
+  title="Про психотерапевта"
+  description="Підхід, освіта, професійний досвід, етичні межі й формат психотерапевтичної роботи онлайн."
+  canonicalPath="/pro-mene"
+  image={siteSettings.profilePhoto || siteSettings.defaultOgImage}
+>
   <Breadcrumbs items={[{ label: 'Про мене' }]} />
   <section class="section">
     <div class="container grid gap-10 md:grid-cols-[0.9fr_1.1fr]">
       <div>
         <p class="eyebrow">Про спеціаліста</p>
-        <h1 class="mt-4 text-4xl font-semibold leading-tight md:text-5xl">Тут буде сторінка довіри, не сухе резюме</h1>
+        <h1 class="mt-4 text-4xl font-semibold leading-tight md:text-5xl">
+          {siteSettings.professionalName || siteSettings.siteName}
+        </h1>
+        {siteSettings.professionalRole && <p class="mt-4 text-lg text-[var(--color-muted)]">{siteSettings.professionalRole}</p>}
+        {
+          profilePhotoUrl && (
+            <figure class="mt-8 overflow-hidden rounded-[var(--radius-large)] border border-[var(--color-border)] bg-[var(--color-surface)]">
+              <img
+                class="aspect-[4/5] h-full w-full object-cover"
+                src={profilePhotoUrl}
+                alt={siteSettings.professionalName || siteSettings.siteName}
+                width="720"
+                height="900"
+              />
+            </figure>
+          )
+        }
       </div>
       <div class="grid gap-6 text-base leading-8 text-[var(--color-muted)]">
-        <p>Ця сторінка має пояснити підхід, освіту, етичні межі, формат роботи і те, як людині зрозуміти, чи їй підходить саме цей спеціаліст.</p>
-        <p>Пізніше ці блоки будуть керуватись через Sanity CMS, але маршрут і структура вже закладені.</p>
+        <p>
+          Ця сторінка допомагає зрозуміти професійний шлях, підхід до роботи й те, як може виглядати перший контакт перед консультацією.
+        </p>
+        <p>
+          Тут доречно розмістити освіту, сертифікати, досвід підвищення кваліфікації, напрямки роботи й принципи, на яких тримається терапевтичний процес.
+        </p>
+        <p>
+          Важливо, щоб людина могла не лише побачити формальні підтвердження кваліфікації, а й відчути стиль мислення, межі компетенції та тон майбутньої розмови.
+        </p>
       </div>
     </div>
   </section>

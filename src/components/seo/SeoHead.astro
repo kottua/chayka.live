@@ -6,6 +6,10 @@ interface Props {
   description?: string;
   canonicalPath?: string;
   noindex?: boolean;
+  siteName?: string;
+  siteUrl?: string;
+  imageUrl?: string | null;
+  faviconUrl?: string | null;
 }
 
 const {
@@ -13,10 +17,14 @@ const {
   description = site.description,
   canonicalPath = Astro.url.pathname,
   noindex = false,
+  siteName = site.name,
+  siteUrl = site.url,
+  imageUrl,
+  faviconUrl,
 } = Astro.props;
 
-const canonical = new URL(canonicalPath, site.url).toString();
-const fullTitle = title === site.title ? title : `${title} | ${site.name}`;
+const canonical = new URL(canonicalPath, siteUrl).toString();
+const fullTitle = title === site.title ? title : `${title} | ${siteName}`;
 ---
 
 <meta charset="utf-8" />
@@ -25,10 +33,16 @@ const fullTitle = title === site.title ? title : `${title} | ${site.name}`;
 <title>{fullTitle}</title>
 <meta name="description" content={description} />
 <link rel="canonical" href={canonical} />
+<link rel="icon" href={faviconUrl || '/favicon.svg'} type={faviconUrl ? undefined : 'image/svg+xml'} />
+<link rel="alternate icon" href="/favicon.ico" />
 {noindex && <meta name="robots" content="noindex,nofollow" />}
 <meta property="og:type" content="website" />
-<meta property="og:site_name" content={site.name} />
+<meta property="og:site_name" content={siteName} />
 <meta property="og:title" content={fullTitle} />
 <meta property="og:description" content={description} />
 <meta property="og:url" content={canonical} />
+{imageUrl && <meta property="og:image" content={imageUrl} />}
+{imageUrl && <meta property="og:image:width" content="1200" />}
+{imageUrl && <meta property="og:image:height" content="630" />}
 <meta name="twitter:card" content="summary_large_image" />
+{imageUrl && <meta name="twitter:image" content={imageUrl} />}

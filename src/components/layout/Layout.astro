@@ -3,22 +3,42 @@ import '../../styles/global.css';
 import Header from './Header.astro';
 import Footer from './Footer.astro';
 import SeoHead from '../seo/SeoHead.astro';
+import { getSiteSettings } from '../../lib/data';
+import { sanityImageUrl } from '../../lib/sanity/image';
 
 interface Props {
   title?: string;
   description?: string;
   canonicalPath?: string;
   noindex?: boolean;
+  image?: unknown;
 }
 
-const { title, description, canonicalPath, noindex = false } = Astro.props;
+const { title, description, canonicalPath, noindex = false, image } = Astro.props;
+const siteSettings = await getSiteSettings();
 const gtmId = import.meta.env.PUBLIC_GTM_ID;
+const seoImage = image || siteSettings.defaultOgImage;
+const imageUrl = seoImage
+  ? sanityImageUrl(seoImage)?.width(1200).height(630).fit('crop').auto('format').url()
+  : null;
+const faviconUrl = siteSettings.favicon
+  ? sanityImageUrl(siteSettings.favicon)?.width(64).height(64).fit('crop').auto('format').url()
+  : null;
 ---
 
 <!doctype html>
 <html lang="uk">
   <head>
-    <SeoHead title={title} description={description} canonicalPath={canonicalPath} noindex={noindex} />
+    <SeoHead
+      title={title || siteSettings.defaultSeo?.title}
+      description={description || siteSettings.defaultSeo?.description}
+      canonicalPath={canonicalPath}
+      noindex={noindex}
+      siteName={siteSettings.siteName}
+      siteUrl={siteSettings.baseUrl}
+      imageUrl={imageUrl}
+      faviconUrl={faviconUrl}
+    />
     {gtmId && (
       <script is:inline define:vars={{ gtmId }}>
         window.dataLayer = window.dataLayer || [];
@@ -42,11 +62,11 @@ const gtmId = import.meta.env.PUBLIC_GTM_ID;
         </iframe>
       </noscript>
     )}
-    <Header />
+    <Header siteSettings={siteSettings} />
     <main>
       <slot />
     </main>
-    <Footer />
+    <Footer siteSettings={siteSettings} />
     <script>
       document.addEventListener('click', (event) => {
         const target = event.target instanceof Element ? event.target.closest('[data-event]') : null;

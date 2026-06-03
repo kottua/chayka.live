@@ -30,6 +30,7 @@ const hasBody = Array.isArray(page.body) && page.body.length > 0;
   description={seoDescription}
   canonicalPath={canonicalPath}
   noindex={page.seo?.noindex}
+  image={page.seo?.ogImage}
 >
   <JsonLd data={buildBreadcrumbJsonLd([{ label: page.title, path: pagePath }])} />
   <Breadcrumbs items={[{ label: page.title }]} />
@@ -44,7 +45,7 @@ const hasBody = Array.isArray(page.body) && page.body.length > 0;
             <PortableText value={page.body} />
           ) : (
             <div class="portable-text">
-              <p>Додайте контент у поле Body цього документа в Sanity, і він з'явиться на сторінці.</p>
+              <p>Матеріал цієї сторінки ще готується. Якщо маєте питання, можна написати коротке повідомлення і уточнити деталі напряму.</p>
             </div>
           )
         }

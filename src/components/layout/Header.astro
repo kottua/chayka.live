@@ -1,12 +1,19 @@
 ---
-import { getHeaderNavItems } from '../../lib/data';
+import { getHeaderNavItems, type SiteSettingsContent } from '../../lib/data';
 
+interface Props {
+  siteSettings: SiteSettingsContent;
+}
+
+const { siteSettings } = Astro.props;
 const navItems = await getHeaderNavItems();
 ---
 
 <header class="border-b border-[var(--color-border)] bg-[var(--color-surface)]/90 backdrop-blur">
   <div class="container flex min-h-16 items-center justify-between gap-6">
-    <a class="focus-ring text-lg font-semibold" href="/" aria-label="chayka.live home">chayka.live</a>
+    <a class="focus-ring text-lg font-semibold" href="/" aria-label={`${siteSettings.siteName} home`}>
+      {siteSettings.siteName}
+    </a>
     <nav class="hidden items-center gap-5 text-sm text-[var(--color-muted)] md:flex" aria-label="Основна навігація">
       {navItems.map((item) => <a class="focus-ring hover:text-[var(--color-ink)]" href={item.href}>{item.label}</a>)}
     </nav>

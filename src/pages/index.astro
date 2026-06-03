@@ -6,22 +6,29 @@ import {
   getConcerns,
   getContactSettings,
   getDefaultCTA,
+  getSiteSettings,
   getServices,
 } from '../lib/data';
+import { sanityImageUrl } from '../lib/sanity/image';
 
-const [articles, concerns, contactSettings, defaultCTA, services] = await Promise.all([
+const [articles, concerns, contactSettings, defaultCTA, services, siteSettings] = await Promise.all([
   getArticles(),
   getConcerns(),
   getContactSettings(),
   getDefaultCTA(),
   getServices(),
+  getSiteSettings(),
 ]);
+const profilePhotoUrl = siteSettings.profilePhoto
+  ? sanityImageUrl(siteSettings.profilePhoto)?.width(720).height(900).fit('crop').auto('format').url()
+  : null;
 ---
 
 <Layout
   title="Психотерапія онлайн"
-  description="chayka.live - SEO-first сайт психотерапевта з послугами, запитами, статтями і м'яким першим контактом."
+  description="Психотерапевтична підтримка онлайн: робота з тривогою, стосунками, виснаженням і складними періодами у зручному форматі."
   canonicalPath="/"
+  image={siteSettings.profilePhoto || siteSettings.defaultOgImage}
 >
   <section class="section">
     <div class="container grid gap-10 md:grid-cols-[1.1fr_0.9fr] md:items-center">
@@ -31,25 +38,39 @@ const [articles, concerns, contactSettings, defaultCTA, services] = await Promis
           Простір для розмови про те, що всередині вже давно потребує уваги
         </h1>
         <p class="mt-6 max-w-2xl text-lg leading-8 text-[var(--color-muted)]">
-          Сайт спроєктований як майбутня SEO-система: послуги, конкретні запити, статті, FAQ і делікатний шлях до першого контакту.
+          Онлайн-консультації для моментів, коли важливо розібратися з тривогою, виснаженням, стосунками або внутрішньою напругою без поспіху й тиску.
         </p>
         <div class="mt-8 flex flex-wrap gap-3">
-          <a class="focus-ring inline-flex min-h-12 items-center rounded-md bg-[var(--color-accent)] px-5 font-semibold text-white hover:bg-[var(--color-accent-strong)]" href="/zapys-na-konsultatsiiu">
+          <a class="button-primary focus-ring inline-flex items-center px-5" href="/zapys-na-konsultatsiiu">
             Звернутися
           </a>
-          <a class="focus-ring inline-flex min-h-12 items-center rounded-md border border-[var(--color-line)] bg-white px-5 font-semibold hover:border-[var(--color-accent)]" href="/poslugy">
+          <a class="focus-ring inline-flex min-h-[var(--size-touch-target)] items-center rounded-[var(--radius-base)] border border-[var(--color-border)] bg-[var(--color-surface)] px-5 font-semibold hover:border-[var(--color-brand-soft)] hover:bg-[var(--color-surface-muted)]" href="/poslugy">
             Подивитись послуги
           </a>
         </div>
       </div>
-      <div class="rounded-lg border border-[var(--color-line)] bg-[var(--color-surface)] p-6">
-        <p class="text-sm font-semibold text-[var(--color-accent-strong)]">Архітектурний фокус</p>
-        <ul class="mt-4 grid gap-3 text-sm leading-6 text-[var(--color-muted)]">
-          <li>SEO-сторінки під конкретні психологічні запити.</li>
-          <li>Sanity CMS для контенту, CTA, контактів і A/B-варіантів.</li>
-          <li>GTM-ready події для месенджерів, телефону і sticky CTA.</li>
-        </ul>
-      </div>
+      {
+        profilePhotoUrl ? (
+          <figure class="overflow-hidden rounded-[var(--radius-large)] border border-[var(--color-border)] bg-[var(--color-surface)]">
+            <img
+              class="aspect-[4/5] h-full w-full object-cover"
+              src={profilePhotoUrl}
+              alt={siteSettings.professionalName || siteSettings.siteName}
+              width="720"
+              height="900"
+            />
+          </figure>
+        ) : (
+          <div class="rounded-[var(--radius-large)] border border-[var(--color-border)] bg-[var(--color-surface)] p-6">
+            <p class="text-sm font-semibold text-[var(--color-accent-strong)]">Перший контакт</p>
+            <ul class="mt-4 grid gap-3 text-sm leading-6 text-[var(--color-muted)]">
+              <li>Можна написати коротко, без готового формулювання запиту.</li>
+              <li>Формат роботи й перший крок можна уточнити в зручному каналі.</li>
+              <li>Конфіденційність і межі роботи проговорюються перед початком консультацій.</li>
+            </ul>
+          </div>
+        )
+      }
     </div>
   </section>
 
