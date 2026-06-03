@@ -246,6 +246,28 @@ export async function getFaqItems() {
   );
 }
 
+export async function getPages() {
+  return fetchFromSanity<CmsDocumentContent[]>(
+    `*[_type == "page"] | order(title asc) {
+      title,
+      "slug": slug.current,
+      "description": coalesce(seo.description, ""),
+      body,
+      seo,
+      "cta": cta->{
+        "id": _id,
+        internalName,
+        headline,
+        text,
+        placementType,
+        enabledChannels,
+        trackingContext
+      }
+    }`,
+    [],
+  );
+}
+
 export async function getContactSettings() {
   const settings = await fetchFromSanity<
     | (Partial<ContactSettings> & {

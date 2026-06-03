@@ -1,0 +1,61 @@
+---
+import PortableText from '../components/content/PortableText.astro';
+import GlobalCTA from '../components/cta/GlobalCTA.astro';
+import Layout from '../components/layout/Layout.astro';
+import Breadcrumbs from '../components/seo/Breadcrumbs.astro';
+import JsonLd from '../components/seo/JsonLd.astro';
+import { getContactSettings, getDefaultCTA, getPages } from '../lib/data';
+import { buildBreadcrumbJsonLd } from '../lib/seo/jsonLd';
+
+export async function getStaticPaths() {
+  const pages = await getPages();
+
+  return pages.map((page) => ({
+    params: { slug: page.slug },
+    props: { page },
+  }));
+}
+
+const { page } = Astro.props;
+const [contactSettings, defaultCTA] = await Promise.all([getContactSettings(), getDefaultCTA()]);
+const pagePath = `/${page.slug}`;
+const seoTitle = page.seo?.title || page.title;
+const seoDescription = page.seo?.description || page.description;
+const canonicalPath = page.seo?.canonicalOverride || pagePath;
+const hasBody = Array.isArray(page.body) && page.body.length > 0;
+---
+
+<Layout
+  title={seoTitle}
+  description={seoDescription}
+  canonicalPath={canonicalPath}
+  noindex={page.seo?.noindex}
+>
+  <JsonLd data={buildBreadcrumbJsonLd([{ label: page.title, path: pagePath }])} />
+  <Breadcrumbs items={[{ label: page.title }]} />
+  <section class="section">
+    <article class="container max-w-3xl">
+      <h1 class="text-4xl font-semibold leading-tight md:text-5xl">{page.title}</h1>
+      {seoDescription && <p class="mt-6 text-lg leading-8 text-[var(--color-muted)]">{seoDescription}</p>}
+
+      <div class="mt-10">
+        {
+          hasBody ? (
+            <PortableText value={page.body} />
+          ) : (
+            <div class="portable-text">
+              <p>Додайте контент у поле Body цього документа в Sanity, і він з'явиться на сторінці.</p>
+            </div>
+          )
+        }
+      </div>
+    </article>
+  </section>
+  <GlobalCTA
+    placement="page_final"
+    pageType="page"
+    contentId={page.slug}
+    contactSettings={contactSettings}
+    cta={page.cta || defaultCTA}
+  />
+</Layout>
