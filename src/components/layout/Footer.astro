@@ -1,9 +1,9 @@
 ---
 import SocialProfileLinks from '../cta/SocialProfileLinks.astro';
-import { getContactSettings } from '../../lib/data';
+import { getContactSettings, getFooterNavItems } from '../../lib/data';
 
 const year = new Date().getFullYear();
-const contactSettings = await getContactSettings();
+const [contactSettings, footerNavItems] = await Promise.all([getContactSettings(), getFooterNavItems()]);
 ---
 
 <footer class="border-t border-[var(--color-border)] bg-[var(--color-surface)]">
@@ -16,6 +16,17 @@ const contactSettings = await getContactSettings();
     </div>
     <div class="grid gap-5 md:justify-items-end">
       <SocialProfileLinks contactSettings={contactSettings} placement="footer" />
+      {
+        footerNavItems.length > 0 && (
+          <nav class="flex flex-wrap gap-x-4 gap-y-2 text-sm text-[var(--color-muted)] md:justify-end" aria-label="Footer navigation">
+            {footerNavItems.map((item) => (
+              <a class="focus-ring hover:text-[var(--color-ink)]" href={item.href}>
+                {item.label}
+              </a>
+            ))}
+          </nav>
+        )
+      }
       <p class="text-sm text-[var(--color-muted)]">© {year}</p>
     </div>
   </div>

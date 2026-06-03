@@ -30,6 +30,12 @@ export type FaqItem = {
   answer: string;
 };
 
+export type NavItem = {
+  label: string;
+  href: string;
+  order?: number;
+};
+
 export type SeoFields = {
   title?: string;
   description?: string;
@@ -85,6 +91,15 @@ type ChannelRoleSetting = {
   role?: ContactChannelRole;
 };
 
+type CmsPageNavFields = {
+  title: string;
+  slug?: string;
+  navLabel?: string;
+  showInHeader?: boolean;
+  showInFooter?: boolean;
+  navOrder?: number;
+};
+
 const channelDefaults: Record<string, { label: string; icon: string; role: ContactChannelRole }> = {
   telegram: { label: 'Telegram', icon: 'telegram', role: 'contact' },
   viber: { label: 'Viber', icon: 'viber', role: 'contact' },
@@ -113,6 +128,26 @@ function buildChannel(
     href,
     icon: channelDefaults[id].icon,
     role: getChannelRole(id, roleSettings),
+  };
+}
+
+const legalPageSlugs = new Set(['konfidenciinist', 'umovi']);
+const reservedTopLevelSlugs = new Set([
+  'faq',
+  'poslugy',
+  'pro-mene',
+  'statti',
+  'zapys-na-konsultatsiiu',
+  'zapyt',
+]);
+
+function toPageNavItem(page: CmsPageNavFields): NavItem | null {
+  if (!page.slug || reservedTopLevelSlugs.has(page.slug)) return null;
+
+  return {
+    label: page.navLabel || page.title,
+    href: `/${page.slug}`,
+    order: page.navOrder,
   };
 }
 
@@ -266,6 +301,51 @@ export async function getPages() {
     }`,
     [],
   );
+}
+
+export async function getHeaderNavItems() {
+  const staticItems: NavItem[] = [
+    { label: 'Про мене', href: '/pro-mene', order: 10 },
+    { label: 'Послуги', href: '/poslugy', order: 20 },
+    { label: 'Запити', href: '/zapyt/postiina-tryvoha', order: 30 },
+  ];
+
+  const pages = await fetchFromSanity<CmsPageNavFields[]>(
+    `*[_type == "page"] | order(coalesce(navOrder, 100) asc, title asc) {
+      title,
+      "slug": slug.current,
+      navLabel,
+      showInHeader,
+      navOrder
+    }`,
+    [],
+  );
+
+  const cmsItems = pages
+    .filter((page) => page.showInHeader === true || (page.showInHeader == null && !legalPageSlugs.has(page.slug || '')))
+    .map(toPageNavItem)
+    .filter(Boolean) as NavItem[];
+
+  return [...staticItems, ...cmsItems, { label: 'Статті', href: '/statti', order: 90 }, { label: 'FAQ', href: '/faq', order: 100 }]
+    .sort((a, b) => (a.order || 100) - (b.order || 100));
+}
+
+export async function getFooterNavItems() {
+  const pages = await fetchFromSanity<CmsPageNavFields[]>(
+    `*[_type == "page"] | order(coalesce(navOrder, 100) asc, title asc) {
+      title,
+      "slug": slug.current,
+      navLabel,
+      showInFooter,
+      navOrder
+    }`,
+    [],
+  );
+
+  return pages
+    .filter((page) => page.showInFooter === true || (page.showInFooter == null && legalPageSlugs.has(page.slug || '')))
+    .map(toPageNavItem)
+    .filter(Boolean) as NavItem[];
 }
 
 export async function getContactSettings() {

@@ -1,11 +1,7 @@
 ---
-const navItems = [
-  { label: 'Про мене', href: '/pro-mene' },
-  { label: 'Послуги', href: '/poslugy' },
-  { label: 'Запити', href: '/zapyt/postiina-tryvoha' },
-  { label: 'Статті', href: '/statti' },
-  { label: 'FAQ', href: '/faq' },
-];
+import { getHeaderNavItems } from '../../lib/data';
+
+const navItems = await getHeaderNavItems();
 ---
 
 <header class="border-b border-[var(--color-border)] bg-[var(--color-surface)]/90 backdrop-blur">
