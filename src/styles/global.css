@@ -115,6 +115,22 @@ select {
   color: var(--color-brand-primary);
 }
 
+footer .icon-button {
+  border-color: rgba(255, 255, 255, 0.28);
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+}
+
+footer .icon-button:hover {
+  border-color: rgba(255, 255, 255, 0.58);
+  background: rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+}
+
+footer [class*="text-[var(--color-muted)]"] {
+  color: rgba(255, 255, 255, 0.72);
+}
+
 .phone-reveal-button[data-revealed="true"] {
   inline-size: auto;
   padding-inline: 1rem;
@@ -135,6 +151,73 @@ select {
 
 .focus-ring:focus-visible {
   outline-color: var(--color-warm);
+}
+
+.home-hero {
+  position: relative;
+  display: grid;
+  min-height: clamp(620px, 78vh, 820px);
+  overflow: hidden;
+  background: var(--color-bg);
+}
+
+.home-hero-with-image {
+  background: var(--color-surface-muted);
+}
+
+.home-hero-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.home-hero-with-image::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background:
+    linear-gradient(90deg, rgba(247, 248, 246, 0.96) 0%, rgba(247, 248, 246, 0.82) 42%, rgba(247, 248, 246, 0.2) 78%),
+    linear-gradient(0deg, rgba(247, 248, 246, 0.3), rgba(247, 248, 246, 0.08));
+}
+
+.home-hero-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  padding-block: clamp(80px, 10vw, 132px);
+}
+
+.experience-item {
+  display: grid;
+  gap: 1.5rem;
+  border-top: 1px solid var(--color-border);
+  padding-top: 1.75rem;
+}
+
+@media (min-width: 768px) {
+  .experience-item {
+    grid-template-columns: minmax(0, 1fr) minmax(280px, 420px);
+    align-items: start;
+  }
+}
+
+@media (max-width: 767px) {
+  .home-hero {
+    min-height: auto;
+  }
+
+  .home-hero-with-image::after {
+    background:
+      linear-gradient(180deg, rgba(247, 248, 246, 0.96) 0%, rgba(247, 248, 246, 0.86) 58%, rgba(247, 248, 246, 0.48) 100%);
+  }
+
+  .home-hero-image {
+    object-position: center top;
+  }
 }
 
 .portable-text {

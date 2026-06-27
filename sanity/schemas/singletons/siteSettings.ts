@@ -9,7 +9,7 @@ export const siteSettings = defineType({
       name: 'siteName',
       title: 'Site name',
       type: 'string',
-      initialValue: 'Чайка Валентина',
+      initialValue: 'Валентина Чайка',
       validation: (Rule) => Rule.required(),
     }),
     defineField({
@@ -36,10 +36,12 @@ export const siteSettings = defineType({
     }),
     defineField({ name: 'defaultSeo', title: 'Default SEO', type: 'seoFields' }),
     defineField({ name: 'professionalName', title: 'Professional name', type: 'string' }),
-    defineField({ name: 'professionalRole', title: 'Professional role', type: 'string' }),
+    defineField({ name: 'professionalRole', title: 'Professional role', type: 'string', initialValue: 'Психотерапевт' }),
     defineField({
       name: 'profilePhoto',
       title: 'Profile photo',
+      description:
+        'Загальне фото профілю. Для головної краще використати окреме горизонтальне фото у Page content, для сторінки Про мене - окремий портрет там само.',
       type: 'image',
       options: { hotspot: true },
     }),
@@ -52,6 +54,7 @@ export const siteSettings = defineType({
     defineField({
       name: 'favicon',
       title: 'Favicon image',
+      description: 'Квадратне зображення 512x512 px або SVG/PNG з простим знаком, який читається у малому розмірі.',
       type: 'image',
       options: { hotspot: true },
     }),

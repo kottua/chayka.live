@@ -2,30 +2,34 @@
 import Layout from '../components/layout/Layout.astro';
 import GlobalCTA from '../components/cta/GlobalCTA.astro';
 import Breadcrumbs from '../components/seo/Breadcrumbs.astro';
-import { getContactSettings, getDefaultCTA, getSiteSettings } from '../lib/data';
+import PortableText from '../components/content/PortableText.astro';
+import { getContactSettings, getDefaultCTA, getPageContentSettings, getSiteSettings } from '../lib/data';
 import { sanityImageUrl } from '../lib/sanity/image';
 
-const [contactSettings, defaultCTA, siteSettings] = await Promise.all([
+const [contactSettings, defaultCTA, pageContent, siteSettings] = await Promise.all([
   getContactSettings(),
   getDefaultCTA(),
+  getPageContentSettings(),
   getSiteSettings(),
 ]);
-const profilePhotoUrl = siteSettings.profilePhoto
-  ? sanityImageUrl(siteSettings.profilePhoto)?.width(720).height(900).fit('crop').auto('format').url()
+const aboutPhoto = pageContent.aboutPhoto || siteSettings.profilePhoto;
+const profilePhotoUrl = aboutPhoto
+  ? sanityImageUrl(aboutPhoto)?.width(1200).height(1500).fit('crop').auto('format').url()
   : null;
 ---
 
 <Layout
-  title="Про психотерапевта"
-  description="Підхід, освіта, професійний досвід, етичні межі й формат психотерапевтичної роботи онлайн."
+  title={pageContent.aboutSeo?.title || 'Про психотерапевта'}
+  description={pageContent.aboutSeo?.description || 'Підхід, освіта, професійний досвід, етичні межі й формат психотерапевтичної роботи онлайн.'}
   canonicalPath="/pro-mene"
-  image={siteSettings.profilePhoto || siteSettings.defaultOgImage}
+  image={pageContent.aboutSeo?.ogImage || aboutPhoto || siteSettings.defaultOgImage}
+  noindex={pageContent.aboutSeo?.noindex}
 >
   <Breadcrumbs items={[{ label: 'Про мене' }]} />
   <section class="section">
     <div class="container grid gap-10 md:grid-cols-[0.9fr_1.1fr]">
       <div>
-        <p class="eyebrow">Про спеціаліста</p>
+        <p class="eyebrow">{pageContent.aboutEyebrow}</p>
         <h1 class="mt-4 text-4xl font-semibold leading-tight md:text-5xl">
           {siteSettings.professionalName || siteSettings.siteName}
         </h1>
@@ -44,18 +48,48 @@ const profilePhotoUrl = siteSettings.profilePhoto
           )
         }
       </div>
-      <div class="grid gap-6 text-base leading-8 text-[var(--color-muted)]">
-        <p>
-          Ця сторінка допомагає зрозуміти професійний шлях, підхід до роботи й те, як може виглядати перший контакт перед консультацією.
-        </p>
-        <p>
-          Тут доречно розмістити освіту, сертифікати, досвід підвищення кваліфікації, напрямки роботи й принципи, на яких тримається терапевтичний процес.
-        </p>
-        <p>
-          Важливо, щоб людина могла не лише побачити формальні підтвердження кваліфікації, а й відчути стиль мислення, межі компетенції та тон майбутньої розмови.
-        </p>
+      <div>
+        <PortableText value={pageContent.aboutIntro} />
       </div>
     </div>
   </section>
+  {
+    pageContent.experienceSections.length > 0 && (
+      <section class="section bg-[var(--color-surface)]">
+        <div class="container">
+          <h2 class="text-3xl font-semibold">{pageContent.experienceTitle}</h2>
+          <div class="mt-8 grid gap-5">
+            {pageContent.experienceSections.map((item) => {
+              const imageUrl = item.image
+                ? sanityImageUrl(item.image)?.width(1200).height(900).fit('max').auto('format').url()
+                : null;
+
+              return (
+                <article class="experience-item">
+                  <div>
+                    {item.period && <p class="eyebrow">{item.period}</p>}
+                    <h3 class="mt-2 text-2xl font-semibold">{item.title}</h3>
+                    {item.text && <div class="mt-4"><PortableText value={item.text} /></div>}
+                  </div>
+                  {imageUrl && (
+                    <figure class="overflow-hidden rounded-[var(--radius-large)] border border-[var(--color-border)] bg-white">
+                      <img
+                        class="aspect-[4/3] h-full w-full object-contain"
+                        src={imageUrl}
+                        alt={item.imageAlt || item.title}
+                        width="1200"
+                        height="900"
+                        loading="lazy"
+                      />
+                    </figure>
+                  )}
+                </article>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+    )
+  }
   <GlobalCTA placement="about_final" pageType="about" contactSettings={contactSettings} cta={defaultCTA} />
 </Layout>

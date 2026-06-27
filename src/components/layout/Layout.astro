@@ -16,6 +16,7 @@ interface Props {
 
 const { title, description, canonicalPath, noindex = false, image } = Astro.props;
 const siteSettings = await getSiteSettings();
+const displaySiteName = siteSettings.professionalName || siteSettings.siteName;
 const gtmId = import.meta.env.PUBLIC_GTM_ID;
 const seoImage = image || siteSettings.defaultOgImage;
 const imageUrl = seoImage
@@ -34,7 +35,7 @@ const faviconUrl = siteSettings.favicon
       description={description || siteSettings.defaultSeo?.description}
       canonicalPath={canonicalPath}
       noindex={noindex}
-      siteName={siteSettings.siteName}
+      siteName={displaySiteName}
       siteUrl={siteSettings.baseUrl}
       imageUrl={imageUrl}
       faviconUrl={faviconUrl}

@@ -17,7 +17,7 @@ export const service = defineType({
     defineField({ name: 'body', title: 'Body', type: 'blockContent' }),
     defineField({ name: 'relatedConcerns', title: 'Related concerns', type: 'array', of: [{ type: 'reference', to: [{ type: 'concern' }] }] }),
     defineField({ name: 'relatedArticles', title: 'Related articles', type: 'array', of: [{ type: 'reference', to: [{ type: 'article' }] }] }),
-    defineField({ name: 'faq', title: 'FAQ', type: 'array', of: [{ type: 'reference', to: [{ type: 'faqItem' }] }] }),
+    defineField({ name: 'faq', title: 'Часті питання', type: 'array', of: [{ type: 'reference', to: [{ type: 'faqItem' }] }] }),
     defineField({ name: 'seo', title: 'SEO', type: 'seoFields' }),
     defineField({ name: 'cta', title: 'CTA', type: 'reference', to: [{ type: 'cta' }] }),
   ],

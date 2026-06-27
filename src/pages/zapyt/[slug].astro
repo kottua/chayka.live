@@ -4,7 +4,7 @@ import GlobalCTA from '../../components/cta/GlobalCTA.astro';
 import Layout from '../../components/layout/Layout.astro';
 import Breadcrumbs from '../../components/seo/Breadcrumbs.astro';
 import JsonLd from '../../components/seo/JsonLd.astro';
-import { getConcerns, getContactSettings, getDefaultCTA, getServices } from '../../lib/data';
+import { getConcerns, getContactSettings, getDefaultCTA, getPageContentSettings, getServices } from '../../lib/data';
 import {
   buildBreadcrumbJsonLd,
   buildFaqJsonLd,
@@ -21,9 +21,10 @@ export async function getStaticPaths() {
 }
 
 const { concern } = Astro.props;
-const [contactSettings, defaultCTA, allServices] = await Promise.all([
+const [contactSettings, defaultCTA, pageContent, allServices] = await Promise.all([
   getContactSettings(),
   getDefaultCTA(),
+  getPageContentSettings(),
   getServices(),
 ]);
 const relatedServices = concern.relatedServices?.length ? concern.relatedServices : allServices;
@@ -41,14 +42,14 @@ const canonicalPath = concern.seo?.canonicalOverride || concernPath;
   canonicalPath={canonicalPath}
   noindex={concern.seo?.noindex}
 >
-  <JsonLd data={buildBreadcrumbJsonLd([{ label: 'Запити', path: '/zapyt' }, { label: concern.title, path: concernPath }])} />
+  <JsonLd data={buildBreadcrumbJsonLd([{ label: 'З чим працюю', path: '/zapyt' }, { label: concern.title, path: concernPath }])} />
   <JsonLd data={buildProfessionalServiceJsonLd(contactSettings)} />
   <JsonLd data={buildFaqJsonLd(faq)} />
-  <Breadcrumbs items={[{ label: 'Запити', href: '/zapyt' }, { label: concern.title }]} />
+  <Breadcrumbs items={[{ label: 'З чим працюю', href: '/zapyt' }, { label: concern.title }]} />
   <section class="section">
     <div class="container grid gap-10 md:grid-cols-[1fr_360px]">
       <article>
-        <p class="eyebrow">Запит</p>
+        <p class="eyebrow">{pageContent.concernsArchiveEyebrow}</p>
         <h1 class="mt-4 text-4xl font-semibold leading-tight md:text-5xl">{concern.title}</h1>
         <p class="mt-6 max-w-2xl text-lg leading-8 text-[var(--color-muted)]">{concern.description}</p>
 

@@ -2,7 +2,7 @@ import { defineField, defineType } from 'sanity';
 
 export const concern = defineType({
   name: 'concern',
-  title: 'Concern',
+  title: 'З чим працюю',
   type: 'document',
   fields: [
     defineField({ name: 'title', title: 'Title', type: 'string', validation: (Rule) => Rule.required() }),
@@ -24,7 +24,7 @@ export const concern = defineType({
     defineField({ name: 'body', title: 'Body', type: 'blockContent' }),
     defineField({ name: 'relatedServices', title: 'Related services', type: 'array', of: [{ type: 'reference', to: [{ type: 'service' }] }] }),
     defineField({ name: 'relatedArticles', title: 'Related articles', type: 'array', of: [{ type: 'reference', to: [{ type: 'article' }] }] }),
-    defineField({ name: 'faq', title: 'FAQ', type: 'array', of: [{ type: 'reference', to: [{ type: 'faqItem' }] }] }),
+    defineField({ name: 'faq', title: 'Часті питання', type: 'array', of: [{ type: 'reference', to: [{ type: 'faqItem' }] }] }),
     defineField({ name: 'seo', title: 'SEO', type: 'seoFields' }),
     defineField({ name: 'cta', title: 'CTA', type: 'reference', to: [{ type: 'cta' }] }),
   ],

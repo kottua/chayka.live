@@ -57,6 +57,44 @@ export type SiteSettingsContent = {
   defaultSeo?: SeoFields;
 };
 
+export type ExperienceSection = {
+  period?: string;
+  title: string;
+  text?: unknown[];
+  image?: unknown;
+  imageAlt?: string;
+};
+
+export type PageContentSettings = {
+  homeEyebrow: string;
+  homeHeadline: string;
+  homeIntro: string;
+  homePrimaryButtonLabel: string;
+  homeSecondaryButtonLabel: string;
+  homeHeroPhoto?: unknown;
+  homeSeo?: SeoFields;
+  servicesSectionEyebrow: string;
+  servicesSectionTitle: string;
+  concernsSectionEyebrow: string;
+  concernsSectionTitle: string;
+  articlesSectionEyebrow: string;
+  articlesSectionTitle: string;
+  aboutEyebrow: string;
+  aboutIntro?: unknown[];
+  aboutPhoto?: unknown;
+  aboutSeo?: SeoFields;
+  experienceTitle: string;
+  experienceSections: ExperienceSection[];
+  concernsArchiveEyebrow: string;
+  concernsArchiveTitle: string;
+  concernsArchiveDescription: string;
+  concernsArchiveSeo?: SeoFields;
+  faqEyebrow: string;
+  faqTitle: string;
+  faqDescription: string;
+  faqSeo?: SeoFields;
+};
+
 export type CmsDocumentContent = {
   title: string;
   slug: string;
@@ -122,13 +160,74 @@ type CmsPageNavFields = {
 };
 
 const fallbackSiteSettings: SiteSettingsContent = {
-  siteName: 'Чайка Валентина',
+  siteName: 'Валентина Чайка',
   baseUrl: site.url,
   defaultLanguage: site.language,
   footerText:
     'Психотерапевтична підтримка онлайн: уважний перший контакт, конфіденційність і робота в темпі, який можна витримати.',
-  professionalName: 'Чайка Валентина',
+  professionalName: 'Валентина Чайка',
   professionalRole: 'Психотерапевт',
+};
+
+function normalizeProfessionalName(name?: string) {
+  if (!name) return undefined;
+  return name.trim() === 'Чайка Валентина' ? 'Валентина Чайка' : name;
+}
+
+const fallbackPageContentSettings: PageContentSettings = {
+  homeEyebrow: 'Психотерапія онлайн',
+  homeHeadline: 'Простір для розмови про те, що всередині вже давно потребує уваги',
+  homeIntro:
+    'Онлайн-консультації для моментів, коли важливо розібратися з тривогою, виснаженням, стосунками або внутрішньою напругою без поспіху й тиску.',
+  homePrimaryButtonLabel: 'Звернутися',
+  homeSecondaryButtonLabel: 'Подивитись послуги',
+  servicesSectionEyebrow: 'Напрямки',
+  servicesSectionTitle: 'Послуги',
+  concernsSectionEyebrow: 'З чим працюю',
+  concernsSectionTitle: 'Теми, з якими люди шукають підтримку',
+  articlesSectionEyebrow: 'База знань',
+  articlesSectionTitle: 'Перші статті',
+  aboutEyebrow: 'Про спеціаліста',
+  aboutIntro: [
+    {
+      _type: 'block',
+      style: 'normal',
+      children: [
+        {
+          _type: 'span',
+          text: 'Ця сторінка допомагає зрозуміти професійний шлях, підхід до роботи й те, як може виглядати перший контакт перед консультацією.',
+        },
+      ],
+    },
+    {
+      _type: 'block',
+      style: 'normal',
+      children: [
+        {
+          _type: 'span',
+          text: 'Тут доречно розмістити освіту, сертифікати, досвід підвищення кваліфікації, напрямки роботи й принципи, на яких тримається терапевтичний процес.',
+        },
+      ],
+    },
+    {
+      _type: 'block',
+      style: 'normal',
+      children: [
+        {
+          _type: 'span',
+          text: 'Важливо, щоб людина могла не лише побачити формальні підтвердження кваліфікації, а й відчути стиль мислення, межі компетенції та тон майбутньої розмови.',
+        },
+      ],
+    },
+  ],
+  experienceTitle: 'Досвід',
+  experienceSections: [],
+  concernsArchiveEyebrow: 'З чим працюю',
+  concernsArchiveTitle: 'Конкретні теми, з якими люди шукають підтримку',
+  concernsArchiveDescription: 'SEO-сторінки під конкретні психологічні запити і стани.',
+  faqEyebrow: 'Часті питання',
+  faqTitle: 'Питання перед першим контактом',
+  faqDescription: 'Відповіді на базові питання перед першим зверненням до психотерапевта.',
 };
 
 const channelDefaults: Record<string, { label: string; icon: string; role: ContactChannelRole }> = {
@@ -214,17 +313,64 @@ export async function getSiteSettings() {
   if (!settings) return fallbackSiteSettings;
 
   return {
-    siteName: settings.siteName || fallbackSiteSettings.siteName,
+    siteName: normalizeProfessionalName(settings.siteName) || fallbackSiteSettings.siteName,
     baseUrl: settings.baseUrl || fallbackSiteSettings.baseUrl,
     defaultLanguage: settings.defaultLanguage || fallbackSiteSettings.defaultLanguage,
     footerText: settings.footerText || fallbackSiteSettings.footerText,
-    professionalName: settings.professionalName || fallbackSiteSettings.professionalName,
+    professionalName: normalizeProfessionalName(settings.professionalName) || fallbackSiteSettings.professionalName,
     professionalRole: settings.professionalRole || fallbackSiteSettings.professionalRole,
     profilePhoto: settings.profilePhoto,
     defaultOgImage: settings.defaultOgImage || settings.defaultSeo?.ogImage,
     favicon: settings.favicon,
     defaultSeo: settings.defaultSeo,
   } satisfies SiteSettingsContent;
+}
+
+export async function getPageContentSettings() {
+  const settings = await fetchFromSanity<Partial<PageContentSettings> | null>(
+    `*[_type == "pageContentSettings"][0] {
+      homeEyebrow,
+      homeHeadline,
+      homeIntro,
+      homePrimaryButtonLabel,
+      homeSecondaryButtonLabel,
+      homeHeroPhoto,
+      homeSeo,
+      servicesSectionEyebrow,
+      servicesSectionTitle,
+      concernsSectionEyebrow,
+      concernsSectionTitle,
+      articlesSectionEyebrow,
+      articlesSectionTitle,
+      aboutEyebrow,
+      aboutIntro,
+      aboutPhoto,
+      aboutSeo,
+      experienceTitle,
+      experienceSections[] {
+        period,
+        title,
+        text,
+        image,
+        imageAlt
+      },
+      concernsArchiveEyebrow,
+      concernsArchiveTitle,
+      concernsArchiveDescription,
+      concernsArchiveSeo,
+      faqEyebrow,
+      faqTitle,
+      faqDescription,
+      faqSeo
+    }`,
+    null,
+  );
+
+  return {
+    ...fallbackPageContentSettings,
+    ...(settings || {}),
+    experienceSections: settings?.experienceSections || fallbackPageContentSettings.experienceSections,
+  } satisfies PageContentSettings;
 }
 
 export async function getServices() {
@@ -378,7 +524,7 @@ export async function getHeaderNavItems() {
   const staticItems: NavItem[] = [
     { label: 'Про мене', href: '/pro-mene', order: 10 },
     { label: 'Послуги', href: '/poslugy', order: 20 },
-    { label: 'Запити', href: '/zapyt/postiina-tryvoha', order: 30 },
+    { label: 'З чим працюю', href: '/zapyt', order: 30 },
   ];
 
   const pages = await fetchFromSanity<CmsPageNavFields[]>(
@@ -397,7 +543,7 @@ export async function getHeaderNavItems() {
     .map(toPageNavItem)
     .filter(Boolean) as NavItem[];
 
-  return [...staticItems, ...cmsItems, { label: 'Статті', href: '/statti', order: 90 }, { label: 'FAQ', href: '/faq', order: 100 }]
+  return [...staticItems, ...cmsItems, { label: 'Статті', href: '/statti', order: 90 }, { label: 'Часті питання', href: '/faq', order: 100 }]
     .sort((a, b) => (a.order || 100) - (b.order || 100));
 }
 

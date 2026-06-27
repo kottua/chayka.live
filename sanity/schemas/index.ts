@@ -7,6 +7,7 @@ import { faqItem } from './documents/faqItem';
 import { page } from './documents/page';
 import { service } from './documents/service';
 import { contactSettings } from './singletons/contactSettings';
+import { pageContentSettings } from './singletons/pageContentSettings';
 import { siteSettings } from './singletons/siteSettings';
 import { trackingSettings } from './singletons/trackingSettings';
 import { blockContent } from './objects/blockContent';
@@ -14,6 +15,7 @@ import { seoFields } from './objects/seoFields';
 
 export const schemaTypes = [
   siteSettings,
+  pageContentSettings,
   trackingSettings,
   contactSettings,
   page,

@@ -1,17 +1,23 @@
 ---
 import Layout from '../../components/layout/Layout.astro';
 import Breadcrumbs from '../../components/seo/Breadcrumbs.astro';
-import { getConcerns } from '../../lib/data';
+import { getConcerns, getPageContentSettings } from '../../lib/data';
 
-const concerns = await getConcerns();
+const [concerns, pageContent] = await Promise.all([getConcerns(), getPageContentSettings()]);
 ---
 
-<Layout title="Запити" description="SEO-сторінки під конкретні психологічні запити і стани." canonicalPath="/zapyt">
-  <Breadcrumbs items={[{ label: 'Запити' }]} />
+<Layout
+  title={pageContent.concernsArchiveSeo?.title || 'З чим працюю'}
+  description={pageContent.concernsArchiveSeo?.description || pageContent.concernsArchiveDescription}
+  canonicalPath="/zapyt"
+  image={pageContent.concernsArchiveSeo?.ogImage}
+  noindex={pageContent.concernsArchiveSeo?.noindex}
+>
+  <Breadcrumbs items={[{ label: 'З чим працюю' }]} />
   <section class="section">
     <div class="container">
-      <p class="eyebrow">Запити</p>
-      <h1 class="mt-4 text-4xl font-semibold leading-tight md:text-5xl">Конкретні теми, з якими люди шукають підтримку</h1>
+      <p class="eyebrow">{pageContent.concernsArchiveEyebrow}</p>
+      <h1 class="mt-4 text-4xl font-semibold leading-tight md:text-5xl">{pageContent.concernsArchiveTitle}</h1>
       <div class="mt-10 grid gap-4 md:grid-cols-3">
         {concerns.map((concern) => (
           <a class="rounded-lg border border-[var(--color-line)] bg-[var(--color-surface)] p-5 hover:border-[var(--color-accent)]" href={`/zapyt/${concern.slug}`}>

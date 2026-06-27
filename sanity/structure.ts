@@ -18,6 +18,7 @@ export const structure: StructureResolver = (S) =>
             .title('Settings')
             .items([
               singleton(S, 'siteSettings', 'Site settings'),
+              singleton(S, 'pageContentSettings', 'Page content'),
               singleton(S, 'trackingSettings', 'Tracking settings'),
               singleton(S, 'contactSettings', 'Contact settings'),
             ]),
@@ -31,9 +32,9 @@ export const structure: StructureResolver = (S) =>
             .items([
               S.documentTypeListItem('page').title('Pages'),
               S.documentTypeListItem('service').title('Services'),
-              S.documentTypeListItem('concern').title('Concerns'),
+              S.documentTypeListItem('concern').title('З чим працюю'),
               S.documentTypeListItem('article').title('Articles'),
-              S.documentTypeListItem('faqItem').title('FAQ items'),
+              S.documentTypeListItem('faqItem').title('Часті питання'),
               S.documentTypeListItem('author').title('Authors'),
             ]),
         ),

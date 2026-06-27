@@ -1,9 +1,9 @@
 import type { ContactSettings } from './data';
 
 export const site = {
-  name: 'Чайка Валентина',
+  name: 'Валентина Чайка',
   url: import.meta.env.PUBLIC_SITE_URL || 'https://chayka.live',
-  title: 'Чайка Валентина - психотерапія онлайн',
+  title: 'Валентина Чайка - психотерапія онлайн',
   description:
     'Психотерапевтична підтримка онлайн: послуги, запити, статті й делікатний перший контакт у зручному каналі зв’язку.',
   language: 'uk',
