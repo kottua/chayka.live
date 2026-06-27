@@ -23,7 +23,7 @@ const imageUrl = seoImage
   ? sanityImageUrl(seoImage)?.width(1200).height(630).fit('crop').auto('format').url()
   : null;
 const faviconUrl = siteSettings.favicon
-  ? sanityImageUrl(siteSettings.favicon)?.width(64).height(64).fit('crop').auto('format').url()
+  ? sanityImageUrl(siteSettings.favicon)?.width(64).height(64).fit('crop').url()
   : null;
 ---
 

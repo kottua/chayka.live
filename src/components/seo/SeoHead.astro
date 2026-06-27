@@ -33,8 +33,19 @@ const fullTitle = title === site.title ? title : `${title} | ${siteName}`;
 <title>{fullTitle}</title>
 <meta name="description" content={description} />
 <link rel="canonical" href={canonical} />
-<link rel="icon" href={faviconUrl || '/favicon.svg'} type={faviconUrl ? undefined : 'image/svg+xml'} />
-<link rel="alternate icon" href="/favicon.ico" />
+{
+  faviconUrl ? (
+    <>
+      <link rel="icon" href={faviconUrl} type="image/png" sizes="64x64" />
+      <link rel="apple-touch-icon" href={faviconUrl} />
+    </>
+  ) : (
+    <>
+      <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+      <link rel="alternate icon" href="/favicon.ico" />
+    </>
+  )
+}
 {noindex && <meta name="robots" content="noindex,nofollow" />}
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content={siteName} />
