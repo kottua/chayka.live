@@ -6,7 +6,6 @@ import Breadcrumbs from '../../components/seo/Breadcrumbs.astro';
 import JsonLd from '../../components/seo/JsonLd.astro';
 import {
   getArticles,
-  getConcerns,
   getContactSettings,
   getDefaultCTA,
   getServices,
@@ -24,14 +23,18 @@ export async function getStaticPaths() {
 }
 
 const { article } = Astro.props;
-const [allConcerns, contactSettings, defaultCTA, allServices] = await Promise.all([
-  getConcerns(),
+const [allArticles, contactSettings, defaultCTA, allServices] = await Promise.all([
+  getArticles(),
   getContactSettings(),
   getDefaultCTA(),
   getServices(),
 ]);
-const relatedServices = article.relatedServices?.length ? article.relatedServices : allServices;
-const relatedConcerns = article.relatedConcerns?.length ? article.relatedConcerns : allConcerns;
+const relatedServices = (article.relatedServices?.length ? article.relatedServices : allServices).slice(0, 3);
+const relatedArticles = (
+  article.relatedArticles?.length
+    ? article.relatedArticles
+    : allArticles.filter((candidate) => candidate.slug !== article.slug)
+).filter((candidate) => candidate.slug !== article.slug).slice(0, 3);
 const hasBody = Array.isArray(article.body) && article.body.length > 0;
 const seoTitle = article.seo?.title || article.title;
 const seoDescription = article.seo?.description || article.excerpt || article.description;
@@ -118,7 +121,7 @@ const heroImageUrl =
         </aside>
       </article>
 
-      <aside class="grid gap-6">
+      <aside class="grid content-start gap-6 self-start">
         <div class="rounded-lg border border-[var(--color-line)] bg-[var(--color-surface)] p-5">
           <h2 class="font-semibold">Пов'язані послуги</h2>
           <div class="mt-4 grid gap-3">
@@ -127,14 +130,16 @@ const heroImageUrl =
             ))}
           </div>
         </div>
-        <div class="rounded-lg border border-[var(--color-line)] bg-[var(--color-surface)] p-5">
-          <h2 class="font-semibold">Пов'язані запити</h2>
-          <div class="mt-4 grid gap-3">
-            {relatedConcerns.map((concern) => (
-              <a class="text-sm leading-6 text-[var(--color-muted)] hover:text-[var(--color-ink)]" href={`/zapyt/${concern.slug}`}>{concern.title}</a>
-            ))}
+        {relatedArticles.length > 0 && (
+          <div class="rounded-lg border border-[var(--color-line)] bg-[var(--color-surface)] p-5">
+            <h2 class="font-semibold">Пов'язані статті</h2>
+            <div class="mt-4 grid gap-3">
+              {relatedArticles.map((relatedArticle) => (
+                <a class="text-sm leading-6 text-[var(--color-muted)] hover:text-[var(--color-ink)]" href={`/statti/${relatedArticle.slug}`}>{relatedArticle.title}</a>
+              ))}
+            </div>
           </div>
-        </div>
+        )}
       </aside>
     </div>
   </section>
