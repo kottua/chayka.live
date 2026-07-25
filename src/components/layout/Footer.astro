@@ -9,7 +9,7 @@ interface Props {
 const { siteSettings } = Astro.props;
 const year = new Date().getFullYear();
 const trackingEnabled = Boolean(
-  import.meta.env.PUBLIC_GOOGLE_ADS_ID || import.meta.env.PUBLIC_GTM_ID || 'AW-970721602',
+  import.meta.env.PUBLIC_GOOGLE_ADS_ID || import.meta.env.PUBLIC_GTM_ID || 'AW-18348666135',
 );
 const [contactSettings, footerNavItems] = await Promise.all([getContactSettings(), getFooterNavItems()]);
 ---

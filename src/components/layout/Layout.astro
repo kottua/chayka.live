@@ -19,7 +19,7 @@ const { title, description, canonicalPath, noindex = false, image } = Astro.prop
 const siteSettings = await getSiteSettings();
 const displaySiteName = siteSettings.professionalName || siteSettings.siteName;
 const gtmId = import.meta.env.PUBLIC_GTM_ID;
-const googleAdsId = import.meta.env.PUBLIC_GOOGLE_ADS_ID || 'AW-970721602';
+const googleAdsId = import.meta.env.PUBLIC_GOOGLE_ADS_ID || 'AW-18348666135';
 const directGoogleAdsId = gtmId ? undefined : googleAdsId;
 const seoImage = image || siteSettings.defaultOgImage;
 const imageUrl =
@@ -152,7 +152,7 @@ const faviconUrl = siteSettings.favicon
         if (isRegularLinkClick) event.preventDefault();
 
         googleTagWindow.gtag('event', 'conversion', {
-          send_to: 'AW-970721602/aw3lCLDupNYcEMKS8M4D',
+          send_to: 'AW-18348666135/gMpLCJ7SnNYcEJfaqa1E',
           value: 1.0,
           currency: 'UAH',
           event_callback: continueNavigation,
