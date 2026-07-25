@@ -1,6 +1,12 @@
 {
   "name": "chayka-live",
   "compatibility_date": "2026-05-27",
+  "routes": [
+    {
+      "pattern": "chayka.live",
+      "custom_domain": true
+    }
+  ],
   "assets": {
     "directory": "./dist"
   }
