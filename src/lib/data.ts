@@ -2,6 +2,8 @@ import {
   articles as fallbackArticles,
   concerns as fallbackConcerns,
   faqItems as fallbackFaqItems,
+  pageContentSettings as editorialPageContentSettings,
+  pages as fallbackPages,
   services as fallbackServices,
 } from './content';
 import { contactSettings as fallbackContactSettings, site } from './site';
@@ -96,12 +98,14 @@ export type PageContentSettings = {
 };
 
 export type CmsDocumentContent = {
+  id?: string;
   title: string;
   slug: string;
   description: string;
   excerpt?: string;
   publishedAt?: string;
   heroImage?: unknown;
+  heroImageUrl?: string;
   author?: {
     name?: string;
     role?: string;
@@ -175,59 +179,7 @@ function normalizeProfessionalName(name?: string) {
 }
 
 const fallbackPageContentSettings: PageContentSettings = {
-  homeEyebrow: 'Психотерапія онлайн',
-  homeHeadline: 'Простір для розмови про те, що всередині вже давно потребує уваги',
-  homeIntro:
-    'Онлайн-консультації для моментів, коли важливо розібратися з тривогою, виснаженням, стосунками або внутрішньою напругою без поспіху й тиску.',
-  homePrimaryButtonLabel: 'Звернутися',
-  homeSecondaryButtonLabel: 'Подивитись послуги',
-  servicesSectionEyebrow: 'Напрямки',
-  servicesSectionTitle: 'Послуги',
-  concernsSectionEyebrow: 'З чим працюю',
-  concernsSectionTitle: 'Теми, з якими люди шукають підтримку',
-  articlesSectionEyebrow: 'База знань',
-  articlesSectionTitle: 'Перші статті',
-  aboutEyebrow: 'Про спеціаліста',
-  aboutIntro: [
-    {
-      _type: 'block',
-      style: 'normal',
-      children: [
-        {
-          _type: 'span',
-          text: 'Ця сторінка допомагає зрозуміти професійний шлях, підхід до роботи й те, як може виглядати перший контакт перед консультацією.',
-        },
-      ],
-    },
-    {
-      _type: 'block',
-      style: 'normal',
-      children: [
-        {
-          _type: 'span',
-          text: 'Тут доречно розмістити освіту, сертифікати, досвід підвищення кваліфікації, напрямки роботи й принципи, на яких тримається терапевтичний процес.',
-        },
-      ],
-    },
-    {
-      _type: 'block',
-      style: 'normal',
-      children: [
-        {
-          _type: 'span',
-          text: 'Важливо, щоб людина могла не лише побачити формальні підтвердження кваліфікації, а й відчути стиль мислення, межі компетенції та тон майбутньої розмови.',
-        },
-      ],
-    },
-  ],
-  experienceTitle: 'Досвід',
-  experienceSections: [],
-  concernsArchiveEyebrow: 'З чим працюю',
-  concernsArchiveTitle: 'Конкретні теми, з якими люди шукають підтримку',
-  concernsArchiveDescription: 'SEO-сторінки під конкретні психологічні запити і стани.',
-  faqEyebrow: 'Часті питання',
-  faqTitle: 'Питання перед першим контактом',
-  faqDescription: 'Відповіді на базові питання перед першим зверненням до психотерапевта.',
+  ...editorialPageContentSettings,
 };
 
 const channelDefaults: Record<string, { label: string; icon: string; role: ContactChannelRole }> = {
@@ -291,6 +243,55 @@ async function fetchFromSanity<T>(query: string, fallback: T): Promise<T> {
     console.warn('Sanity fetch failed, using fallback content.', error);
     return fallback;
   }
+}
+
+function mergeByKey<T extends Record<string, unknown>>(
+  remote: T[],
+  editorial: T[],
+  key: keyof T,
+) {
+  const merged = new Map<string, T>();
+  for (const item of remote) {
+    const value = item[key];
+    if (typeof value === 'string') merged.set(value, item);
+  }
+  for (const item of editorial) {
+    const value = item[key];
+    if (typeof value === 'string') merged.set(value, item);
+  }
+  return [...merged.values()];
+}
+
+const legacyServiceSlugs: Record<string, string> = {
+  'indyvidualna-psykhoterapiia': 'indyvidualne-konsultuvannia',
+  'onlain-konsultatsiia': 'indyvidualne-konsultuvannia',
+  tryvozhnist: 'indyvidualne-konsultuvannia',
+  '247': 'psykholohichna-pidtrymka-24-7',
+};
+
+const legacyConcernSlugs: Record<string, string> = {
+  'postiina-tryvoha': 'naviazlyvi-tryvozhni-dumky',
+  'skladnoshchi-u-stosunkakh': 'simeini-konflikty',
+};
+
+function remapCards(
+  cards: CardContent[] | undefined,
+  aliases: Record<string, string>,
+  canonicalCards: CardContent[],
+) {
+  if (!cards) return cards;
+  return cards.map((card) => {
+    const nextSlug = aliases[card.slug];
+    return nextSlug ? canonicalCards.find((candidate) => candidate.slug === nextSlug) || card : card;
+  });
+}
+
+function normalizeLegacyRelations(document: CmsDocumentContent) {
+  return {
+    ...document,
+    relatedServices: remapCards(document.relatedServices, legacyServiceSlugs, fallbackServices),
+    relatedConcerns: remapCards(document.relatedConcerns, legacyConcernSlugs, fallbackConcerns),
+  };
 }
 
 export async function getSiteSettings() {
@@ -367,15 +368,25 @@ export async function getPageContentSettings() {
   );
 
   return {
-    ...fallbackPageContentSettings,
     ...(settings || {}),
-    experienceSections: settings?.experienceSections || fallbackPageContentSettings.experienceSections,
+    ...fallbackPageContentSettings,
+    homeHeroPhoto: settings?.homeHeroPhoto,
+    aboutPhoto: settings?.aboutPhoto,
+    homeSeo: { ...(settings?.homeSeo || {}), ...(fallbackPageContentSettings.homeSeo || {}) },
+    aboutSeo: { ...(settings?.aboutSeo || {}), ...(fallbackPageContentSettings.aboutSeo || {}) },
+    concernsArchiveSeo: {
+      ...(settings?.concernsArchiveSeo || {}),
+      ...(fallbackPageContentSettings.concernsArchiveSeo || {}),
+    },
+    faqSeo: { ...(settings?.faqSeo || {}), ...(fallbackPageContentSettings.faqSeo || {}) },
+    experienceSections: fallbackPageContentSettings.experienceSections,
   } satisfies PageContentSettings;
 }
 
 export async function getServices() {
-  return fetchFromSanity<CmsDocumentContent[]>(
+  const remote = await fetchFromSanity<CmsDocumentContent[]>(
     `*[_type == "service"] | order(title asc) {
+      "id": _id,
       title,
       "slug": slug.current,
       "description": coalesce(shortDescription, seo.description, ""),
@@ -406,13 +417,15 @@ export async function getServices() {
         trackingContext
       }
     }`,
-    fallbackServices,
+    [],
   );
+  return mergeByKey(remote, fallbackServices, 'id');
 }
 
 export async function getConcerns() {
-  return fetchFromSanity<CmsDocumentContent[]>(
+  const remote = await fetchFromSanity<CmsDocumentContent[]>(
     `*[_type == "concern"] | order(title asc) {
+      "id": _id,
       title,
       "slug": slug.current,
       "description": coalesce(shortDescription, searchIntentSummary, seo.description, ""),
@@ -443,19 +456,22 @@ export async function getConcerns() {
         trackingContext
       }
     }`,
-    fallbackConcerns,
+    [],
   );
+  return mergeByKey(remote.map(normalizeLegacyRelations), fallbackConcerns, 'id');
 }
 
 export async function getArticles() {
-  return fetchFromSanity<CmsDocumentContent[]>(
+  const remote = await fetchFromSanity<CmsDocumentContent[]>(
     `*[_type == "article"] | order(publishedAt desc) {
+      "id": _id,
       title,
       "slug": slug.current,
       excerpt,
       "description": coalesce(excerpt, seo.description, ""),
       "publishedAt": coalesce(publishedAt, _createdAt),
       heroImage,
+      heroImageUrl,
       "author": author->{
         name,
         role,
@@ -484,22 +500,19 @@ export async function getArticles() {
         trackingContext
       }
     }`,
-    fallbackArticleDocuments,
+    [],
+  );
+  return mergeByKey(remote.map(normalizeLegacyRelations), fallbackArticleDocuments, 'id').sort((a, b) =>
+    (b.publishedAt || '').localeCompare(a.publishedAt || ''),
   );
 }
 
 export async function getFaqItems() {
-  return fetchFromSanity<FaqItem[]>(
-    `*[_type == "faqItem"] | order(_createdAt asc) {
-      question,
-      answer
-    }`,
-    fallbackFaqItems,
-  );
+  return fallbackFaqItems;
 }
 
 export async function getPages() {
-  return fetchFromSanity<CmsDocumentContent[]>(
+  const remote = await fetchFromSanity<CmsDocumentContent[]>(
     `*[_type == "page"] | order(title asc) {
       title,
       "slug": slug.current,
@@ -518,6 +531,7 @@ export async function getPages() {
     }`,
     [],
   );
+  return mergeByKey(remote, fallbackPages, 'slug');
 }
 
 export async function getHeaderNavItems() {
@@ -535,10 +549,11 @@ export async function getHeaderNavItems() {
       showInHeader,
       navOrder
     }`,
-    [],
+    fallbackPages,
   );
 
-  const cmsItems = pages
+  const mergedPages = mergeByKey(pages, fallbackPages, 'slug');
+  const cmsItems = mergedPages
     .filter((page) => page.showInHeader === true || (page.showInHeader == null && !legalPageSlugs.has(page.slug || '')))
     .map(toPageNavItem)
     .filter(Boolean) as NavItem[];
@@ -556,10 +571,10 @@ export async function getFooterNavItems() {
       showInFooter,
       navOrder
     }`,
-    [],
+    fallbackPages,
   );
 
-  return pages
+  return mergeByKey(pages, fallbackPages, 'slug')
     .filter((page) => page.showInFooter === true || (page.showInFooter == null && legalPageSlugs.has(page.slug || '')))
     .map(toPageNavItem)
     .filter(Boolean) as NavItem[];

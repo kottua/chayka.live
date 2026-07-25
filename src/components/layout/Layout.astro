@@ -19,9 +19,12 @@ const siteSettings = await getSiteSettings();
 const displaySiteName = siteSettings.professionalName || siteSettings.siteName;
 const gtmId = import.meta.env.PUBLIC_GTM_ID;
 const seoImage = image || siteSettings.defaultOgImage;
-const imageUrl = seoImage
-  ? sanityImageUrl(seoImage)?.width(1200).height(630).fit('crop').auto('format').url()
-  : null;
+const imageUrl =
+  typeof seoImage === 'string'
+    ? new URL(seoImage, siteSettings.baseUrl).toString()
+    : seoImage
+      ? sanityImageUrl(seoImage)?.width(1200).height(630).fit('crop').auto('format').url()
+      : null;
 const faviconUrl = siteSettings.favicon
   ? sanityImageUrl(siteSettings.favicon)?.width(64).height(64).fit('crop').url()
   : null;

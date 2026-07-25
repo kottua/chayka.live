@@ -1,0 +1,4823 @@
+[
+  {
+    "_createdAt": "2026-06-27T10:33:37Z",
+    "_id": "pageContentSettings",
+    "_rev": "I9xX6BqE4hcTWUihvXsGJF",
+    "_system": {
+      "base": {
+        "id": "pageContentSettings",
+        "rev": "ws3kvG3HsASTzK4mSYgttq"
+      }
+    },
+    "_type": "pageContentSettings",
+    "_updatedAt": "2026-06-29T11:41:35Z",
+    "aboutEyebrow": "Про мене",
+    "aboutPhoto": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-b3acacfff418fa7be3d98d294b593e179cc55100-1792x2400-jpg",
+        "_type": "reference"
+      }
+    },
+    "aboutSeo": {
+      "_type": "seoFields",
+      "noindex": false
+    },
+    "articlesSectionEyebrow": "База знань",
+    "articlesSectionTitle": "Матеріали для першого розуміння",
+    "concernsArchiveDescription": "Пояснення психологічних станів і труднощів: як вони проявляються, чому можуть виникати та як із ними працюють у терапії.",
+    "concernsArchiveEyebrow": "З чим працюю",
+    "concernsArchiveSeo": {
+      "_type": "seoFields",
+      "noindex": false
+    },
+    "concernsArchiveTitle": "Теми, з якими можна прийти",
+    "concernsSectionEyebrow": "З чим працюю",
+    "concernsSectionTitle": "До мене звертаються, коли",
+    "experienceTitle": "Освіта, розвиток і авторські проєкти",
+    "faqDescription": "Відповіді на питання про перший контакт, тривалість і онлайн-формат терапії.",
+    "faqEyebrow": "Часті питання",
+    "faqSeo": {
+      "_type": "seoFields",
+      "noindex": false
+    },
+    "faqTitle": "Перед першим зверненням",
+    "homeEyebrow": "Психотерапія онлайн",
+    "homeHeadline": "Бути собою сміливо",
+    "homeHeroPhoto": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-c8e9e16d745651af9db7724bb981de10695b35fb-2752x1536-jpg",
+        "_type": "reference"
+      }
+    },
+    "homeIntro": "Дбайливий простір, де можна краще зрозуміти себе, знайти власні відповіді й поступово будувати життя у більш чесному контакті з собою.",
+    "homePrimaryButtonLabel": "Написати Валентині",
+    "homeSecondaryButtonLabel": "Обрати напрям роботи",
+    "homeSeo": {
+      "_type": "seoFields",
+      "noindex": false
+    },
+    "servicesSectionEyebrow": "Напрямки моєї роботи",
+    "servicesSectionTitle": "Формати підтримки",
+    "aboutIntro": [
+      {
+        "_type": "block",
+        "_key": "content-233",
+        "style": "blockquote",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-233",
+            "text": "Бути собою сміливо",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-234",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-234",
+            "text": "Як я працюю",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-235",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-235",
+            "text": "Я вірю, що кожна людина вже має всередині себе ресурси для змін. Іноді вони просто приховані за болем, тривогою, втомою чи складним життєвим досвідом.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-236",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-236",
+            "text": "У своїй роботі я не даю готових порад і не розповідаю, як «правильно» жити. Натомість я допомагаю вам краще зрозуміти себе, побачити причини того, що відбувається у вашому житті, і знайти власні відповіді та опори.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-237",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-237",
+            "text": "Для мене терапія — це безпечний простір, де можна бути справжнім: говорити про свої страхи, злість, сором, біль, сумніви чи розгубленість без страху бути засудженим.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-238",
+        "style": "h3",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-238",
+            "text": "Під час нашої роботи ми будемо",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-239",
+        "style": "normal",
+        "listItem": "bullet",
+        "level": 1,
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-239",
+            "text": "досліджувати ваші переживання та життєві сценарії",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-240",
+        "style": "normal",
+        "listItem": "bullet",
+        "level": 1,
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-240",
+            "text": "шукати причини труднощів, а не лише боротися із симптомами",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-241",
+        "style": "normal",
+        "listItem": "bullet",
+        "level": 1,
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-241",
+            "text": "вчитися краще розуміти свої почуття та потреби",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-242",
+        "style": "normal",
+        "listItem": "bullet",
+        "level": 1,
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-242",
+            "text": "помічати старі переконання, які заважають жити",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-243",
+        "style": "normal",
+        "listItem": "bullet",
+        "level": 1,
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-243",
+            "text": "знаходити нові способи справлятися зі складними ситуаціями",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-244",
+        "style": "normal",
+        "listItem": "bullet",
+        "level": 1,
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-244",
+            "text": "будувати більш дбайливі стосунки із собою та іншими",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-245",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-245",
+            "text": "Я працюю дбайливо, з повагою до вашого темпу та життєвого досвіду.",
+            "marks": []
+          }
+        ]
+      }
+    ],
+    "experienceSections": [
+      {
+        "period": "Бакалавр",
+        "title": "Практична психологія",
+        "text": [
+          {
+            "_type": "block",
+            "_key": "content-246",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "span-246",
+                "text": "Черкаський національний університет імені Богдана Хмельницького. Спеціальність — «Практична психологія».",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "content-247",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "span-247",
+                "text": "Я переконана, що професійний розвиток психолога триває все життя, тому постійно навчаюся, розвиваю професійні компетенції та поглиблюю практичні знання. Регулярно проходжу особисту терапію та супервізію, що є важливою частиною моєї професійної практики.",
+                "marks": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "period": "Дослідження",
+        "title": "Психологія звичок і поведінкових змін",
+        "text": [
+          {
+            "_type": "block",
+            "_key": "content-248",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "span-248",
+                "text": "Тема моєї дипломної роботи — «Соціально-психологічні детермінанти формування звичок». Я вивчала, як формуються звички, які психологічні механізми впливають на їх закріплення та чому ми роками повторюємо одні й ті самі життєві сценарії.",
+                "marks": []
+              }
+            ]
+          },
+          {
+            "_type": "block",
+            "_key": "content-249",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "span-249",
+                "text": "Я переконана, що зміни починаються не з боротьби із собою, а з розуміння себе. Лише дослідивши потреби, бажання та внутрішні причини, ми можемо зрозуміти, які звички хочемо змінити й навіщо.",
+                "marks": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "period": "Авторський курс",
+        "title": "«Я і мої звички»",
+        "text": [
+          {
+            "_type": "block",
+            "_key": "content-250",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "span-250",
+                "text": "Це не курс про дисципліну чи «правильні» звички. Це курс про глибоке дослідження себе: переконань, життєвих сценаріїв, очевидних і прихованих автоматичних реакцій.",
+                "marks": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "period": "Авторський курс",
+        "title": "«Самооцінка. Моя самоцінність»",
+        "text": [
+          {
+            "_type": "block",
+            "_key": "content-251",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_type": "span",
+                "_key": "span-251",
+                "text": "Курс присвячений самооцінці, внутрішній опорі та дбайливому ставленню до себе. Він допомагає бачити власну цінність не лише через досягнення чи оцінку інших, а через глибший контакт із собою.",
+                "marks": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "_id": "author-valentyna-chaika",
+    "_type": "author",
+    "name": "Валентина Чайка",
+    "slug": {
+      "_type": "slug",
+      "current": "valentyna-chaika"
+    },
+    "role": "Психолог, психотерапевт",
+    "shortBio": "Практична психологиня. Працює з тривогою, самооцінкою, особистими межами, життєвими кризами та стосунками.",
+    "credentials": [
+      "Бакалавр за спеціальністю «Практична психологія»",
+      "Регулярна особиста терапія",
+      "Регулярна супервізія"
+    ]
+  },
+  {
+    "_id": "faq-bez-chitkoho-zapytu",
+    "_type": "faqItem",
+    "question": "Чи можна звернутися без чіткого запиту?",
+    "answer": "Так. Не обов’язково заздалегідь точно знати, що саме відбувається і чого ви хочете від терапії. На першій зустрічі ми можемо разом окреслити те, що зараз турбує, і зрозуміти можливий напрям роботи.",
+    "category": "first-contact",
+    "seoRelevant": true
+  },
+  {
+    "_id": "faq-skilky-tryvaie-terapiia",
+    "_type": "faqItem",
+    "question": "Скільки триває терапія?",
+    "answer": "Тривалість залежить від запиту, вашого темпу та цілей. Іноді достатньо кількох консультацій для конкретної ситуації, а глибша робота потребує більше часу. Орієнтири й регулярність обговорюються разом.",
+    "category": "format",
+    "seoRelevant": true
+  },
+  {
+    "_id": "faq-onlain-z-tryvohoiu",
+    "_type": "faqItem",
+    "question": "Чи працює онлайн-терапія з тривогою?",
+    "answer": "Так, онлайн-формат підходить для роботи з тривогою, якщо ви маєте приватне місце та стабільний зв’язок. На сесіях ми досліджуємо причини напруги, реакції тіла, думки й способи повертати собі відчуття опори.",
+    "category": "anxiety",
+    "seoRelevant": true
+  },
+  {
+    "_id": "faq-soromno-pysaty",
+    "_type": "faqItem",
+    "question": "Що робити, якщо соромно писати психологу?",
+    "answer": "Можна почати з одного речення: «Мені складно про це говорити, але я хочу дізнатися про консультацію». Вам не потрібно одразу розповідати всі подробиці чи формулювати ідеальне повідомлення.",
+    "category": "first-contact",
+    "seoRelevant": true
+  },
+  {
+    "_id": "concern-nyzka-samootsinka-faq-1",
+    "_type": "faqItem",
+    "question": "Чи можна справді змінити самооцінку?",
+    "answer": "Так. Це не швидка заміна «негативних думок» позитивними, а поступова зміна стосунків із собою, своїми межами, помилками та досягненнями.",
+    "category": "nyzka-samootsinka",
+    "seoRelevant": true
+  },
+  {
+    "_id": "concern-nyzka-samootsinka-faq-2",
+    "_type": "faqItem",
+    "question": "Чому похвала не допомагає надовго?",
+    "answer": "Якщо всередині діє стійке переконання «зі мною щось не так», зовнішня похвала дає коротке полегшення. У роботі важливо дослідити саме це переконання.",
+    "category": "nyzka-samootsinka",
+    "seoRelevant": true
+  },
+  {
+    "_id": "concern-osobysti-mezhi-faq-1",
+    "_type": "faqItem",
+    "question": "Чому після відмови виникає провина?",
+    "answer": "Провина не завжди означає, що ви зробили щось погане. Вона може бути звичною реакцією на вихід із ролі, у якій від вас чекали зручності.",
+    "category": "osobysti-mezhi",
+    "seoRelevant": true
+  },
+  {
+    "_id": "concern-osobysti-mezhi-faq-2",
+    "_type": "faqItem",
+    "question": "Як відмовляти без конфлікту?",
+    "answer": "Говорити коротко, конкретно й без надмірних виправдань. Водночас неможливо повністю контролювати реакцію іншої людини — важливо вчитися її витримувати.",
+    "category": "osobysti-mezhi",
+    "seoRelevant": true
+  },
+  {
+    "_id": "concern-osobysti-mezhi-faq-3",
+    "_type": "faqItem",
+    "question": "Що робити, якщо на мене тиснуть?",
+    "answer": "Повторити межу, взяти паузу та оцінити безпеку ситуації. Якщо тиск системний, у терапії можна дослідити способи захисту й підтримки.",
+    "category": "osobysti-mezhi",
+    "seoRelevant": true
+  },
+  {
+    "_id": "service-indyvidualna-psykhoterapiia",
+    "_type": "service",
+    "title": "Індивідуальне консультування",
+    "slug": {
+      "_type": "slug",
+      "current": "indyvidualne-konsultuvannia"
+    },
+    "shortDescription": "Індивідуальні сесії для дорослих і підлітків: внутрішні стани, емоційні труднощі, життєві кризи, самооцінка та особисті запити.",
+    "body": [
+      {
+        "_type": "block",
+        "_key": "content-1",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-1",
+            "text": "Кому підходить індивідуальна робота",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-2",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-2",
+            "text": "Цей формат підходить, коли хочеться уважно розібратися у власному стані, побачити причини повторюваних труднощів і сформувати внутрішню опору. Працюю з дорослими та підлітками онлайн.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-3",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-3",
+            "text": "Як я працюю",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-4",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-4",
+            "text": "Я не даю готових порад і не визначаю, як «правильно» жити. Натомість допомагаю краще зрозуміти себе, свої почуття, потреби й життєві сценарії, а також знайти власні відповіді.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-5",
+        "style": "normal",
+        "listItem": "bullet",
+        "level": 1,
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-5",
+            "text": "досліджуємо переживання та причини труднощів, а не лише симптоми",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-6",
+        "style": "normal",
+        "listItem": "bullet",
+        "level": 1,
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-6",
+            "text": "помічаємо переконання й автоматичні реакції, які заважають жити",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-7",
+        "style": "normal",
+        "listItem": "bullet",
+        "level": 1,
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-7",
+            "text": "шукаємо більш дбайливі способи справлятися зі складними ситуаціями",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-8",
+        "style": "normal",
+        "listItem": "bullet",
+        "level": 1,
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-8",
+            "text": "будуємо чесніші стосунки із собою та іншими",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-9",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-9",
+            "text": "Працюю дбайливо, з повагою до вашого темпу та життєвого досвіду.",
+            "marks": []
+          }
+        ]
+      }
+    ],
+    "relatedConcerns": [
+      {
+        "_type": "reference",
+        "_ref": "concern-nyzka-samootsinka"
+      },
+      {
+        "_type": "reference",
+        "_ref": "concern-nevpevnenist-i-strakh-pomylok"
+      },
+      {
+        "_type": "reference",
+        "_ref": "concern-osobysti-mezhi"
+      },
+      {
+        "_type": "reference",
+        "_ref": "concern-emotsiine-vyhorannia"
+      },
+      {
+        "_type": "reference",
+        "_ref": "concern-postiina-tryvoha"
+      }
+    ],
+    "relatedArticles": [
+      {
+        "_type": "reference",
+        "_ref": "article-koli-zvertatysia-do-psykhoterapevta"
+      },
+      {
+        "_type": "reference",
+        "_ref": "article-pershe-povidomlennia-psykhoterapevtu"
+      },
+      {
+        "_type": "reference",
+        "_ref": "article-yak-pryiniaty-rishennia"
+      },
+      {
+        "_type": "reference",
+        "_ref": "article-yak-skazaty-ni"
+      },
+      {
+        "_type": "reference",
+        "_ref": "article-oznaky-vyhorannia"
+      },
+      {
+        "_type": "reference",
+        "_ref": "article-yak-vporatysia-z-tryvozhnymy-dumkamy"
+      },
+      {
+        "_type": "reference",
+        "_ref": "article-dovira-pislia-zrady"
+      }
+    ],
+    "faq": [
+      {
+        "_type": "reference",
+        "_ref": "faq-bez-chitkoho-zapytu"
+      },
+      {
+        "_type": "reference",
+        "_ref": "faq-skilky-tryvaie-terapiia"
+      }
+    ],
+    "seo": {
+      "_type": "seoFields",
+      "title": "Індивідуальне консультування онлайн",
+      "description": "Індивідуальні сесії для дорослих і підлітків: внутрішні стани, емоційні труднощі, життєві кризи, самооцінка та особисті запити."
+    },
+    "cta": {
+      "_type": "reference",
+      "_ref": "cta-default-contact"
+    }
+  },
+  {
+    "_id": "service-onlain-konsultatsiia",
+    "_type": "service",
+    "title": "Сімейне та парне консультування",
+    "slug": {
+      "_type": "slug",
+      "current": "simeine-ta-parne-konsultuvannia"
+    },
+    "shortDescription": "Робота з парами та сім’ями, які переживають конфлікти, кризи, складнощі у комунікації або емоційну дистанцію.",
+    "body": [
+      {
+        "_type": "block",
+        "_key": "content-10",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-10",
+            "text": "Коли варто звернутися разом",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-11",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-11",
+            "text": "Парна або сімейна консультація може бути корисною, коли розмови знову завершуються тим самим конфліктом, накопичуються образи, зникає відчуття близькості або сім’я переживає кризу.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-12",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-12",
+            "text": "Фокус роботи",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-13",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-13",
+            "text": "Ми не шукаємо винного. Досліджуємо внесок кожного у взаємодію, вчимося чути потреби й відновлювати діалог без приниження, тиску та знецінення.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-14",
+        "style": "normal",
+        "listItem": "bullet",
+        "level": 1,
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-14",
+            "text": "повторювані конфлікти й болючі сценарії",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-15",
+        "style": "normal",
+        "listItem": "bullet",
+        "level": 1,
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-15",
+            "text": "емоційна дистанція та складнощі з близькістю",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-16",
+        "style": "normal",
+        "listItem": "bullet",
+        "level": 1,
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-16",
+            "text": "відновлення довіри після зради",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-17",
+        "style": "normal",
+        "listItem": "bullet",
+        "level": 1,
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-17",
+            "text": "межі, ролі та домовленості у сім’ї",
+            "marks": []
+          }
+        ]
+      }
+    ],
+    "relatedConcerns": [
+      {
+        "_type": "reference",
+        "_ref": "concern-stosunky-pislia-zrady"
+      },
+      {
+        "_type": "reference",
+        "_ref": "concern-spivzalezhni-stosunky"
+      },
+      {
+        "_type": "reference",
+        "_ref": "concern-skladnoshchi-u-stosunkakh"
+      }
+    ],
+    "relatedArticles": [
+      {
+        "_type": "reference",
+        "_ref": "article-dovira-pislia-zrady"
+      }
+    ],
+    "faq": [
+      {
+        "_type": "reference",
+        "_ref": "faq-bez-chitkoho-zapytu"
+      },
+      {
+        "_type": "reference",
+        "_ref": "faq-skilky-tryvaie-terapiia"
+      }
+    ],
+    "seo": {
+      "_type": "seoFields",
+      "title": "Сімейне та парне консультування онлайн",
+      "description": "Робота з парами та сім’ями, які переживають конфлікти, кризи, складнощі у комунікації або емоційну дистанцію."
+    },
+    "cta": {
+      "_type": "reference",
+      "_ref": "cta-default-contact"
+    }
+  },
+  {
+    "_id": "dfcee209-8637-4878-aacf-3680bdf00c03",
+    "_type": "service",
+    "title": "Психологічна підтримка 24/7",
+    "slug": {
+      "_type": "slug",
+      "current": "psykholohichna-pidtrymka-24-7"
+    },
+    "shortDescription": "Щоденний супровід у форматі листування для додаткової стабілізації та підтримки у складних емоційних станах.",
+    "body": [
+      {
+        "_type": "block",
+        "_key": "content-18",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-18",
+            "text": "Формат супроводу",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-19",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-19",
+            "text": "Це формат щоденної комунікації лише у листуванні для клієнтів, яким у складний період потрібне додаткове відчуття присутності та опори між зустрічами.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-20",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-20",
+            "text": "Важливі межі",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-21",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-21",
+            "text": "Формат, час відповідей, тривалість супроводу та ситуації, у яких потрібна екстрена медична допомога, узгоджуються до початку роботи. Ця послуга не замінює екстрені служби.",
+            "marks": []
+          }
+        ]
+      }
+    ],
+    "relatedConcerns": [
+      {
+        "_type": "reference",
+        "_ref": "concern-postiina-tryvoha"
+      },
+      {
+        "_type": "reference",
+        "_ref": "concern-emotsiine-vyhorannia"
+      }
+    ],
+    "relatedArticles": [
+      {
+        "_type": "reference",
+        "_ref": "article-oznaky-vyhorannia"
+      },
+      {
+        "_type": "reference",
+        "_ref": "article-yak-vporatysia-z-tryvozhnymy-dumkamy"
+      }
+    ],
+    "faq": [
+      {
+        "_type": "reference",
+        "_ref": "faq-bez-chitkoho-zapytu"
+      },
+      {
+        "_type": "reference",
+        "_ref": "faq-skilky-tryvaie-terapiia"
+      }
+    ],
+    "seo": {
+      "_type": "seoFields",
+      "title": "Психологічна підтримка 24/7 онлайн",
+      "description": "Щоденний супровід у форматі листування для додаткової стабілізації та підтримки у складних емоційних станах."
+    },
+    "cta": {
+      "_type": "reference",
+      "_ref": "cta-default-contact"
+    }
+  },
+  {
+    "_id": "service-tryvozhnist",
+    "_type": "service",
+    "title": "Психокорекційні курси",
+    "slug": {
+      "_type": "slug",
+      "current": "psykhokorektsiini-kursy"
+    },
+    "shortDescription": "Структуровані програми з психоедукацією, практиками та самостійними завданнями для глибокої роботи з поведінковими й емоційними патернами.",
+    "body": [
+      {
+        "_type": "block",
+        "_key": "content-22",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-22",
+            "text": "Курс «Я і мої звички»",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-23",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-23",
+            "text": "Програма про формування психологічних і поведінкових звичок, усвідомлення автоматичних та прихованих реакцій і розвиток саморегуляції. Це не курс про дисципліну за будь-яку ціну, а глибоке дослідження себе.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-24",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-24",
+            "text": "Курс «Самооцінка та самоцінність»",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-25",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-25",
+            "text": "Програма для відновлення внутрішньої цінності, роботи з внутрішнім критиком, соромом, порівнянням себе з іншими та формування більш стабільної самооцінки.",
+            "marks": []
+          }
+        ]
+      }
+    ],
+    "relatedConcerns": [
+      {
+        "_type": "reference",
+        "_ref": "concern-nyzka-samootsinka"
+      },
+      {
+        "_type": "reference",
+        "_ref": "concern-nevpevnenist-i-strakh-pomylok"
+      },
+      {
+        "_type": "reference",
+        "_ref": "concern-zalezhnist-vid-dumky-inshykh"
+      }
+    ],
+    "relatedArticles": [],
+    "faq": [
+      {
+        "_type": "reference",
+        "_ref": "faq-bez-chitkoho-zapytu"
+      },
+      {
+        "_type": "reference",
+        "_ref": "faq-skilky-tryvaie-terapiia"
+      }
+    ],
+    "seo": {
+      "_type": "seoFields",
+      "title": "Психокорекційні курси онлайн",
+      "description": "Структуровані програми з психоедукацією, практиками та самостійними завданнями для глибокої роботи з поведінковими й емоційними патернами."
+    },
+    "cta": {
+      "_type": "reference",
+      "_ref": "cta-default-contact"
+    }
+  },
+  {
+    "_id": "concern-nyzka-samootsinka",
+    "_type": "concern",
+    "title": "Низька самооцінка та самознецінення",
+    "slug": {
+      "_type": "slug",
+      "current": "nyzka-samootsinka"
+    },
+    "searchIntentSummary": "Коли власна цінність залежить від досягнень, схвалення інших або постійного доведення, що ви «достатні».",
+    "shortDescription": "Коли власна цінність залежить від досягнень, схвалення інших або постійного доведення, що ви «достатні».",
+    "body": [
+      {
+        "_type": "block",
+        "_key": "content-26",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-26",
+            "text": "Як це може проявлятися",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-27",
+        "style": "normal",
+        "listItem": "bullet",
+        "level": 1,
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-27",
+            "text": "часте порівняння себе з іншими",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-28",
+        "style": "normal",
+        "listItem": "bullet",
+        "level": 1,
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-28",
+            "text": "знецінення власних успіхів",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-29",
+        "style": "normal",
+        "listItem": "bullet",
+        "level": 1,
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-29",
+            "text": "сильний внутрішній критик",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-30",
+        "style": "normal",
+        "listItem": "bullet",
+        "level": 1,
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-30",
+            "text": "сором за себе та свої потреби",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-31",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-31",
+            "text": "Чому так може відбуватися",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-32",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-32",
+            "text": "Самооцінка формується у стосунках і може залежати від досвіду критики, умовної любові, нестабільного схвалення або звички помічати лише помилки.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-33",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-33",
+            "text": "Як допомагає терапія",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-34",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-34",
+            "text": "У терапії ми досліджуємо походження критичного погляду на себе, вчимося помічати власну цінність не лише через результат і поступово формуємо внутрішню опору.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-35",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-35",
+            "text": "Кому це може бути актуально",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-36",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-36",
+            "text": "Ця тема може бути актуальною, якщо стан повторюється, впливає на сон, роботу, рішення або стосунки й самостійних способів підтримки вже недостатньо. Не потрібно чекати, поки стане нестерпно.",
+            "marks": []
+          }
+        ]
+      }
+    ],
+    "relatedServices": [
+      {
+        "_type": "reference",
+        "_ref": "service-indyvidualna-psykhoterapiia"
+      },
+      {
+        "_type": "reference",
+        "_ref": "service-tryvozhnist"
+      }
+    ],
+    "relatedArticles": [],
+    "faq": [
+      {
+        "_type": "reference",
+        "_ref": "concern-nyzka-samootsinka-faq-1"
+      },
+      {
+        "_type": "reference",
+        "_ref": "concern-nyzka-samootsinka-faq-2"
+      }
+    ],
+    "seo": {
+      "_type": "seoFields",
+      "title": "Низька самооцінка та самознецінення — робота з психологом",
+      "description": "Коли власна цінність залежить від досягнень, схвалення інших або постійного доведення, що ви «достатні»."
+    },
+    "cta": {
+      "_type": "reference",
+      "_ref": "cta-default-contact"
+    }
+  },
+  {
+    "_id": "concern-nevpevnenist-i-strakh-pomylok",
+    "_type": "concern",
+    "title": "Невпевненість у собі та страх помилок",
+    "slug": {
+      "_type": "slug",
+      "current": "nevpevnenist-i-strakh-pomylok"
+    },
+    "searchIntentSummary": "Коли рішення виснажують, сумніви не завершуються, а можливість помилитися здається доказом власної неспроможності.",
+    "shortDescription": "Коли рішення виснажують, сумніви не завершуються, а можливість помилитися здається доказом власної неспроможності.",
+    "body": [
+      {
+        "_type": "block",
+        "_key": "content-37",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-37",
+            "text": "Як це може проявлятися",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-38",
+        "style": "normal",
+        "listItem": "bullet",
+        "level": 1,
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-38",
+            "text": "довге відкладання рішень",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-39",
+        "style": "normal",
+        "listItem": "bullet",
+        "level": 1,
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-39",
+            "text": "потреба у постійному підтвердженні",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-40",
+        "style": "normal",
+        "listItem": "bullet",
+        "level": 1,
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-40",
+            "text": "перфекціонізм і страх почати",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-41",
+        "style": "normal",
+        "listItem": "bullet",
+        "level": 1,
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-41",
+            "text": "самокритика після кожної помилки",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-42",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-42",
+            "text": "Чому так може відбуватися",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-43",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-43",
+            "text": "За страхом помилок часто стоять досвід жорсткої оцінки, завищені вимоги до себе, сором або переконання, що помилка загрожує стосункам і прийняттю.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-44",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-44",
+            "text": "Як допомагає терапія",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-45",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-45",
+            "text": "Ми вчимося розрізняти реальний ризик і страх оцінки, досліджуємо внутрішні вимоги та розвиваємо здатність робити вибір, не вимагаючи від себе абсолютної певності.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-46",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-46",
+            "text": "Кому це може бути актуально",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-47",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-47",
+            "text": "Ця тема може бути актуальною, якщо стан повторюється, впливає на сон, роботу, рішення або стосунки й самостійних способів підтримки вже недостатньо. Не потрібно чекати, поки стане нестерпно.",
+            "marks": []
+          }
+        ]
+      }
+    ],
+    "relatedServices": [
+      {
+        "_type": "reference",
+        "_ref": "service-indyvidualna-psykhoterapiia"
+      },
+      {
+        "_type": "reference",
+        "_ref": "service-tryvozhnist"
+      }
+    ],
+    "relatedArticles": [
+      {
+        "_type": "reference",
+        "_ref": "article-pershe-povidomlennia-psykhoterapevtu"
+      },
+      {
+        "_type": "reference",
+        "_ref": "article-yak-pryiniaty-rishennia"
+      }
+    ],
+    "faq": [],
+    "seo": {
+      "_type": "seoFields",
+      "title": "Невпевненість у собі та страх помилок — робота з психологом",
+      "description": "Коли рішення виснажують, сумніви не завершуються, а можливість помилитися здається доказом власної неспроможності."
+    },
+    "cta": {
+      "_type": "reference",
+      "_ref": "cta-default-contact"
+    }
+  },
+  {
+    "_id": "concern-zalezhnist-vid-dumky-inshykh",
+    "_type": "concern",
+    "title": "Залежність від думки інших",
+    "slug": {
+      "_type": "slug",
+      "current": "zalezhnist-vid-dumky-inshykh"
+    },
+    "searchIntentSummary": "Коли ви постійно думаєте, що скажуть інші, і через це складно обрати своє, проявитися або захистити власне рішення.",
+    "shortDescription": "Коли ви постійно думаєте, що скажуть інші, і через це складно обрати своє, проявитися або захистити власне рішення.",
+    "body": [
+      {
+        "_type": "block",
+        "_key": "content-48",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-48",
+            "text": "Як це може проявлятися",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-49",
+        "style": "normal",
+        "listItem": "bullet",
+        "level": 1,
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-49",
+            "text": "зміна рішень після чужої реакції",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-50",
+        "style": "normal",
+        "listItem": "bullet",
+        "level": 1,
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-50",
+            "text": "страх розчарувати близьких",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-51",
+        "style": "normal",
+        "listItem": "bullet",
+        "level": 1,
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-51",
+            "text": "пошук дозволу на власні бажання",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-52",
+        "style": "normal",
+        "listItem": "bullet",
+        "level": 1,
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-52",
+            "text": "сором бути помітною або незручною",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-53",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-53",
+            "text": "Чому так може відбуватися",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-54",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-54",
+            "text": "Потреба у схваленні природна. Вона стає виснажливою, коли без чужого підтвердження неможливо відчути право на вибір, межі та власний голос.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-55",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-55",
+            "text": "Як допомагає терапія",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-56",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-56",
+            "text": "У терапії можна краще почути свої бажання, дослідити страх відкидання та поступово витримувати різницю між власним вибором і очікуваннями інших.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-57",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-57",
+            "text": "Кому це може бути актуально",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-58",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-58",
+            "text": "Ця тема може бути актуальною, якщо стан повторюється, впливає на сон, роботу, рішення або стосунки й самостійних способів підтримки вже недостатньо. Не потрібно чекати, поки стане нестерпно.",
+            "marks": []
+          }
+        ]
+      }
+    ],
+    "relatedServices": [
+      {
+        "_type": "reference",
+        "_ref": "service-indyvidualna-psykhoterapiia"
+      },
+      {
+        "_type": "reference",
+        "_ref": "service-tryvozhnist"
+      }
+    ],
+    "relatedArticles": [
+      {
+        "_type": "reference",
+        "_ref": "article-yak-pryiniaty-rishennia"
+      },
+      {
+        "_type": "reference",
+        "_ref": "article-yak-skazaty-ni"
+      }
+    ],
+    "faq": [],
+    "seo": {
+      "_type": "seoFields",
+      "title": "Залежність від думки інших — робота з психологом",
+      "description": "Коли ви постійно думаєте, що скажуть інші, і через це складно обрати своє, проявитися або захистити власне рішення."
+    },
+    "cta": {
+      "_type": "reference",
+      "_ref": "cta-default-contact"
+    }
+  },
+  {
+    "_id": "concern-osobysti-mezhi",
+    "_type": "concern",
+    "title": "Особисті межі та вміння казати «ні»",
+    "slug": {
+      "_type": "slug",
+      "current": "osobysti-mezhi"
+    },
+    "searchIntentSummary": "Коли відмова викликає провину, чужий тиск складно витримувати, а власні потреби постійно опиняються на останньому місці.",
+    "shortDescription": "Коли відмова викликає провину, чужий тиск складно витримувати, а власні потреби постійно опиняються на останньому місці.",
+    "body": [
+      {
+        "_type": "block",
+        "_key": "content-59",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-59",
+            "text": "Як це може проявлятися",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-60",
+        "style": "normal",
+        "listItem": "bullet",
+        "level": 1,
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-60",
+            "text": "автоматична згода всупереч собі",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-61",
+        "style": "normal",
+        "listItem": "bullet",
+        "level": 1,
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-61",
+            "text": "провина після відмови",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-62",
+        "style": "normal",
+        "listItem": "bullet",
+        "level": 1,
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-62",
+            "text": "страх конфлікту або образи",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-63",
+        "style": "normal",
+        "listItem": "bullet",
+        "level": 1,
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-63",
+            "text": "накопичення злості та виснаження",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-64",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-64",
+            "text": "Чому так може відбуватися",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-65",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-65",
+            "text": "Складність із межами часто пов’язана зі страхом втратити стосунки, досвідом покарання за незгоду або переконанням, що хороша людина завжди зручна.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-66",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-66",
+            "text": "Як допомагає терапія",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-67",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-67",
+            "text": "Ми вчимося розпізнавати власне «так» і «ні», говорити про потреби без нападу та витримувати реакцію іншої людини, не зраджуючи себе.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-68",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-68",
+            "text": "Кому це може бути актуально",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-69",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-69",
+            "text": "Ця тема може бути актуальною, якщо стан повторюється, впливає на сон, роботу, рішення або стосунки й самостійних способів підтримки вже недостатньо. Не потрібно чекати, поки стане нестерпно.",
+            "marks": []
+          }
+        ]
+      }
+    ],
+    "relatedServices": [
+      {
+        "_type": "reference",
+        "_ref": "service-indyvidualna-psykhoterapiia"
+      },
+      {
+        "_type": "reference",
+        "_ref": "service-onlain-konsultatsiia"
+      }
+    ],
+    "relatedArticles": [
+      {
+        "_type": "reference",
+        "_ref": "article-yak-skazaty-ni"
+      }
+    ],
+    "faq": [
+      {
+        "_type": "reference",
+        "_ref": "concern-osobysti-mezhi-faq-1"
+      },
+      {
+        "_type": "reference",
+        "_ref": "concern-osobysti-mezhi-faq-2"
+      },
+      {
+        "_type": "reference",
+        "_ref": "concern-osobysti-mezhi-faq-3"
+      }
+    ],
+    "seo": {
+      "_type": "seoFields",
+      "title": "Особисті межі та вміння казати «ні» — робота з психологом",
+      "description": "Коли відмова викликає провину, чужий тиск складно витримувати, а власні потреби постійно опиняються на останньому місці."
+    },
+    "cta": {
+      "_type": "reference",
+      "_ref": "cta-default-contact"
+    }
+  },
+  {
+    "_id": "concern-emotsiine-vyhorannia",
+    "_type": "concern",
+    "title": "Емоційне вигорання",
+    "slug": {
+      "_type": "slug",
+      "current": "emotsiine-vyhorannia"
+    },
+    "searchIntentSummary": "Коли втома не минає після відпочинку, зростає дратівливість, зникає сенс і навіть прості справи потребують надмірних зусиль.",
+    "shortDescription": "Коли втома не минає після відпочинку, зростає дратівливість, зникає сенс і навіть прості справи потребують надмірних зусиль.",
+    "body": [
+      {
+        "_type": "block",
+        "_key": "content-70",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-70",
+            "text": "Як це може проявлятися",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-71",
+        "style": "normal",
+        "listItem": "bullet",
+        "level": 1,
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-71",
+            "text": "постійна втома й перевантаження",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-72",
+        "style": "normal",
+        "listItem": "bullet",
+        "level": 1,
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-72",
+            "text": "дратівливість або емоційне оніміння",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-73",
+        "style": "normal",
+        "listItem": "bullet",
+        "level": 1,
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-73",
+            "text": "втрата інтересу та сенсу",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-74",
+        "style": "normal",
+        "listItem": "bullet",
+        "level": 1,
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-74",
+            "text": "відчуття, що відпочинок треба заслужити",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-75",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-75",
+            "text": "Чому так може відбуватися",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-76",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-76",
+            "text": "Вигорання підтримують не лише обсяг справ, а й тривалий стрес, відсутність меж, неможливість відновлюватися та життя всупереч власним потребам.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-77",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-77",
+            "text": "Як допомагає терапія",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-78",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-78",
+            "text": "Ми досліджуємо, що виснажує саме вас, повертаємо контакт із потребами, переглядаємо внутрішні вимоги та шукаємо реалістичний ритм відновлення.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-79",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-79",
+            "text": "Кому це може бути актуально",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-80",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-80",
+            "text": "Ця тема може бути актуальною, якщо стан повторюється, впливає на сон, роботу, рішення або стосунки й самостійних способів підтримки вже недостатньо. Не потрібно чекати, поки стане нестерпно.",
+            "marks": []
+          }
+        ]
+      }
+    ],
+    "relatedServices": [
+      {
+        "_type": "reference",
+        "_ref": "service-indyvidualna-psykhoterapiia"
+      },
+      {
+        "_type": "reference",
+        "_ref": "dfcee209-8637-4878-aacf-3680bdf00c03"
+      }
+    ],
+    "relatedArticles": [
+      {
+        "_type": "reference",
+        "_ref": "article-koli-zvertatysia-do-psykhoterapevta"
+      },
+      {
+        "_type": "reference",
+        "_ref": "article-oznaky-vyhorannia"
+      }
+    ],
+    "faq": [],
+    "seo": {
+      "_type": "seoFields",
+      "title": "Емоційне вигорання — робота з психологом",
+      "description": "Коли втома не минає після відпочинку, зростає дратівливість, зникає сенс і навіть прості справи потребують надмірних зусиль."
+    },
+    "cta": {
+      "_type": "reference",
+      "_ref": "cta-default-contact"
+    }
+  },
+  {
+    "_id": "concern-postiina-tryvoha",
+    "_type": "concern",
+    "title": "Нав’язливі тривожні думки",
+    "slug": {
+      "_type": "slug",
+      "current": "naviazlyvi-tryvozhni-dumky"
+    },
+    "searchIntentSummary": "Коли розум безупинно створює негативні сценарії, майбутнє лякає, а тіло майже не виходить зі стану напруги.",
+    "shortDescription": "Коли розум безупинно створює негативні сценарії, майбутнє лякає, а тіло майже не виходить зі стану напруги.",
+    "body": [
+      {
+        "_type": "block",
+        "_key": "content-81",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-81",
+            "text": "Як це може проявлятися",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-82",
+        "style": "normal",
+        "listItem": "bullet",
+        "level": 1,
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-82",
+            "text": "прокручування найгірших сценаріїв",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-83",
+        "style": "normal",
+        "listItem": "bullet",
+        "level": 1,
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-83",
+            "text": "постійна перевірка й пошук гарантій",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-84",
+        "style": "normal",
+        "listItem": "bullet",
+        "level": 1,
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-84",
+            "text": "складність заснути або відпочити",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-85",
+        "style": "normal",
+        "listItem": "bullet",
+        "level": 1,
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-85",
+            "text": "страх майбутнього та тілесна напруга",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-86",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-86",
+            "text": "Чому так може відбуватися",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-87",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-87",
+            "text": "Тривожне мислення часто намагається створити контроль там, де немає повної визначеності. Тимчасове заспокоєння від перевірок підтримує цей цикл.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-88",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-88",
+            "text": "Як допомагає терапія",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-89",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-89",
+            "text": "У терапії ми досліджуємо цикл тривоги, вчимося повертатися до теперішнього, витримувати невизначеність і розрізняти думку, почуття та реальну небезпеку.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-90",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-90",
+            "text": "Кому це може бути актуально",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-91",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-91",
+            "text": "Ця тема може бути актуальною, якщо стан повторюється, впливає на сон, роботу, рішення або стосунки й самостійних способів підтримки вже недостатньо. Не потрібно чекати, поки стане нестерпно.",
+            "marks": []
+          }
+        ]
+      }
+    ],
+    "relatedServices": [
+      {
+        "_type": "reference",
+        "_ref": "service-indyvidualna-psykhoterapiia"
+      },
+      {
+        "_type": "reference",
+        "_ref": "dfcee209-8637-4878-aacf-3680bdf00c03"
+      }
+    ],
+    "relatedArticles": [
+      {
+        "_type": "reference",
+        "_ref": "article-koli-zvertatysia-do-psykhoterapevta"
+      },
+      {
+        "_type": "reference",
+        "_ref": "article-yak-vporatysia-z-tryvozhnymy-dumkamy"
+      }
+    ],
+    "faq": [],
+    "seo": {
+      "_type": "seoFields",
+      "title": "Нав’язливі тривожні думки — робота з психологом",
+      "description": "Коли розум безупинно створює негативні сценарії, майбутнє лякає, а тіло майже не виходить зі стану напруги."
+    },
+    "cta": {
+      "_type": "reference",
+      "_ref": "cta-default-contact"
+    }
+  },
+  {
+    "_id": "concern-stosunky-pislia-zrady",
+    "_type": "concern",
+    "title": "Стосунки після зради",
+    "slug": {
+      "_type": "slug",
+      "current": "stosunky-pislia-zrady"
+    },
+    "searchIntentSummary": "Підтримка у проживанні болю, відновленні довіри та рішенні — залишатися у стосунках чи завершувати їх.",
+    "shortDescription": "Підтримка у проживанні болю, відновленні довіри та рішенні — залишатися у стосунках чи завершувати їх.",
+    "body": [
+      {
+        "_type": "block",
+        "_key": "content-92",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-92",
+            "text": "Як це може проявлятися",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-93",
+        "style": "normal",
+        "listItem": "bullet",
+        "level": 1,
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-93",
+            "text": "гострий біль, злість і розгубленість",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-94",
+        "style": "normal",
+        "listItem": "bullet",
+        "level": 1,
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-94",
+            "text": "нав’язливі перевірки та недовіра",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-95",
+        "style": "normal",
+        "listItem": "bullet",
+        "level": 1,
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-95",
+            "text": "коливання між близькістю й віддаленням",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-96",
+        "style": "normal",
+        "listItem": "bullet",
+        "level": 1,
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-96",
+            "text": "тиск швидко пробачити або вирішити",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-97",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-97",
+            "text": "Чому так може відбуватися",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-98",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-98",
+            "text": "Зрада руйнує не лише домовленість, а й відчуття реальності та безпеки у стосунках. Відновлення потребує часу, відповідальності й чесного діалогу.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-99",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-99",
+            "text": "Як допомагає терапія",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-100",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-100",
+            "text": "Терапія не підштовхує до конкретного рішення. Вона допомагає прожити травматичний досвід, побачити можливості пари й зробити вибір, який не суперечить вашим цінностям.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-101",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-101",
+            "text": "Кому це може бути актуально",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-102",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-102",
+            "text": "Ця тема може бути актуальною, якщо стан повторюється, впливає на сон, роботу, рішення або стосунки й самостійних способів підтримки вже недостатньо. Не потрібно чекати, поки стане нестерпно.",
+            "marks": []
+          }
+        ]
+      }
+    ],
+    "relatedServices": [
+      {
+        "_type": "reference",
+        "_ref": "service-onlain-konsultatsiia"
+      },
+      {
+        "_type": "reference",
+        "_ref": "service-indyvidualna-psykhoterapiia"
+      }
+    ],
+    "relatedArticles": [
+      {
+        "_type": "reference",
+        "_ref": "article-dovira-pislia-zrady"
+      }
+    ],
+    "faq": [],
+    "seo": {
+      "_type": "seoFields",
+      "title": "Стосунки після зради — робота з психологом",
+      "description": "Підтримка у проживанні болю, відновленні довіри та рішенні — залишатися у стосунках чи завершувати їх."
+    },
+    "cta": {
+      "_type": "reference",
+      "_ref": "cta-default-contact"
+    }
+  },
+  {
+    "_id": "concern-spivzalezhni-stosunky",
+    "_type": "concern",
+    "title": "Співзалежні стосунки",
+    "slug": {
+      "_type": "slug",
+      "current": "spivzalezhni-stosunky"
+    },
+    "searchIntentSummary": "Коли турбота про іншого перетворюється на втрату себе, контроль, самопожертву та страх залишитися наодинці.",
+    "shortDescription": "Коли турбота про іншого перетворюється на втрату себе, контроль, самопожертву та страх залишитися наодинці.",
+    "body": [
+      {
+        "_type": "block",
+        "_key": "content-103",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-103",
+            "text": "Як це може проявлятися",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-104",
+        "style": "normal",
+        "listItem": "bullet",
+        "level": 1,
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-104",
+            "text": "відповідальність за настрій і вибір партнера",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-105",
+        "style": "normal",
+        "listItem": "bullet",
+        "level": 1,
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-105",
+            "text": "страх дистанції та самотності",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-106",
+        "style": "normal",
+        "listItem": "bullet",
+        "level": 1,
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-106",
+            "text": "контроль під виглядом турботи",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-107",
+        "style": "normal",
+        "listItem": "bullet",
+        "level": 1,
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-107",
+            "text": "відмова від власних потреб і меж",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-108",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-108",
+            "text": "Чому так може відбуватися",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-109",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-109",
+            "text": "Співзалежність відрізняється від близькості тим, що окремість переживається як загроза, а власна цінність залежить від потрібності іншому.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-110",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-110",
+            "text": "Як допомагає терапія",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-111",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-111",
+            "text": "Ми відновлюємо контакт із власними потребами, вчимося розрізняти турботу й контроль, будувати межі та залишатися у близькості без втрати себе.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-112",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-112",
+            "text": "Кому це може бути актуально",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-113",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-113",
+            "text": "Ця тема може бути актуальною, якщо стан повторюється, впливає на сон, роботу, рішення або стосунки й самостійних способів підтримки вже недостатньо. Не потрібно чекати, поки стане нестерпно.",
+            "marks": []
+          }
+        ]
+      }
+    ],
+    "relatedServices": [
+      {
+        "_type": "reference",
+        "_ref": "service-onlain-konsultatsiia"
+      },
+      {
+        "_type": "reference",
+        "_ref": "service-indyvidualna-psykhoterapiia"
+      }
+    ],
+    "relatedArticles": [],
+    "faq": [],
+    "seo": {
+      "_type": "seoFields",
+      "title": "Співзалежні стосунки — робота з психологом",
+      "description": "Коли турбота про іншого перетворюється на втрату себе, контроль, самопожертву та страх залишитися наодинці."
+    },
+    "cta": {
+      "_type": "reference",
+      "_ref": "cta-default-contact"
+    }
+  },
+  {
+    "_id": "concern-skladnoshchi-u-stosunkakh",
+    "_type": "concern",
+    "title": "Сімейні конфлікти",
+    "slug": {
+      "_type": "slug",
+      "current": "simeini-konflikty"
+    },
+    "searchIntentSummary": "Коли суперечки повторюються за одним сценарієм, партнери перестають чути одне одного, а емоційна дистанція зростає.",
+    "shortDescription": "Коли суперечки повторюються за одним сценарієм, партнери перестають чути одне одного, а емоційна дистанція зростає.",
+    "body": [
+      {
+        "_type": "block",
+        "_key": "content-114",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-114",
+            "text": "Як це може проявлятися",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-115",
+        "style": "normal",
+        "listItem": "bullet",
+        "level": 1,
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-115",
+            "text": "одні й ті самі сварки без рішення",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-116",
+        "style": "normal",
+        "listItem": "bullet",
+        "level": 1,
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-116",
+            "text": "критика, захист, мовчання або знецінення",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-117",
+        "style": "normal",
+        "listItem": "bullet",
+        "level": 1,
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-117",
+            "text": "відчуття самотності у стосунках",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-118",
+        "style": "normal",
+        "listItem": "bullet",
+        "level": 1,
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-118",
+            "text": "складність говорити про вразливі потреби",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-119",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-119",
+            "text": "Чому так може відбуватися",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-120",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-120",
+            "text": "За конфліктом часто стоять не лише факти, а й непочуті потреби, страх втрати близькості, старі сімейні сценарії та способи захисту.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-121",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-121",
+            "text": "Як допомагає терапія",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-122",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-122",
+            "text": "На консультаціях ми сповільнюємо звичний цикл конфлікту, вчимося чути зміст за реакціями й створювати нові домовленості.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-123",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-123",
+            "text": "Кому це може бути актуально",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-124",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-124",
+            "text": "Ця тема може бути актуальною, якщо стан повторюється, впливає на сон, роботу, рішення або стосунки й самостійних способів підтримки вже недостатньо. Не потрібно чекати, поки стане нестерпно.",
+            "marks": []
+          }
+        ]
+      }
+    ],
+    "relatedServices": [
+      {
+        "_type": "reference",
+        "_ref": "service-onlain-konsultatsiia"
+      }
+    ],
+    "relatedArticles": [
+      {
+        "_type": "reference",
+        "_ref": "article-dovira-pislia-zrady"
+      }
+    ],
+    "faq": [],
+    "seo": {
+      "_type": "seoFields",
+      "title": "Сімейні конфлікти — робота з психологом",
+      "description": "Коли суперечки повторюються за одним сценарієм, партнери перестають чути одне одного, а емоційна дистанція зростає."
+    },
+    "cta": {
+      "_type": "reference",
+      "_ref": "cta-default-contact"
+    }
+  },
+  {
+    "_id": "article-koli-zvertatysia-do-psykhoterapevta",
+    "_type": "article",
+    "title": "Коли варто звернутися до психолога",
+    "slug": {
+      "_type": "slug",
+      "current": "koly-varto-zvernutysia-do-psykholoha"
+    },
+    "excerpt": "Орієнтири для моментів, коли самостійно вже складно, але рішення звернутися по підтримку ще дозріває.",
+    "author": {
+      "_type": "reference",
+      "_ref": "author-valentyna-chaika"
+    },
+    "publishedAt": "2026-07-10T00:00:00.000Z",
+    "updatedAt": "2026-07-25T07:58:12.029Z",
+    "heroImageUrl": "/images/clusters/first-consultation.webp",
+    "body": [
+      {
+        "_type": "block",
+        "_key": "content-125",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-125",
+            "text": "Не обов’язково чекати кризи",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-126",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-126",
+            "text": "Звернення по психологічну підтримку доречне не лише тоді, коли «вже зовсім неможливо». Достатньою причиною може бути повторюваний стан, який забирає сили, ускладнює стосунки або не дає жити так, як вам хочеться.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-127",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-127",
+            "text": "Сигнали, на які варто звернути увагу",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-128",
+        "style": "normal",
+        "listItem": "bullet",
+        "level": 1,
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-128",
+            "text": "тривога, напруга чи втома стали постійним фоном",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-129",
+        "style": "normal",
+        "listItem": "bullet",
+        "level": 1,
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-129",
+            "text": "повторюються болючі сценарії у стосунках",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-130",
+        "style": "normal",
+        "listItem": "bullet",
+        "level": 1,
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-130",
+            "text": "складно відчути свої бажання, зробити вибір або поставити межу",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-131",
+        "style": "normal",
+        "listItem": "bullet",
+        "level": 1,
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-131",
+            "text": "звичні способи самопідтримки більше не працюють",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-132",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-132",
+            "text": "З чого почати",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-133",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-133",
+            "text": "Перше повідомлення може бути коротким. Достатньо написати, що зараз турбує і що ви хочете дізнатися про формат консультації. Чіткий запит можна сформувати вже разом.",
+            "marks": []
+          }
+        ]
+      }
+    ],
+    "relatedServices": [
+      {
+        "_type": "reference",
+        "_ref": "service-indyvidualna-psykhoterapiia"
+      }
+    ],
+    "relatedConcerns": [
+      {
+        "_type": "reference",
+        "_ref": "concern-postiina-tryvoha"
+      },
+      {
+        "_type": "reference",
+        "_ref": "concern-emotsiine-vyhorannia"
+      }
+    ],
+    "seo": {
+      "_type": "seoFields",
+      "title": "Коли варто звернутися до психолога",
+      "description": "Орієнтири для моментів, коли самостійно вже складно, але рішення звернутися по підтримку ще дозріває."
+    },
+    "cta": {
+      "_type": "reference",
+      "_ref": "cta-default-contact"
+    }
+  },
+  {
+    "_id": "article-pershe-povidomlennia-psykhoterapevtu",
+    "_type": "article",
+    "title": "Що написати психологу у першому повідомленні",
+    "slug": {
+      "_type": "slug",
+      "current": "shcho-napysaty-psykholohu"
+    },
+    "excerpt": "Простий спосіб почати розмову, навіть якщо соромно, тривожно або запит ще не сформульований.",
+    "author": {
+      "_type": "reference",
+      "_ref": "author-valentyna-chaika"
+    },
+    "publishedAt": "2026-07-11T00:00:00.000Z",
+    "updatedAt": "2026-07-25T07:58:12.029Z",
+    "heroImageUrl": "/images/clusters/first-consultation.webp",
+    "body": [
+      {
+        "_type": "block",
+        "_key": "content-134",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-134",
+            "text": "Повідомлення не має бути ідеальним",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-135",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-135",
+            "text": "Психологу не потрібна повна історія життя у першому повідомленні. Можна написати: «Добрий день. Останнім часом мені тривожно і я хочу дізнатися про консультацію».",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-136",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-136",
+            "text": "Що можна уточнити",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-137",
+        "style": "normal",
+        "listItem": "bullet",
+        "level": 1,
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-137",
+            "text": "чи працює спеціаліст із вашою темою",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-138",
+        "style": "normal",
+        "listItem": "bullet",
+        "level": 1,
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-138",
+            "text": "який формат і тривалість зустрічі",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-139",
+        "style": "normal",
+        "listItem": "bullet",
+        "level": 1,
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-139",
+            "text": "вартість, спосіб оплати й найближчий доступний час",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-140",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-140",
+            "text": "Якщо соромно",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-141",
+        "style": "blockquote",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-141",
+            "text": "«Мені складно про це говорити, але я хочу спробувати звернутися по підтримку».",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-142",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-142",
+            "text": "Цього достатньо для першого кроку. Подробиці можна розкривати у своєму темпі.",
+            "marks": []
+          }
+        ]
+      }
+    ],
+    "relatedServices": [
+      {
+        "_type": "reference",
+        "_ref": "service-indyvidualna-psykhoterapiia"
+      }
+    ],
+    "relatedConcerns": [
+      {
+        "_type": "reference",
+        "_ref": "concern-nevpevnenist-i-strakh-pomylok"
+      }
+    ],
+    "seo": {
+      "_type": "seoFields",
+      "title": "Що написати психологу у першому повідомленні",
+      "description": "Простий спосіб почати розмову, навіть якщо соромно, тривожно або запит ще не сформульований."
+    },
+    "cta": {
+      "_type": "reference",
+      "_ref": "cta-default-contact"
+    }
+  },
+  {
+    "_id": "article-yak-pryiniaty-rishennia",
+    "_type": "article",
+    "title": "Як прийняти рішення, коли постійно сумніваєшся",
+    "slug": {
+      "_type": "slug",
+      "current": "yak-pryiniaty-rishennia-koly-sumnivaieshsia"
+    },
+    "excerpt": "Чому пошук стовідсоткової певності виснажує і як повернути собі право на вибір.",
+    "author": {
+      "_type": "reference",
+      "_ref": "author-valentyna-chaika"
+    },
+    "publishedAt": "2026-07-12T00:00:00.000Z",
+    "updatedAt": "2026-07-25T07:58:12.029Z",
+    "heroImageUrl": "/images/clusters/self-esteem.webp",
+    "body": [
+      {
+        "_type": "block",
+        "_key": "content-143",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-143",
+            "text": "Чому рішення застрягає",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-144",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-144",
+            "text": "Іноді ми шукаємо не найкращий варіант, а гарантію, що не помилимося і не зустрінемося з чужим невдоволенням. Такої гарантії зазвичай не існує.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-145",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-145",
+            "text": "Три опори для вибору",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-146",
+        "style": "normal",
+        "listItem": "number",
+        "level": 1,
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-146",
+            "text": "Назвати, що важливо саме вам, а не лише оточенню.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-147",
+        "style": "normal",
+        "listItem": "number",
+        "level": 1,
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-147",
+            "text": "Оцінити реальні наслідки кожного варіанта без катастрофізації.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-148",
+        "style": "normal",
+        "listItem": "number",
+        "level": 1,
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-148",
+            "text": "Визначити, яку невизначеність ви готові витримати заради свого рішення.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-149",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-149",
+            "text": "Коли допоможе терапія",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-150",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-150",
+            "text": "Якщо сумніви повторюються у різних сферах, терапія допомагає дослідити страх помилки, залежність від оцінки й навчитися спиратися на власні цінності.",
+            "marks": []
+          }
+        ]
+      }
+    ],
+    "relatedServices": [
+      {
+        "_type": "reference",
+        "_ref": "service-indyvidualna-psykhoterapiia"
+      }
+    ],
+    "relatedConcerns": [
+      {
+        "_type": "reference",
+        "_ref": "concern-nevpevnenist-i-strakh-pomylok"
+      },
+      {
+        "_type": "reference",
+        "_ref": "concern-zalezhnist-vid-dumky-inshykh"
+      }
+    ],
+    "seo": {
+      "_type": "seoFields",
+      "title": "Як прийняти рішення, коли постійно сумніваєшся",
+      "description": "Чому пошук стовідсоткової певності виснажує і як повернути собі право на вибір."
+    },
+    "cta": {
+      "_type": "reference",
+      "_ref": "cta-default-contact"
+    }
+  },
+  {
+    "_id": "article-yak-skazaty-ni",
+    "_type": "article",
+    "title": "Як сказати «ні» й не зрадити себе",
+    "slug": {
+      "_type": "slug",
+      "current": "yak-skazaty-ni"
+    },
+    "excerpt": "Практичні орієнтири для відмови без зайвих виправдань і роботи з провиною після неї.",
+    "author": {
+      "_type": "reference",
+      "_ref": "author-valentyna-chaika"
+    },
+    "publishedAt": "2026-07-13T00:00:00.000Z",
+    "updatedAt": "2026-07-25T07:58:12.029Z",
+    "heroImageUrl": "/images/clusters/boundaries.webp",
+    "body": [
+      {
+        "_type": "block",
+        "_key": "content-151",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-151",
+            "text": "Коротка формула відмови",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-152",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-152",
+            "text": "Назвіть рішення, за потреби коротко поясніть і не перетворюйте пояснення на прохання про дозвіл: «Я не зможу це взяти. Мені потрібно залишити цей час вільним».",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-153",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-153",
+            "text": "Що робити з провиною",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-154",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-154",
+            "text": "Не поспішайте скасовувати межу лише для того, щоб провина зникла. Дайте почуттю час і перевірте: ви справді завдали шкоди чи просто перестали бути зручними?",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-155",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-155",
+            "text": "Якщо тиск продовжується",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-156",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-156",
+            "text": "Повторіть відповідь без нових аргументів. У небезпечних або контролюючих стосунках пріоритетом є не переконати іншу людину, а подбати про безпеку та підтримку.",
+            "marks": []
+          }
+        ]
+      }
+    ],
+    "relatedServices": [
+      {
+        "_type": "reference",
+        "_ref": "service-indyvidualna-psykhoterapiia"
+      }
+    ],
+    "relatedConcerns": [
+      {
+        "_type": "reference",
+        "_ref": "concern-osobysti-mezhi"
+      },
+      {
+        "_type": "reference",
+        "_ref": "concern-zalezhnist-vid-dumky-inshykh"
+      }
+    ],
+    "seo": {
+      "_type": "seoFields",
+      "title": "Як сказати «ні» й не зрадити себе",
+      "description": "Практичні орієнтири для відмови без зайвих виправдань і роботи з провиною після неї."
+    },
+    "cta": {
+      "_type": "reference",
+      "_ref": "cta-default-contact"
+    }
+  },
+  {
+    "_id": "article-oznaky-vyhorannia",
+    "_type": "article",
+    "title": "Емоційне вигорання: коли відпочинку вже недостатньо",
+    "slug": {
+      "_type": "slug",
+      "current": "emotsiine-vyhorannia-oznaky"
+    },
+    "excerpt": "Як відрізнити звичайну втому від виснаження, яке потребує зміни ритму та підтримки.",
+    "author": {
+      "_type": "reference",
+      "_ref": "author-valentyna-chaika"
+    },
+    "publishedAt": "2026-07-14T00:00:00.000Z",
+    "updatedAt": "2026-07-25T07:58:12.029Z",
+    "heroImageUrl": "/images/clusters/burnout.webp",
+    "body": [
+      {
+        "_type": "block",
+        "_key": "content-157",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-157",
+            "text": "Не лише втома",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-158",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-158",
+            "text": "При вигоранні відпочинок може давати дуже коротке полегшення, бо незмінними залишаються перевантаження, внутрішні вимоги та відсутність меж.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-159",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-159",
+            "text": "Що підтримує виснаження",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-160",
+        "style": "normal",
+        "listItem": "bullet",
+        "level": 1,
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-160",
+            "text": "звичка ігнорувати сигнали тіла",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-161",
+        "style": "normal",
+        "listItem": "bullet",
+        "level": 1,
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-161",
+            "text": "неможливість відмовити або делегувати",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-162",
+        "style": "normal",
+        "listItem": "bullet",
+        "level": 1,
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-162",
+            "text": "відчуття, що цінність залежить від продуктивності",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-163",
+        "style": "normal",
+        "listItem": "bullet",
+        "level": 1,
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-163",
+            "text": "тривалий стрес без достатнього відновлення",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-164",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-164",
+            "text": "Перший крок",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-165",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-165",
+            "text": "Спробуйте не лише «краще відпочити», а й назвати джерела витрат. Якщо змінити їх самостійно складно, це може стати темою консультації.",
+            "marks": []
+          }
+        ]
+      }
+    ],
+    "relatedServices": [
+      {
+        "_type": "reference",
+        "_ref": "service-indyvidualna-psykhoterapiia"
+      },
+      {
+        "_type": "reference",
+        "_ref": "dfcee209-8637-4878-aacf-3680bdf00c03"
+      }
+    ],
+    "relatedConcerns": [
+      {
+        "_type": "reference",
+        "_ref": "concern-emotsiine-vyhorannia"
+      }
+    ],
+    "seo": {
+      "_type": "seoFields",
+      "title": "Емоційне вигорання: коли відпочинку вже недостатньо",
+      "description": "Як відрізнити звичайну втому від виснаження, яке потребує зміни ритму та підтримки."
+    },
+    "cta": {
+      "_type": "reference",
+      "_ref": "cta-default-contact"
+    }
+  },
+  {
+    "_id": "article-yak-vporatysia-z-tryvozhnymy-dumkamy",
+    "_type": "article",
+    "title": "Що робити, коли тривожні думки не зупиняються",
+    "slug": {
+      "_type": "slug",
+      "current": "shcho-robyty-z-tryvozhnymy-dumkamy"
+    },
+    "excerpt": "Як розірвати цикл негативних сценаріїв, перевірок і короткого заспокоєння.",
+    "author": {
+      "_type": "reference",
+      "_ref": "author-valentyna-chaika"
+    },
+    "publishedAt": "2026-07-15T00:00:00.000Z",
+    "updatedAt": "2026-07-25T07:58:12.029Z",
+    "heroImageUrl": "/images/clusters/anxiety.webp",
+    "body": [
+      {
+        "_type": "block",
+        "_key": "content-166",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-166",
+            "text": "Думка — не прогноз",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-167",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-167",
+            "text": "Тривожний сценарій може відчуватися дуже переконливо, але його інтенсивність не робить його фактом. Спробуйте назвати: «Зараз у мене є думка, що…».",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-168",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-168",
+            "text": "Повернення до теперішнього",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-169",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-169",
+            "text": "Озирніться навколо, відчуйте опору під ногами й назвіть одну дію, яку можете зробити зараз. Мета не в тому, щоб заборонити думки, а в тому, щоб не віддавати їм усе керування.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-170",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-170",
+            "text": "Коли звернутися по допомогу",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-171",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-171",
+            "text": "Якщо думки регулярно порушують сон, роботу або стосунки, разом із психологом можна дослідити цикл тривоги й підібрати стійкіші способи підтримки.",
+            "marks": []
+          }
+        ]
+      }
+    ],
+    "relatedServices": [
+      {
+        "_type": "reference",
+        "_ref": "service-indyvidualna-psykhoterapiia"
+      },
+      {
+        "_type": "reference",
+        "_ref": "dfcee209-8637-4878-aacf-3680bdf00c03"
+      }
+    ],
+    "relatedConcerns": [
+      {
+        "_type": "reference",
+        "_ref": "concern-postiina-tryvoha"
+      }
+    ],
+    "seo": {
+      "_type": "seoFields",
+      "title": "Що робити, коли тривожні думки не зупиняються",
+      "description": "Як розірвати цикл негативних сценаріїв, перевірок і короткого заспокоєння."
+    },
+    "cta": {
+      "_type": "reference",
+      "_ref": "cta-default-contact"
+    }
+  },
+  {
+    "_id": "article-dovira-pislia-zrady",
+    "_type": "article",
+    "title": "Чи можна відновити довіру після зради",
+    "slug": {
+      "_type": "slug",
+      "current": "dovira-pislia-zrady"
+    },
+    "excerpt": "Що насправді потрібне для відновлення стосунків і чому рішення не варто приймати під тиском.",
+    "author": {
+      "_type": "reference",
+      "_ref": "author-valentyna-chaika"
+    },
+    "publishedAt": "2026-07-16T00:00:00.000Z",
+    "updatedAt": "2026-07-25T07:58:12.029Z",
+    "heroImageUrl": "/images/clusters/relationships.webp",
+    "body": [
+      {
+        "_type": "block",
+        "_key": "content-172",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-172",
+            "text": "Довіра не повертається обіцянкою",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-173",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-173",
+            "text": "Для відновлення потрібні визнання завданого болю, відповідальність, прозорість і послідовна поведінка з часом. Пробачення не може бути вимогою.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-174",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-174",
+            "text": "Залишатися чи завершувати",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-175",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-175",
+            "text": "Терапія не приймає рішення за пару. Вона створює простір, де можна побачити реальний стан стосунків, власні межі та можливість змін без поспіху.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-176",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-176",
+            "text": "Індивідуальна й парна робота",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-177",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-177",
+            "text": "Індивідуальна консультація допомагає прожити травматичний досвід і почути себе. Парна — дослідити взаємодію та умови, за яких відновлення довіри взагалі можливе.",
+            "marks": []
+          }
+        ]
+      }
+    ],
+    "relatedServices": [
+      {
+        "_type": "reference",
+        "_ref": "service-onlain-konsultatsiia"
+      },
+      {
+        "_type": "reference",
+        "_ref": "service-indyvidualna-psykhoterapiia"
+      }
+    ],
+    "relatedConcerns": [
+      {
+        "_type": "reference",
+        "_ref": "concern-stosunky-pislia-zrady"
+      },
+      {
+        "_type": "reference",
+        "_ref": "concern-skladnoshchi-u-stosunkakh"
+      }
+    ],
+    "seo": {
+      "_type": "seoFields",
+      "title": "Чи можна відновити довіру після зради",
+      "description": "Що насправді потрібне для відновлення стосунків і чому рішення не варто приймати під тиском."
+    },
+    "cta": {
+      "_type": "reference",
+      "_ref": "cta-default-contact"
+    }
+  },
+  {
+    "_id": "5c0c4c44-c36f-41a0-aceb-732aa9831410",
+    "_type": "page",
+    "title": "Умови і правила",
+    "slug": {
+      "_type": "slug",
+      "current": "umovi"
+    },
+    "navLabel": "Умови і правила",
+    "showInHeader": true,
+    "showInFooter": true,
+    "navOrder": 40,
+    "body": [
+      {
+        "_type": "block",
+        "_key": "content-178",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-178",
+            "text": "Правила моєї терапії",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-179",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-179",
+            "text": "Я будую свою роботу на безпеці, повазі та відповідальності — як з мого боку, так і з боку клієнта.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-180",
+        "style": "h3",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-180",
+            "text": "1. Конфіденційність",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-181",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-181",
+            "text": "Усе, що відбувається в терапії, залишається між нами. Винятки можливі лише у випадках загрози життю або вимог закону.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-182",
+        "style": "h3",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-182",
+            "text": "2. Повага до меж",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-183",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-183",
+            "text": "У терапії ми не переходимо в особисті або дружні стосунки. Чіткі професійні межі — це частина безпеки процесу.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-184",
+        "style": "h3",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-184",
+            "text": "3. Відповідальність за процес",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-185",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-185",
+            "text": "Я відповідаю за якість простору, методи та професійність. Клієнт відповідає за свої рішення, дії та готовність працювати.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-186",
+        "style": "h3",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-186",
+            "text": "4. Добровільність",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-187",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-187",
+            "text": "Терапія не працює через примус. Клієнт має право зупинити процес у будь-який момент.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-188",
+        "style": "h3",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-188",
+            "text": "5. Повага до темпу",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-189",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-189",
+            "text": "Ми не форсуємо процес. У кожної людини є свій ритм проживання досвіду.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-190",
+        "style": "h3",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-190",
+            "text": "6. Чесність у контакті",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-191",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-191",
+            "text": "Важливо говорити про те, що відчувається в процесі: сумніви, опір, дискомфорт, незгоду. Це частина роботи.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-192",
+        "style": "h3",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-192",
+            "text": "7. Етичність і відсутність оцінки",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-193",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-193",
+            "text": "Я не засуджую, не навішую ярликів і не знецінюю досвід клієнта.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-194",
+        "style": "h3",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-194",
+            "text": "8. Оплата і домовленості",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-195",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-195",
+            "text": "Сесії оплачуються заздалегідь або в узгодженому форматі. Скасування та перенесення мають чіткі домовленості, викладені нижче.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-196",
+        "style": "h3",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-196",
+            "text": "9. Межі поза сесією",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-197",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-197",
+            "text": "Контакт між сесіями — тільки в межах домовленого формату: організаційні питання або окремо погоджений супровід.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-198",
+        "style": "h3",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-198",
+            "text": "10. Орієнтація на зміни",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-199",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-199",
+            "text": "Терапія — це не просто «поговорити», а процес, який передбачає рух, усвідомлення і зміни в житті.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-200",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-200",
+            "text": "Умови роботи",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-201",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-201",
+            "text": "Щоб терапія була стабільною, безпечною і структурованою, я працюю за чіткими домовленостями.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-202",
+        "style": "h3",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-202",
+            "text": "1. Оплата та бронювання сесії",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-203",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-203",
+            "text": "Сесія бронюється лише після повної передплати. Передплата є підтвердженням запису та закріплює час у моєму графіку. Без оплати час не резервується.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-204",
+        "style": "h3",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-204",
+            "text": "2. Скасування та перенесення",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-205",
+        "style": "normal",
+        "listItem": "bullet",
+        "level": 1,
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-205",
+            "text": "скасування або перенесення сесії можливе не пізніше ніж за 24 години",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-206",
+        "style": "normal",
+        "listItem": "bullet",
+        "level": 1,
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-206",
+            "text": "при скасуванні менш ніж за 24 години оплата не повертається, а сесія не переноситься",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-207",
+        "style": "normal",
+        "listItem": "bullet",
+        "level": 1,
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-207",
+            "text": "у разі неявки без попередження оплата також не повертається",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-208",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-208",
+            "text": "Винятки можливі лише у випадках форс-мажору, які обговорюються індивідуально.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-209",
+        "style": "h3",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-209",
+            "text": "3. Запізнення",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-210",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-210",
+            "text": "У разі запізнення сесія не продовжується — ми працюємо в межах запланованого часу. Якщо запізнення значне, сесія може бути скорочена або вважатися проведеною.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-211",
+        "style": "h3",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-211",
+            "text": "4. Регулярність",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-212",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-212",
+            "text": "Для стабільного результату рекомендована регулярність зустрічей — зазвичай один раз на тиждень або за індивідуальною домовленістю.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-213",
+        "style": "h3",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-213",
+            "text": "5. Завершення терапії",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-214",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-214",
+            "text": "Клієнт має право завершити терапію у будь-який момент, бажано з попереднім обговоренням цього процесу на сесії.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-215",
+        "style": "h3",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-215",
+            "text": "6. Контакт поза сесіями",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-216",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-216",
+            "text": "Поза сесіями я відповідаю лише на організаційні питання: час, оплата, перенесення. Терапевтичні теми обговорюються під час зустрічей або в межах окремо погодженого формату підтримки.",
+            "marks": []
+          }
+        ]
+      }
+    ],
+    "seo": {
+      "_type": "seoFields",
+      "title": "Умови і правила",
+      "description": "Правила терапії, оплата, бронювання, перенесення, регулярність і контакт поза сесіями."
+    },
+    "cta": {
+      "_type": "reference",
+      "_ref": "cta-default-contact"
+    }
+  },
+  {
+    "_id": "77353ae6-9aee-44e2-af13-b8f071febb79",
+    "_type": "page",
+    "title": "Конфіденційність",
+    "slug": {
+      "_type": "slug",
+      "current": "konfidenciinist"
+    },
+    "navLabel": "Конфіденційність",
+    "showInHeader": false,
+    "showInFooter": true,
+    "navOrder": 91,
+    "body": [
+      {
+        "_type": "block",
+        "_key": "content-217",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-217",
+            "text": "Конфіденційність і професійна етика",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-218",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-218",
+            "text": "У своїй професійній діяльності я дотримуюся принципів конфіденційності та етичного кодексу психолога.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-219",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-219",
+            "text": "Інформація, отримана під час консультацій, є конфіденційною та не підлягає розголошенню третім особам без згоди клієнта, за винятком випадків, передбачених чинним законодавством України або ситуацій, що становлять загрозу життю та здоров’ю клієнта чи інших осіб.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-220",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-220",
+            "text": "Психологічна допомога надається на засадах добровільності, професійної компетентності, поваги до гідності клієнта та відповідальності спеціаліста.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-221",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-221",
+            "text": "Як міжнародний професійний орієнтир можна переглянути офіційний документ European Association for Psychotherapy. Посилання не є заявою про членство або сертифікацію EAP.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-222",
+        "style": "normal",
+        "markDefs": [
+          {
+            "_key": "link-222",
+            "_type": "link",
+            "href": "https://www.europsyche.org/Resources/EAP-Documents/Statement-of-Ethical-Principles"
+          }
+        ],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-222",
+            "text": "Етичні принципи European Association for Psychotherapy (EAP)",
+            "marks": [
+              "link-222"
+            ]
+          }
+        ]
+      }
+    ],
+    "seo": {
+      "_type": "seoFields",
+      "title": "Конфіденційність",
+      "description": "Принципи конфіденційності, добровільності та етичності психологічної допомоги."
+    },
+    "cta": {
+      "_type": "reference",
+      "_ref": "cta-default-contact"
+    }
+  },
+  {
+    "_id": "page-publichna-oferta",
+    "_type": "page",
+    "title": "Публічна оферта",
+    "slug": {
+      "_type": "slug",
+      "current": "publichna-oferta"
+    },
+    "navLabel": "Публічна оферта",
+    "showInHeader": false,
+    "showInFooter": true,
+    "navOrder": 92,
+    "body": [
+      {
+        "_type": "block",
+        "_key": "content-223",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-223",
+            "text": "Загальні положення",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-224",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-224",
+            "text": "Ця сторінка фіксує базові домовленості щодо запису, оплати та надання психологічних послуг. Перед оплатою клієнт має можливість уточнити формат, тривалість, вартість і організаційні умови конкретної послуги.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-225",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-225",
+            "text": "Підтвердження запису",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-226",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-226",
+            "text": "Запис на сесію вважається підтвердженим після погодження часу та повної передплати. Оплата означає згоду з актуальними умовами бронювання, скасування і перенесення, розміщеними на сторінці «Умови і правила».",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-227",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-227",
+            "text": "Характер послуги",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-228",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-228",
+            "text": "Психологічна консультація не є екстреною медичною допомогою та не гарантує наперед визначеного результату. Результат залежить від запиту, участі клієнта, регулярності та інших індивідуальних обставин.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-229",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-229",
+            "text": "Конфіденційність",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-230",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-230",
+            "text": "Інформація, отримана під час консультацій, захищається відповідно до професійних принципів конфіденційності та вимог чинного законодавства України.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-231",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-231",
+            "text": "Важливе уточнення",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "content-232",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "span-232",
+            "text": "Цей текст є інформаційною версією домовленостей і має бути перевірений юристом перед використанням як повноцінний договір публічної оферти, зокрема після додавання реквізитів надавача послуг, вартості, способів оплати та порядку вирішення спорів.",
+            "marks": []
+          }
+        ]
+      }
+    ],
+    "seo": {
+      "_type": "seoFields",
+      "title": "Публічна оферта",
+      "description": "Публічна інформація про домовленості щодо отримання та оплати психологічних послуг.",
+      "noindex": true
+    },
+    "cta": {
+      "_type": "reference",
+      "_ref": "cta-default-contact"
+    }
+  }
+]

@@ -37,10 +37,21 @@ const seoTitle = article.seo?.title || article.title;
 const seoDescription = article.seo?.description || article.excerpt || article.description;
 const articlePath = `/statti/${article.slug}`;
 const canonicalPath = article.seo?.canonicalOverride || articlePath;
-const shareImage = article.seo?.ogImage || article.heroImage;
-const heroImageUrl = article.heroImage
-  ? sanityImageUrl(article.heroImage)?.width(1120).height(630).fit('crop').auto('format').url()
-  : null;
+const clusterImage = (() => {
+  const slug = article.slug;
+  if (/stosunk|pari|simyi|zrad|spivzalezh/.test(slug)) return '/images/clusters/relationships.webp';
+  if (/hovoryty-ni|chuzhoi-dumky|mezh/.test(slug)) return '/images/clusters/boundaries.webp';
+  if (/vyhorann|dratuie|vysnazh/.test(slug)) return '/images/clusters/burnout.webp';
+  if (/tryvo|pohane|panich/.test(slug)) return '/images/clusters/anxiety.webp';
+  if (/samoot|krytyk|nevpev|pomyl|rishennia|khochu|poklyk/.test(slug)) return '/images/clusters/self-esteem.webp';
+  return '/images/clusters/first-consultation.webp';
+})();
+const shareImage = article.seo?.ogImage || article.heroImage || article.heroImageUrl || clusterImage;
+const heroImageUrl =
+  article.heroImageUrl ||
+  (article.heroImage
+    ? sanityImageUrl(article.heroImage)?.width(1120).height(630).fit('crop').auto('format').url()
+    : clusterImage);
 ---
 
 <Layout
@@ -91,6 +102,20 @@ const heroImageUrl = article.heroImage
             </div>
           )}
         </div>
+
+        <aside class="mt-12 rounded-[var(--radius-large)] border border-[var(--color-border)] bg-[var(--color-surface-muted)] p-6">
+          <p class="eyebrow">Авторка матеріалу</p>
+          <h2 class="mt-3 text-xl font-semibold">{article.author?.name || 'Валентина Чайка'}</h2>
+          <p class="mt-1 text-sm font-medium text-[var(--color-accent-strong)]">
+            {article.author?.role || 'Психолог, психотерапевт'}
+          </p>
+          <p class="mt-3 text-sm leading-6 text-[var(--color-muted)]">
+            {article.author?.shortBio || 'Практична психологиня, яка працює з тривогою, самооцінкою, межами, життєвими кризами та стосунками.'}
+          </p>
+          <a class="mt-4 inline-flex font-semibold text-[var(--color-accent-strong)] underline underline-offset-4" href="/pro-mene">
+            Про освіту та підхід Валентини
+          </a>
+        </aside>
       </article>
 
       <aside class="grid gap-6">

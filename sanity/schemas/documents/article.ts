@@ -18,6 +18,12 @@ export const article = defineType({
     defineField({ name: 'publishedAt', title: 'Published at', type: 'datetime' }),
     defineField({ name: 'updatedAt', title: 'Updated at', type: 'datetime' }),
     defineField({ name: 'heroImage', title: 'Hero image', type: 'image', options: { hotspot: true } }),
+    defineField({
+      name: 'heroImageUrl',
+      title: 'Local / external hero image URL',
+      type: 'string',
+      description: 'Наприклад: /images/clusters/anxiety.webp',
+    }),
     defineField({ name: 'body', title: 'Body', type: 'blockContent' }),
     defineField({ name: 'relatedServices', title: 'Related services', type: 'array', of: [{ type: 'reference', to: [{ type: 'service' }] }] }),
     defineField({ name: 'relatedConcerns', title: 'Related concerns', type: 'array', of: [{ type: 'reference', to: [{ type: 'concern' }] }] }),

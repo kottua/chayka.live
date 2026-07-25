@@ -27,6 +27,7 @@ const [allConcerns, contactSettings, defaultCTA] = await Promise.all([
   getDefaultCTA(),
 ]);
 const relatedConcerns = service.relatedConcerns?.length ? service.relatedConcerns : allConcerns;
+const relatedArticles = service.relatedArticles || [];
 const faq = service.faq || [];
 const hasBody = Array.isArray(service.body) && service.body.length > 0;
 const seoTitle = service.seo?.title || service.title;
@@ -80,13 +81,25 @@ const canonicalPath = service.seo?.canonicalOverride || servicePath;
         )}
       </article>
 
-      <aside class="rounded-lg border border-[var(--color-line)] bg-[var(--color-surface)] p-5">
-        <h2 class="font-semibold">Пов'язані запити</h2>
-        <div class="mt-4 grid gap-3">
-          {relatedConcerns.map((concern) => (
-            <a class="text-sm leading-6 text-[var(--color-muted)] hover:text-[var(--color-ink)]" href={`/zapyt/${concern.slug}`}>{concern.title}</a>
-          ))}
+      <aside class="grid content-start gap-6">
+        <div class="rounded-lg border border-[var(--color-line)] bg-[var(--color-surface)] p-5">
+          <h2 class="font-semibold">Запити для цього формату</h2>
+          <div class="mt-4 grid gap-3">
+            {relatedConcerns.map((concern) => (
+              <a class="text-sm leading-6 text-[var(--color-muted)] hover:text-[var(--color-ink)]" href={`/zapyt/${concern.slug}`}>{concern.title}</a>
+            ))}
+          </div>
         </div>
+        {relatedArticles.length > 0 && (
+          <div class="rounded-lg border border-[var(--color-line)] bg-[var(--color-surface)] p-5">
+            <h2 class="font-semibold">Корисні матеріали</h2>
+            <div class="mt-4 grid gap-3">
+              {relatedArticles.map((article) => (
+                <a class="text-sm leading-6 text-[var(--color-muted)] hover:text-[var(--color-ink)]" href={`/statti/${article.slug}`}>{article.title}</a>
+              ))}
+            </div>
+          </div>
+        )}
       </aside>
     </div>
   </section>

@@ -28,6 +28,7 @@ const [contactSettings, defaultCTA, pageContent, allServices] = await Promise.al
   getServices(),
 ]);
 const relatedServices = concern.relatedServices?.length ? concern.relatedServices : allServices;
+const relatedArticles = concern.relatedArticles || [];
 const faq = concern.faq || [];
 const hasBody = Array.isArray(concern.body) && concern.body.length > 0;
 const seoTitle = concern.seo?.title || concern.title;
@@ -81,13 +82,25 @@ const canonicalPath = concern.seo?.canonicalOverride || concernPath;
         )}
       </article>
 
-      <aside class="rounded-lg border border-[var(--color-line)] bg-[var(--color-surface)] p-5">
-        <h2 class="font-semibold">Релевантні послуги</h2>
-        <div class="mt-4 grid gap-3">
-          {relatedServices.map((service) => (
-            <a class="text-sm leading-6 text-[var(--color-muted)] hover:text-[var(--color-ink)]" href={`/poslugy/${service.slug}`}>{service.title}</a>
-          ))}
+      <aside class="grid content-start gap-6">
+        <div class="rounded-lg border border-[var(--color-line)] bg-[var(--color-surface)] p-5">
+          <h2 class="font-semibold">Наступний крок: формат роботи</h2>
+          <div class="mt-4 grid gap-3">
+            {relatedServices.map((service) => (
+              <a class="text-sm leading-6 text-[var(--color-muted)] hover:text-[var(--color-ink)]" href={`/poslugy/${service.slug}`}>{service.title}</a>
+            ))}
+          </div>
         </div>
+        {relatedArticles.length > 0 && (
+          <div class="rounded-lg border border-[var(--color-line)] bg-[var(--color-surface)] p-5">
+            <h2 class="font-semibold">Матеріали на цю тему</h2>
+            <div class="mt-4 grid gap-3">
+              {relatedArticles.map((article) => (
+                <a class="text-sm leading-6 text-[var(--color-muted)] hover:text-[var(--color-ink)]" href={`/statti/${article.slug}`}>{article.title}</a>
+              ))}
+            </div>
+          </div>
+        )}
       </aside>
     </div>
   </section>
