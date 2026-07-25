@@ -8,6 +8,9 @@ interface Props {
 
 const { siteSettings } = Astro.props;
 const year = new Date().getFullYear();
+const trackingEnabled = Boolean(
+  import.meta.env.PUBLIC_GOOGLE_ADS_ID || import.meta.env.PUBLIC_GTM_ID || 'AW-970721602',
+);
 const [contactSettings, footerNavItems] = await Promise.all([getContactSettings(), getFooterNavItems()]);
 ---
 
@@ -30,6 +33,13 @@ const [contactSettings, footerNavItems] = await Promise.all([getContactSettings(
                 {item.label}
               </a>
             ))}
+            {
+              trackingEnabled && (
+                <button class="focus-ring hover:text-white" type="button" data-cookie-settings>
+                  Налаштування cookies
+                </button>
+              )
+            }
           </nav>
         )
       }

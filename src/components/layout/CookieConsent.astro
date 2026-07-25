@@ -1,0 +1,115 @@
+---
+interface Props {
+  enabled?: boolean;
+}
+
+const { enabled = false } = Astro.props;
+---
+
+{
+  enabled && (
+    <section
+      id="cookie-consent"
+      class="fixed inset-x-4 bottom-4 z-50 hidden rounded-2xl border border-[var(--color-border)] bg-white p-5 shadow-2xl sm:left-auto sm:max-w-lg"
+      role="dialog"
+      aria-live="polite"
+      aria-label="Налаштування cookies"
+    >
+      <p class="font-semibold text-[var(--color-text)]">Налаштування cookies</p>
+      <p class="mt-2 text-sm leading-6 text-[var(--color-text-muted)]">
+        Ми використовуємо Google Ads для вимірювання звернень із реклами. Необов’язкові cookies
+        вмикаються лише за вашою згодою. Персоналізація реклами вимкнена.
+      </p>
+      <a
+        class="focus-ring mt-2 inline-block text-sm font-medium text-[var(--color-brand-primary)] underline underline-offset-4"
+        href="/konfidenciinist"
+      >
+        Докладніше про конфіденційність
+      </a>
+      <div class="mt-4 flex flex-wrap justify-end gap-3">
+        <button
+          class="focus-ring rounded-full border border-[var(--color-border)] px-4 py-2 text-sm font-semibold text-[var(--color-text)] hover:bg-[var(--color-surface)]"
+          type="button"
+          data-consent-choice="denied"
+        >
+          Відхилити
+        </button>
+        <button
+          class="focus-ring rounded-full bg-[var(--color-brand-primary)] px-4 py-2 text-sm font-semibold text-white hover:bg-[var(--color-brand-primary-hover)]"
+          type="button"
+          data-consent-choice="granted"
+        >
+          Дозволити
+        </button>
+      </div>
+    </section>
+  )
+}
+
+{
+  enabled && (
+    <script is:inline>
+      (() => {
+        const storageKey = 'chayka-consent-v1';
+        const banner = document.getElementById('cookie-consent');
+        if (!banner) return;
+
+        const readChoice = () => {
+          try {
+            return window.localStorage.getItem(storageKey);
+          } catch {
+            return null;
+          }
+        };
+
+        const saveChoice = (choice) => {
+          try {
+            window.localStorage.setItem(storageKey, choice);
+          } catch {
+            // Consent still applies for the current page if storage is unavailable.
+          }
+        };
+
+        const updateConsent = (choice) => {
+          const granted = choice === 'granted';
+          if (typeof window.gtag === 'function') {
+            window.gtag('consent', 'update', {
+              ad_storage: granted ? 'granted' : 'denied',
+              ad_user_data: granted ? 'granted' : 'denied',
+              ad_personalization: 'denied',
+              analytics_storage: granted ? 'granted' : 'denied',
+            });
+          }
+        };
+
+        const showBanner = () => {
+          banner.classList.remove('hidden');
+          banner.querySelector('button')?.focus();
+        };
+
+        const hideBanner = () => banner.classList.add('hidden');
+
+        if (!readChoice()) showBanner();
+
+        banner.addEventListener('click', (event) => {
+          const button =
+            event.target instanceof Element ? event.target.closest('[data-consent-choice]') : null;
+          if (!(button instanceof HTMLElement)) return;
+
+          const choice = button.dataset.consentChoice;
+          if (choice !== 'granted' && choice !== 'denied') return;
+          saveChoice(choice);
+          updateConsent(choice);
+          hideBanner();
+        });
+
+        document.addEventListener('click', (event) => {
+          const trigger =
+            event.target instanceof Element ? event.target.closest('[data-cookie-settings]') : null;
+          if (!(trigger instanceof HTMLElement)) return;
+          showBanner();
+        });
+      })();
+    </script>
+  )
+}

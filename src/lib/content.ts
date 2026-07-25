@@ -553,6 +553,10 @@ export const pages = [
         'Етичні принципи European Association for Psychotherapy (EAP)',
         'https://www.europsyche.org/Resources/EAP-Documents/Statement-of-Ethical-Principles',
       ),
+      h2('Cookies і вимірювання реклами'),
+      p('За згодою відвідувача сайт використовує Google Ads для вимірювання звернень, отриманих із реклами. До надання згоди рекламні й аналітичні cookies не зберігаються. Персоналізація реклами на сайті вимкнена.'),
+      p('Надану згоду можна будь-коли змінити через кнопку «Налаштування cookies» у нижній частині сайту.'),
+      linkParagraph('Політика конфіденційності Google', 'https://policies.google.com/privacy'),
     ],
   },
   {

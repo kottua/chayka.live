@@ -2,6 +2,7 @@
 import '../../styles/global.css';
 import Header from './Header.astro';
 import Footer from './Footer.astro';
+import CookieConsent from './CookieConsent.astro';
 import SeoHead from '../seo/SeoHead.astro';
 import { getSiteSettings } from '../../lib/data';
 import { sanityImageUrl } from '../../lib/sanity/image';
@@ -18,6 +19,8 @@ const { title, description, canonicalPath, noindex = false, image } = Astro.prop
 const siteSettings = await getSiteSettings();
 const displaySiteName = siteSettings.professionalName || siteSettings.siteName;
 const gtmId = import.meta.env.PUBLIC_GTM_ID;
+const googleAdsId = import.meta.env.PUBLIC_GOOGLE_ADS_ID || 'AW-970721602';
+const directGoogleAdsId = gtmId ? undefined : googleAdsId;
 const seoImage = image || siteSettings.defaultOgImage;
 const imageUrl =
   typeof seoImage === 'string'
@@ -53,6 +56,40 @@ const faviconUrl = siteSettings.favicon
         document.head.appendChild(script);
       </script>
     )}
+    {directGoogleAdsId && (
+      <script is:inline define:vars={{ directGoogleAdsId }}>
+        window.dataLayer = window.dataLayer || [];
+        window.gtag =
+          window.gtag ||
+          function () {
+            window.dataLayer.push(arguments);
+          };
+
+        let consentChoice = null;
+        try {
+          consentChoice = window.localStorage.getItem('chayka-consent-v1');
+        } catch {
+          consentChoice = null;
+        }
+
+        const consentGranted = consentChoice === 'granted';
+        window.gtag('consent', 'default', {
+          ad_storage: consentGranted ? 'granted' : 'denied',
+          ad_user_data: consentGranted ? 'granted' : 'denied',
+          ad_personalization: 'denied',
+          analytics_storage: consentGranted ? 'granted' : 'denied',
+          wait_for_update: 500,
+        });
+        window.gtag('set', 'ads_data_redaction', true);
+        window.gtag('js', new Date());
+        window.gtag('config', directGoogleAdsId);
+
+        const googleTag = document.createElement('script');
+        googleTag.async = true;
+        googleTag.src = `https://www.googletagmanager.com/gtag/js?id=${directGoogleAdsId}`;
+        document.head.appendChild(googleTag);
+      </script>
+    )}
   </head>
   <body>
     {gtmId && (
@@ -71,6 +108,7 @@ const faviconUrl = siteSettings.favicon
       <slot />
     </main>
     <Footer siteSettings={siteSettings} />
+    <CookieConsent enabled={Boolean(directGoogleAdsId)} />
     <script>
       document.addEventListener('click', (event) => {
         const target = event.target instanceof Element ? event.target.closest('[data-event]') : null;
