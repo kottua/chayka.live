@@ -114,9 +114,10 @@ const faviconUrl = siteSettings.favicon
         const target = event.target instanceof Element ? event.target.closest('[data-event]') : null;
         if (!(target instanceof HTMLElement)) return;
 
+        const eventName = target.dataset.event || 'site_click';
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({
-          event: target.dataset.event || 'site_click',
+          event: eventName,
           channel: target.dataset.channel,
           placement: target.dataset.placement,
           page_type: target.dataset.pageType,
@@ -124,6 +125,41 @@ const faviconUrl = siteSettings.favicon
           cta_id: target.dataset.ctaId,
           tracking_context: target.dataset.trackingContext,
         });
+
+        if (eventName !== 'cta_contact_click') return;
+
+        const googleTagWindow = window as typeof window & {
+          gtag?: (...args: unknown[]) => void;
+        };
+        if (typeof googleTagWindow.gtag !== 'function') return;
+
+        const isRegularLinkClick =
+          target instanceof HTMLAnchorElement &&
+          event instanceof MouseEvent &&
+          event.button === 0 &&
+          !event.metaKey &&
+          !event.ctrlKey &&
+          !event.shiftKey &&
+          !event.altKey;
+
+        let navigationCompleted = false;
+        const continueNavigation = () => {
+          if (!isRegularLinkClick || navigationCompleted) return;
+          navigationCompleted = true;
+          window.location.href = target.href;
+        };
+
+        if (isRegularLinkClick) event.preventDefault();
+
+        googleTagWindow.gtag('event', 'conversion', {
+          send_to: 'AW-970721602/aw3lCLDupNYcEMKS8M4D',
+          value: 1.0,
+          currency: 'UAH',
+          event_callback: continueNavigation,
+          event_timeout: 1000,
+        });
+
+        if (isRegularLinkClick) window.setTimeout(continueNavigation, 1000);
       });
     </script>
   </body>
